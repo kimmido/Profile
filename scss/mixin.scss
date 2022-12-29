@@ -42,7 +42,7 @@
 }
 
 // 폰트 사이즈 + 줄간격
-@mixin font_height($size, $height) {
+@mixin font_height($size, $height: calc($size + 10px)) {
     font-size: $size;
     line-height: $height;
 }

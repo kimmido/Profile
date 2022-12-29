@@ -74,6 +74,15 @@ section > h2 {
   display: none;
 }
 
+.index-wrap > h3 {
+  font-size: 20px;
+}
+@media screen and (min-width: 1028px) {
+  .index-wrap > h3 {
+    font-size: 24px;
+  }
+}
+
 header, main, footer {
   display: block;
 }
@@ -237,6 +246,14 @@ header .header-inner .gnb-wrap .gnb li a:hover .kr {
 
 main {
   overflow: hidden;
+}
+main .index-wrap > h3 {
+  font-size: 20px;
+}
+@media screen and (min-width: 1028px) {
+  main .index-wrap > h3 {
+    font-size: 24px;
+  }
 }
 main section#intro-wrap {
   position: relative;
@@ -416,5 +433,126 @@ main section#about-wrap .about .about-flex .about-img {
     margin-top: 0;
     margin-left: 80px;
     width: 28.2608695652%;
+  }
+}
+main section#attitude-wrap {
+  margin-top: 60px;
+}
+@media screen and (min-width: 1028px) {
+  main section#attitude-wrap {
+    margin-top: 140px;
+  }
+}
+main section#attitude-wrap .attitude .index-wrap {
+  text-align: right;
+}
+main section#attitude-wrap .attitude .index-wrap .index {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 140px;
+  margin-left: auto;
+}
+@media screen and (min-width: 1028px) {
+  main section#attitude-wrap .attitude .index-wrap .index {
+    width: 170px;
+  }
+}
+main section#attitude-wrap .attitude .index-wrap .index span {
+  display: block;
+  width: 100px;
+  height: 1px;
+  background-color: #fff;
+}
+@media screen and (min-width: 1028px) {
+  main section#attitude-wrap .attitude .index-wrap .index span {
+    width: 124px;
+  }
+}
+main section#attitude-wrap .attitude .attitude-inner {
+  margin-top: 50px;
+}
+@media screen and (min-width: 1028px) {
+  main section#attitude-wrap .attitude .attitude-inner {
+    margin-top: 66px;
+  }
+}
+main section#attitude-wrap .attitude .attitude-inner .title {
+  font-size: 60px;
+}
+@media screen and (min-width: 1028px) {
+  main section#attitude-wrap .attitude .attitude-inner .title {
+    margin-left: 160px;
+    font-size: 150px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main section#attitude-wrap .attitude .attitude-inner .attitude-flex {
+    display: flex;
+  }
+}
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove {
+  margin: 0 auto;
+  width: 240px;
+  background-color: rebeccapurple;
+}
+@media screen and (min-width: 1028px) {
+  main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove {
+    margin-left: 300px;
+  }
+}
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .img {
+  margin-top: -20px;
+  width: 100%;
+  aspect-ratio: 32/39;
+  background: url(../images/attitude\(1\).png) no-repeat center top;
+  background-size: 110%;
+}
+@media screen and (min-width: 1028px) {
+  main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .img {
+    margin-top: -45px;
+    width: 320px;
+    height: 390px;
+  }
+}
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove {
+  margin-top: -20px;
+  text-align: center;
+}
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .prev, main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .next {
+  position: relative;
+  width: 54px;
+  aspect-ratio: 27/25;
+  background: url(../images/circle-bt.svg) no-repeat;
+}
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .prev img, main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .next img {
+  width: 55%;
+}
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .prev img {
+  transform: rotateZ(90deg);
+}
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .next {
+  margin-left: 50px;
+}
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .next img {
+  transform: rotateZ(-90deg);
+}
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .attitude-txt {
+  margin-top: 30px;
+  font-size: 1em;
+  line-height: calc(1em + 10px);
+}
+@media screen and (min-width: 1028px) {
+  main section#attitude-wrap .attitude .attitude-inner .attitude-flex .attitude-txt {
+    margin-left: 70px;
+    width: 500px;
+  }
+}
+main section#skill-wrap {
+  margin-top: 100px;
+}
+@media screen and (min-width: 1028px) {
+  main section#skill-wrap {
+    margin-top: 320px;
   }
 }/*# sourceMappingURL=profile.css.map */

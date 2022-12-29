@@ -197,8 +197,16 @@ header {
     } // header-inner
 } // header
 
+
+
 main {
     overflow: hidden;
+
+    .index-wrap > h3 {
+        font-size: 20px;
+    
+        @include responsive(pc-screens) { font-size: 24px; }
+    }
 
     section#intro-wrap {
         position: relative;
@@ -354,7 +362,7 @@ main {
                 }
 
                 .about-txt {
-                    @include font_height(1em, calc(1em + 10px));
+                    @include font_height(1em);
                     
                     @include responsive(pc-screens) {
                         order: 2;
@@ -383,4 +391,138 @@ main {
             }
         } // about
     } // section#about-wrap
+
+    section#attitude-wrap {
+        margin-top: 60px;
+
+        @include responsive(pc-screens) {
+            margin-top: 140px;
+        }
+        .attitude {
+            
+            .index-wrap {
+                text-align: right;
+                
+                .index {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 140px;
+                    margin-left: auto;
+                    
+                    @include responsive(pc-screens) {
+                        width: 170px;
+                    }
+
+                    span {
+                        display: block;
+                        width: 100px; height: 1px;
+                        background-color: #fff;
+
+                        @include responsive(pc-screens) {
+                            width: 124px;
+                        }
+                    }
+                }
+            }
+
+            .attitude-inner {
+                margin-top: 50px;
+
+                @include responsive(pc-screens) {
+                    margin-top: 66px;
+                }
+                
+                .title {
+                    font-size: 60px;
+
+                    @include responsive(pc-screens) {
+                        margin-left: 160px;
+                        font-size: 150px;
+                    }
+                }
+
+                .attitude-flex {
+
+                    @include responsive(tablet-screens) {
+                        display: flex;
+                    }
+
+                    .img-pagemove {
+                        // margin-left: calc(55px / 350px) * 100%;
+                        margin: 0 auto;
+                        width: 240px;
+                        background-color: rebeccapurple;
+
+                        @include responsive(pc-screens) {
+                            margin-left: 300px;
+                        }
+
+                        .img {
+                            margin-top: -20px;
+                            width: 100%;
+                            aspect-ratio: 32 / 39;
+                            background: url(../images/attitude\(1\).png) no-repeat center top;
+                            background-size: 110%;
+                            
+                            @include responsive(pc-screens) {
+                                margin-top: -45px;
+                                width: 320px; height: 390px;
+                            }
+                        }
+
+                        .pagemove {
+                            margin-top: -20px;
+                            text-align: center;
+
+                            .prev, .next {
+                                position: relative;
+                                width: 54px;
+                                aspect-ratio: 27 / 25;
+                                background: url(../images/circle-bt.svg) no-repeat;
+                                
+                                img {
+                                    // margin-top: auto;
+                                    // @include position_center();
+                                    width:55%;
+                                }
+                            }
+
+                            .prev {
+                                
+                                img {
+                                    transform: rotateZ(90deg);
+                                }
+                            }
+
+                            .next {
+                                margin-left: 50px;
+                                img {
+                                    transform: rotateZ(-90deg);
+                                }
+                            }
+                        }
+                    }
+
+                    .attitude-txt {
+                        margin-top: 30px;
+                        @include font_height(1em);
+
+                        @include responsive(pc-screens) {
+                            margin-left: 70px;
+                            width: 500px;
+                        }
+                    }
+                }
+            }
+        } // attitude
+    } // section #attitude-wrap
+
+    section#skill-wrap {
+        margin-top: 100px;
+
+        @include responsive(pc-screens) {
+            margin-top: 320px;
+        }
+    }
 } // main
