@@ -135,6 +135,21 @@ header .header-inner .mobile-menu-list li a span,
 header .header-inner .gnb li a span {
   font-weight: 500;
 }
+header .header-inner .mobile-menu-list li a span.kr,
+header .header-inner .gnb li a span.kr {
+  display: none;
+}
+header .header-inner .mobile-menu-list li a:hover .eng,
+header .header-inner .gnb li a:hover .eng {
+  display: none;
+}
+header .header-inner .mobile-menu-list li a:hover .kr,
+header .header-inner .gnb li a:hover .kr {
+  display: block;
+}
+header .header-inner .mobile-menu-wrap {
+  background-color: violet;
+}
 @media screen and (min-width: 768px) {
   header .header-inner .mobile-menu-wrap {
     display: none;
@@ -190,7 +205,7 @@ header .header-inner .mobile-menu-wrap .mobile-menu-list {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: url("../images/cat_ear.svg") #222 no-repeat center bottom;
   background-size: 80%;
 }
@@ -233,15 +248,6 @@ header .header-inner .gnb-wrap .gnb li {
 }
 header .header-inner .gnb-wrap .gnb li a span {
   font-size: 24px;
-}
-header .header-inner .gnb-wrap .gnb li a span.kr {
-  display: none;
-}
-header .header-inner .gnb-wrap .gnb li a:hover .eng {
-  display: none;
-}
-header .header-inner .gnb-wrap .gnb li a:hover .kr {
-  display: block;
 }
 
 main {
@@ -397,10 +403,14 @@ main section#about-wrap .about .about-title strong .point-txt {
 main section#about-wrap .about .about-flex {
   margin-top: 100px;
 }
-@media screen and (min-width: 1028px) {
+@media screen and (min-width: 768px) {
   main section#about-wrap .about .about-flex {
     display: flex;
     justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1028px) {
+  main section#about-wrap .about .about-flex {
     width: 84.0579710145%;
     margin-top: 200px;
   }
@@ -409,28 +419,36 @@ main section#about-wrap .about .about-flex .about-txt {
   font-size: 1em;
   line-height: calc(1em + 10px);
 }
+@media screen and (min-width: 768px) {
+  main section#about-wrap .about .about-flex .about-txt {
+    margin-top: 100px;
+    width: 47.1014492754%;
+    order: 2;
+  }
+}
 @media screen and (min-width: 1028px) {
   main section#about-wrap .about .about-flex .about-txt {
-    order: 2;
-    margin-top: 150px;
+    margin-top: 10.8695652174%;
     width: 47.1014492754%;
   }
 }
 main section#about-wrap .about .about-flex .about-img {
   margin-top: 90px;
-  width: 57.1428571429%;
+  margin-left: 20%;
+  width: 200px;
   aspect-ratio: 4/5;
   background-color: #eee;
 }
 @media screen and (min-width: 768px) {
   main section#about-wrap .about .about-flex .about-img {
+    margin-top: 0;
+    margin-left: 0;
     width: 300px;
+    order: 1;
   }
 }
 @media screen and (min-width: 1028px) {
   main section#about-wrap .about .about-flex .about-img {
-    order: 1;
-    margin-top: 0;
     margin-left: 80px;
     width: 28.2608695652%;
   }
@@ -480,6 +498,11 @@ main section#attitude-wrap .attitude .attitude-inner {
 main section#attitude-wrap .attitude .attitude-inner .title {
   font-size: 60px;
 }
+@media screen and (min-width: 768px) {
+  main section#attitude-wrap .attitude .attitude-inner .title {
+    font-size: 100px;
+  }
+}
 @media screen and (min-width: 1028px) {
   main section#attitude-wrap .attitude .attitude-inner .title {
     margin-left: 160px;
@@ -491,68 +514,200 @@ main section#attitude-wrap .attitude .attitude-inner .title {
     display: flex;
   }
 }
-main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove {
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box {
   margin: 0 auto;
   width: 240px;
-  background-color: rebeccapurple;
 }
-@media screen and (min-width: 1028px) {
-  main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove {
-    margin-left: 300px;
+@media screen and (min-width: 768px) {
+  main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box {
+    margin-left: 55px;
+    width: 320px;
   }
 }
-main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .img {
+@media screen and (min-width: 1028px) {
+  main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box {
+    width: 320px;
+    margin-left: 21.7391304348%;
+  }
+}
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img {
   margin-top: -20px;
   width: 100%;
   aspect-ratio: 32/39;
   background: url(../images/attitude\(1\).png) no-repeat center top;
   background-size: 110%;
 }
-@media screen and (min-width: 1028px) {
-  main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .img {
-    margin-top: -45px;
-    width: 320px;
-    height: 390px;
+@media screen and (min-width: 768px) {
+  main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img {
+    margin-top: -30px;
   }
 }
-main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove {
-  margin-top: -20px;
+@media screen and (min-width: 1028px) {
+  main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img {
+    margin-top: -45px;
+  }
+}
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img::before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #ff5da2;
+  width: 30%;
+}
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .pagemove {
+  margin-top: -24px;
   text-align: center;
 }
-main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .prev, main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .next {
-  position: relative;
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .pagemove .prev, main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .pagemove .next {
   width: 54px;
-  aspect-ratio: 27/25;
-  background: url(../images/circle-bt.svg) no-repeat;
+  height: 50px;
 }
-main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .prev img, main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .next img {
-  width: 55%;
-}
-main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .prev img {
-  transform: rotateZ(90deg);
-}
-main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .next {
+main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .pagemove .next {
   margin-left: 50px;
 }
-main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove .pagemove .next img {
-  transform: rotateZ(-90deg);
+@media screen and (min-width: 1028px) {
+  main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .pagemove .next {
+    margin-left: 70px;
+  }
 }
 main section#attitude-wrap .attitude .attitude-inner .attitude-flex .attitude-txt {
   margin-top: 30px;
   font-size: 1em;
   line-height: calc(1em + 10px);
 }
+@media screen and (min-width: 768px) {
+  main section#attitude-wrap .attitude .attitude-inner .attitude-flex .attitude-txt {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
 @media screen and (min-width: 1028px) {
   main section#attitude-wrap .attitude .attitude-inner .attitude-flex .attitude-txt {
     margin-left: 70px;
+    margin-right: 190px;
     width: 500px;
   }
 }
 main section#skill-wrap {
-  margin-top: 100px;
+  padding-top: 100px;
 }
 @media screen and (min-width: 1028px) {
   main section#skill-wrap {
-    margin-top: 320px;
+    padding-top: 320px;
+  }
+}
+main section#skill-wrap .skill {
+  height: 100vh;
+}
+main section#skill-wrap .skill h3 {
+  font-size: 20px;
+}
+@media screen and (min-width: 1028px) {
+  main section#skill-wrap .skill h3 {
+    font-size: 30px;
+  }
+}
+main section#skill-wrap .skill .skill-list {
+  margin: 40px 40px 0;
+}
+main section#skill-wrap .skill .skill-list .perspective {
+  perspective: 2000px;
+  perspective-origin: -700px 500px;
+  background-color: darkblue;
+}
+main section#skill-wrap .skill .skill-list .perspective .cube {
+  position: relative;
+  transform-style: preserve-3d;
+  width: 80px;
+  -webkit-animation: 5s cuberotate linear infinite;
+          animation: 5s cuberotate linear infinite;
+}
+@-webkit-keyframes cuberotate {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes cuberotate {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@media screen and (min-width: 1028px) {
+  main section#skill-wrap .skill .skill-list .perspective .cube {
+    width: 160px;
+  }
+}
+main section#skill-wrap .skill .skill-list .perspective .cube > div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background-color: #222;
+  width: 80px;
+  height: 80px;
+}
+main section#skill-wrap .skill .skill-list .perspective .cube > div.front {
+  transform: translateZ(40px);
+}
+main section#skill-wrap .skill .skill-list .perspective .cube > div.back {
+  transform: translateZ(-40px);
+}
+main section#skill-wrap .skill .skill-list .perspective .cube > div.top {
+  transform: rotateX(90deg) translateZ(40px);
+}
+main section#skill-wrap .skill .skill-list .perspective .cube > div.bottom {
+  transform: rotateX(-90deg) translateZ(40px);
+}
+main section#skill-wrap .skill .skill-list .perspective .cube > div.left {
+  transform: rotateY(-90deg) translateZ(40px);
+}
+main section#skill-wrap .skill .skill-list .perspective .cube > div.right {
+  transform: rotateY(90deg) translateZ(40px);
+}
+@media screen and (min-width: 1028px) {
+  main section#skill-wrap .skill .skill-list .perspective .cube > div {
+    width: 160px;
+    height: 160px;
+  }
+  main section#skill-wrap .skill .skill-list .perspective .cube > div.front {
+    transform: translateZ(80px);
+  }
+  main section#skill-wrap .skill .skill-list .perspective .cube > div.back {
+    transform: translateZ(-80px);
+  }
+  main section#skill-wrap .skill .skill-list .perspective .cube > div.top {
+    transform: rotateX(90deg) translateZ(80px);
+  }
+  main section#skill-wrap .skill .skill-list .perspective .cube > div.bottom {
+    transform: rotateX(-90deg) translateZ(80px);
+  }
+  main section#skill-wrap .skill .skill-list .perspective .cube > div.left {
+    transform: rotateY(-90deg) translateZ(80px);
+  }
+  main section#skill-wrap .skill .skill-list .perspective .cube > div.right {
+    transform: rotateY(90deg) translateZ(80px);
+  }
+}
+main section#skill-wrap .skill .skill-list .perspective .cube > div h4 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: auto;
+  font-family: Cafe24Dongdong;
+  font-size: calc(1em + 4px);
+}
+@media screen and (min-width: 1028px) {
+  main section#skill-wrap .skill .skill-list .perspective .cube > div h4 {
+    font-size: 40px;
   }
 }/*# sourceMappingURL=profile.css.map */

@@ -17,6 +17,12 @@
             @content;
         }
     }
+
+    @else if $break == pc2-screens {
+        @media screen and(min-width:$break-pc2) {
+            @content;
+        }
+    }
 }
 
 // 수직, 수평 정가운데 정렬
@@ -45,4 +51,26 @@
 @mixin font_height($size, $height: calc($size + 10px)) {
     font-size: $size;
     line-height: $height;
+}
+
+// 커버 생성
+@mixin overlay($color) {
+    display: block;
+    content: '';
+    width: 100%; height: 100%;
+    background-color: $color;
+}
+
+// 정육면체(cube) 생성
+// html: div.front+ div.back + div.top...
+// 요소에 선언(div), $side: 정사각형 한 변의 길이
+@mixin cube($side) {
+    @include square($side);
+    $depth: ($side / 2);
+    &.front {transform: translateZ($depth);}
+    &.back {transform:  translateZ(-$depth);}
+    &.top {transform: rotateX(90deg) translateZ($depth);}
+    &.bottom {transform: rotateX(-90deg) translateZ($depth);}
+    &.left {transform: rotateY(-90deg) translateZ($depth);}
+    &.right {transform: rotateY(90deg) translateZ($depth);}
 }
