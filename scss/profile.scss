@@ -3,6 +3,14 @@
 @import './common.scss';
 @import './mixin.scss';
 
+section {
+    z-index: 2;
+}
+
+.portfolio-area > h3 {
+    z-index: 0;
+}
+
 header {
     position: fixed;
     width: 100%;
@@ -174,7 +182,7 @@ header {
             .gnb {
                 display: none;
                 position: absolute;
-                top: 48px; right: 30px;
+                top: 35px; right: 30px;
                 width: 540px;
                 
                 @include responsive(tablet-screens) {
@@ -187,7 +195,7 @@ header {
                     width: 120px;
                     
                     a {
-    
+                        padding: 5px;
                         span {
                             font-size: 24px;
                         }
@@ -317,7 +325,7 @@ main {
     } // section#intro-wrap
 
     section#about-wrap {
-        background-color: $sub-color;
+        background-color: $main-color02;
 
         .about {
             padding-top: 75px;
@@ -479,6 +487,7 @@ main {
                         
 
                         .img {
+                            position: relative;
                             margin-top: -20px;
                             width: 100%;
                             aspect-ratio: 32 / 39;
@@ -522,7 +531,7 @@ main {
                         @include font_height(1em);
 
                         @include responsive(tablet-screens) {
-
+                            margin-top: 70px;
                             margin-left: 40px;
                             margin-right: 40px;
                         }
@@ -532,6 +541,10 @@ main {
                             margin-right: 190px;
                             width: 500px;
                         }
+
+                        @include responsive(pc2-screens) {
+                            margin-top: 140px;
+                        }
                     }
                 }
             }
@@ -539,50 +552,118 @@ main {
     } // section #attitude-wrap
 
     section#skill-wrap {
-        padding-top: 100px;
-        
+        margin-top: 100px;
+
         @include responsive(pc-screens) {
-            padding-top: 320px;
+            margin-top: 350px;
         }
 
         .skill {
-            
-            height: 100vh;
 
             h3 {
                 font-size: 20px;
-
+                
                 @include responsive(pc-screens) {
                     font-size: 30px;
                 }
             }
+
+            .perspective {
+                position: relative;
+                perspective: 2000px;
+                perspective-origin: -700px 500px;
+
+                .cube{
+                    position: relative;
+                    transform-style: preserve-3d;
+
+                }
+            }
             
             .skill-list {
-                // display: flex;
-                margin: 40px 40px 0;
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                margin: 40px 0;
+                
+                @include responsive(pc-screens) {
+                    margin: 80px 0;
+                    justify-content: space-between;
+                }
                 
                 
                 .perspective {
-                    // position: relative;
-                    perspective: 2000px;
-                    perspective-origin: -700px 500px;
-                    background-color: darkblue;
+                    padding-top: 20px;
+                    width: 50%; height: 160px;
+                    // background-color: darkblue;
+                    // border: 1px solid #fff;
+                    
+                    @include responsive(tablet-screens) {
+                        width: 25%; height: 180px;
+                    }
+
+                    @include responsive(pc-screens) {
+                        height: 360px;
+                    }
+
+                    // 큐브 회전 애니메이션 선언
+                    &:nth-child(1) .cube,
+                    &:nth-child(8) .cube{ animation-name: cuberotate01; }
+                    
+                    &:nth-child(2) .cube,
+                    &:nth-child(7) .cube { animation-name: cuberotate02; }
+
+                    &:nth-child(3) .cube,
+                    &:nth-child(6) .cube { animation-name: cuberotate03; }
+
+                    &:nth-child(4) .cube,
+                    &:nth-child(5) .cube { animation-name: cuberotate04; }
+
+                    // 큐브 회전 애니메이션 생성
+                    @keyframes cuberotate01 {
+                        from { transform: rotateY(0);}
+                        to { transform: rotateY(360deg);}
+                    }
+                    
+                    @keyframes cuberotate02 {
+                        from { transform: rotateZ(50deg) rotateY(360deg);}
+                        to { transform: rotateZ(50deg) rotateY(0);}
+                    }
+
+                    @keyframes cuberotate03 {
+                        from { transform: rotateZ(-50deg) rotateY(0);}
+                        to { transform: rotateZ(-50deg) rotateY(360deg);}
+                    }
+
+                    @keyframes cuberotate04 {
+                        from { transform: rotateX(230deg)rotateZ(230deg) rotateY(0);}
+                        to { transform: rotateX(230deg) rotateZ(230deg) rotateY(360deg);}
+                    }
                     
                     .cube {
-                        $size: 80px;
-                        position: relative;
-                        transform-style: preserve-3d;
-                        // transform: rotate3d(x, y, z, angle);
-                        width: 80px;
-                        animation: 5s cuberotate linear infinite;
+                        margin: 0 auto;
+                        @include square(80px);
+                        animation: {
+                            duration: 10s;
+                            timing-function: linear;
+                            iteration-count: infinite;
+                        }
+                        cursor: pointer;
+                        
+                        &:hover {
+                            animation-play-state: paused;
 
-                        @keyframes cuberotate {
-                            from { transform: rotateY(0);}
-                            to { transform: rotateY(360deg);}
+                            > div {
+                                color: $main-color;
+                                border-color: $main-color;
+                                background-color: $main-color02;
+                            }
+
+                            
                         }
 
                         @include responsive(pc-screens) {
-                            width: 160px;
+                            @include square(130px);
                         }
 
                         > div {
@@ -592,28 +673,145 @@ main {
                             border: 2px solid rgba(255, 255, 255, 0.6);
                             background-color: $main-color;
                             
-                            @include cube(80px);
+                            @include create_cube(80px);
                             
                             @include responsive(pc-screens) {
-                                @include cube(160px);
+                                @include create_cube(130px);
                             }
 
-                            h4 {
+                            span {
                                 @include position_center();
+                                display: block;
                                 text-align: center;
                                 padding: auto;
                                 font-family: $point-font;
-                                // @include font_height(18px, $side);
                                 font-size: calc(1em + 4px);
                                 
                                 @include responsive(pc-screens) {
-                                    font-size: 40px;
+                                    font-size: 32px;
                                 }
                             }
                         }
-                    }
-                }
-            }
+                    } // cube
+                } // perspective
+            } // skill-list
+        } // skill
+    } // section#skill-wrap
+
+    section#portfolio-wrap {
+        overflow: hidden;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        background-color: $main-color02;
+        
+        @include responsive(tablet-screens) {
+            padding-left: 20px;
+            padding-right: 20px;
         }
-    }
+
+        @include responsive(pc-screens) {
+            padding: 56px calc(100px / 1920px) * 100%;
+        }
+        
+        
+        .portfolio-area {
+            color: $main-color;
+
+            > h3 {
+                display: none;
+                @include position_center();
+                position: fixed;
+                margin-top: -50px;
+            
+                @include font_height(200px, 0);
+                color: rgba(255, 255, 255, 0.6);
+                // background-color: darkblue;
+            }
+
+            .portfolio-list {
+                
+                .item-wrap {
+                    width: 100%;
+                    overflow: hidden;
+                    box-shadow: 0 7px 40px 4px rgba(0, 0, 0, 0.2);
+                    border-radius: 30px;
+                    background-color: #fff;
+                    
+                    @include responsive(pc-screens) {
+                        margin: 0 auto;
+                        aspect-ratio: 16 / 9;
+                        border-radius: 50px;
+                    }
+
+                    & + .item-wrap {
+                        margin-top: 100px;
+                        
+                        @include responsive(pc-screens) {
+                            margin-top: 112px;
+                        }
+                    }
+
+                    .item-inner {
+
+                        @include responsive(pc-screens) {
+                            display: flex;
+                        }
+                        
+                        .item-img {
+                            width: 100%; height: 400px;
+                            overflow: hidden;
+                           
+                            @include responsive(tablet-screens) {
+                                height: 600px;
+                            }
+
+                            @include responsive(pc-screens) {
+                                width: 950px; 
+                                height: 100%;
+                            }
+    
+                            img {
+                                width: 100%;
+                            }
+                        }
+    
+                        .item-con {
+    
+                            @include responsive(pc-screens) {
+                                width: 770px; 
+                            }
+
+                            .title-box {
+    
+                                strong {
+                                    font-size: calc(1em + 6px);
+                                    
+                                    @include responsive(pc-screens) {
+                                        font-size: 30px;
+                                    }
+                                }
+                                
+                                span {
+                                    display: block;
+                                    color: #aaa;
+                                    font-size: calc(1em - 2px);
+                                }
+                            }
+    
+                            .portfolio-skill {
+                                display: flex;
+    
+                                li {
+                                    padding: 5px;
+                                    color: $point-pink;
+                                    border: 1px solid opacify($point-pink, 0.5);
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+                    } // item-inner
+                } // item-wrap
+            } // portfolio-list
+        } // portfolio-area
+    } // section#portfolio-wrap
 } // main

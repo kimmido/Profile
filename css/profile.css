@@ -87,6 +87,14 @@ header, main, footer {
   display: block;
 }
 
+section {
+  z-index: 2;
+}
+
+.portfolio-area > h3 {
+  z-index: 0;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -232,7 +240,7 @@ header .header-inner .gnb-wrap .dot {
 header .header-inner .gnb-wrap .gnb {
   display: none;
   position: absolute;
-  top: 48px;
+  top: 35px;
   right: 30px;
   width: 540px;
 }
@@ -245,6 +253,9 @@ header .header-inner .gnb-wrap .gnb {
 header .header-inner .gnb-wrap .gnb li {
   position: relative;
   width: 120px;
+}
+header .header-inner .gnb-wrap .gnb li a {
+  padding: 5px;
 }
 header .header-inner .gnb-wrap .gnb li a span {
   font-size: 24px;
@@ -531,6 +542,7 @@ main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemov
   }
 }
 main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img {
+  position: relative;
   margin-top: -20px;
   width: 100%;
   aspect-ratio: 32/39;
@@ -548,6 +560,9 @@ main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemov
   }
 }
 main section#attitude-wrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img::before {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
   content: "";
   width: 100%;
@@ -578,6 +593,7 @@ main section#attitude-wrap .attitude .attitude-inner .attitude-flex .attitude-tx
 }
 @media screen and (min-width: 768px) {
   main section#attitude-wrap .attitude .attitude-inner .attitude-flex .attitude-txt {
+    margin-top: 70px;
     margin-left: 40px;
     margin-right: 40px;
   }
@@ -589,16 +605,18 @@ main section#attitude-wrap .attitude .attitude-inner .attitude-flex .attitude-tx
     width: 500px;
   }
 }
+@media screen and (min-width: 1400px) {
+  main section#attitude-wrap .attitude .attitude-inner .attitude-flex .attitude-txt {
+    margin-top: 140px;
+  }
+}
 main section#skill-wrap {
-  padding-top: 100px;
+  margin-top: 100px;
 }
 @media screen and (min-width: 1028px) {
   main section#skill-wrap {
-    padding-top: 320px;
+    margin-top: 350px;
   }
-}
-main section#skill-wrap .skill {
-  height: 100vh;
 }
 main section#skill-wrap .skill h3 {
   font-size: 20px;
@@ -608,40 +626,148 @@ main section#skill-wrap .skill h3 {
     font-size: 30px;
   }
 }
-main section#skill-wrap .skill .skill-list {
-  margin: 40px 40px 0;
-}
-main section#skill-wrap .skill .skill-list .perspective {
+main section#skill-wrap .skill .perspective {
+  position: relative;
   perspective: 2000px;
   perspective-origin: -700px 500px;
-  background-color: darkblue;
 }
-main section#skill-wrap .skill .skill-list .perspective .cube {
+main section#skill-wrap .skill .perspective .cube {
   position: relative;
   transform-style: preserve-3d;
-  width: 80px;
-  -webkit-animation: 5s cuberotate linear infinite;
-          animation: 5s cuberotate linear infinite;
 }
-@-webkit-keyframes cuberotate {
-  from {
-    transform: rotateY(0);
-  }
-  to {
-    transform: rotateY(360deg);
+main section#skill-wrap .skill .skill-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+@media screen and (min-width: 1028px) {
+  main section#skill-wrap .skill .skill-list {
+    margin: 80px 0;
+    justify-content: space-between;
   }
 }
-@keyframes cuberotate {
-  from {
-    transform: rotateY(0);
-  }
-  to {
-    transform: rotateY(360deg);
+main section#skill-wrap .skill .skill-list .perspective {
+  padding-top: 20px;
+  width: 50%;
+  height: 160px;
+}
+@media screen and (min-width: 768px) {
+  main section#skill-wrap .skill .skill-list .perspective {
+    width: 25%;
+    height: 180px;
   }
 }
 @media screen and (min-width: 1028px) {
+  main section#skill-wrap .skill .skill-list .perspective {
+    height: 360px;
+  }
+}
+main section#skill-wrap .skill .skill-list .perspective:nth-child(1) .cube, main section#skill-wrap .skill .skill-list .perspective:nth-child(8) .cube {
+  -webkit-animation-name: cuberotate01;
+          animation-name: cuberotate01;
+}
+main section#skill-wrap .skill .skill-list .perspective:nth-child(2) .cube, main section#skill-wrap .skill .skill-list .perspective:nth-child(7) .cube {
+  -webkit-animation-name: cuberotate02;
+          animation-name: cuberotate02;
+}
+main section#skill-wrap .skill .skill-list .perspective:nth-child(3) .cube, main section#skill-wrap .skill .skill-list .perspective:nth-child(6) .cube {
+  -webkit-animation-name: cuberotate03;
+          animation-name: cuberotate03;
+}
+main section#skill-wrap .skill .skill-list .perspective:nth-child(4) .cube, main section#skill-wrap .skill .skill-list .perspective:nth-child(5) .cube {
+  -webkit-animation-name: cuberotate04;
+          animation-name: cuberotate04;
+}
+@-webkit-keyframes cuberotate01 {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes cuberotate01 {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@-webkit-keyframes cuberotate02 {
+  from {
+    transform: rotateZ(50deg) rotateY(360deg);
+  }
+  to {
+    transform: rotateZ(50deg) rotateY(0);
+  }
+}
+@keyframes cuberotate02 {
+  from {
+    transform: rotateZ(50deg) rotateY(360deg);
+  }
+  to {
+    transform: rotateZ(50deg) rotateY(0);
+  }
+}
+@-webkit-keyframes cuberotate03 {
+  from {
+    transform: rotateZ(-50deg) rotateY(0);
+  }
+  to {
+    transform: rotateZ(-50deg) rotateY(360deg);
+  }
+}
+@keyframes cuberotate03 {
+  from {
+    transform: rotateZ(-50deg) rotateY(0);
+  }
+  to {
+    transform: rotateZ(-50deg) rotateY(360deg);
+  }
+}
+@-webkit-keyframes cuberotate04 {
+  from {
+    transform: rotateX(230deg) rotateZ(230deg) rotateY(0);
+  }
+  to {
+    transform: rotateX(230deg) rotateZ(230deg) rotateY(360deg);
+  }
+}
+@keyframes cuberotate04 {
+  from {
+    transform: rotateX(230deg) rotateZ(230deg) rotateY(0);
+  }
+  to {
+    transform: rotateX(230deg) rotateZ(230deg) rotateY(360deg);
+  }
+}
+main section#skill-wrap .skill .skill-list .perspective .cube {
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  cursor: pointer;
+}
+main section#skill-wrap .skill .skill-list .perspective .cube:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+main section#skill-wrap .skill .skill-list .perspective .cube:hover > div {
+  color: #222;
+  border-color: #222;
+  background-color: #e3e0dd;
+}
+@media screen and (min-width: 1028px) {
   main section#skill-wrap .skill .skill-list .perspective .cube {
-    width: 160px;
+    width: 130px;
+    height: 130px;
   }
 }
 main section#skill-wrap .skill .skill-list .perspective .cube > div {
@@ -658,7 +784,7 @@ main section#skill-wrap .skill .skill-list .perspective .cube > div.front {
   transform: translateZ(40px);
 }
 main section#skill-wrap .skill .skill-list .perspective .cube > div.back {
-  transform: translateZ(-40px);
+  transform: scaleX(-1) translateZ(-40px);
 }
 main section#skill-wrap .skill .skill-list .perspective .cube > div.top {
   transform: rotateX(90deg) translateZ(40px);
@@ -674,40 +800,146 @@ main section#skill-wrap .skill .skill-list .perspective .cube > div.right {
 }
 @media screen and (min-width: 1028px) {
   main section#skill-wrap .skill .skill-list .perspective .cube > div {
-    width: 160px;
-    height: 160px;
+    width: 130px;
+    height: 130px;
   }
   main section#skill-wrap .skill .skill-list .perspective .cube > div.front {
-    transform: translateZ(80px);
+    transform: translateZ(65px);
   }
   main section#skill-wrap .skill .skill-list .perspective .cube > div.back {
-    transform: translateZ(-80px);
+    transform: scaleX(-1) translateZ(-65px);
   }
   main section#skill-wrap .skill .skill-list .perspective .cube > div.top {
-    transform: rotateX(90deg) translateZ(80px);
+    transform: rotateX(90deg) translateZ(65px);
   }
   main section#skill-wrap .skill .skill-list .perspective .cube > div.bottom {
-    transform: rotateX(-90deg) translateZ(80px);
+    transform: rotateX(-90deg) translateZ(65px);
   }
   main section#skill-wrap .skill .skill-list .perspective .cube > div.left {
-    transform: rotateY(-90deg) translateZ(80px);
+    transform: rotateY(-90deg) translateZ(65px);
   }
   main section#skill-wrap .skill .skill-list .perspective .cube > div.right {
-    transform: rotateY(90deg) translateZ(80px);
+    transform: rotateY(90deg) translateZ(65px);
   }
 }
-main section#skill-wrap .skill .skill-list .perspective .cube > div h4 {
+main section#skill-wrap .skill .skill-list .perspective .cube > div span {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  display: block;
   text-align: center;
   padding: auto;
   font-family: Cafe24Dongdong;
   font-size: calc(1em + 4px);
 }
 @media screen and (min-width: 1028px) {
-  main section#skill-wrap .skill .skill-list .perspective .cube > div h4 {
-    font-size: 40px;
+  main section#skill-wrap .skill .skill-list .perspective .cube > div span {
+    font-size: 32px;
   }
+}
+main section#portfolio-wrap {
+  overflow: hidden;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #e3e0dd;
+}
+@media screen and (min-width: 768px) {
+  main section#portfolio-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media screen and (min-width: 1028px) {
+  main section#portfolio-wrap {
+    padding: 56px 5.2083333333%;
+  }
+}
+main section#portfolio-wrap .portfolio-area {
+  color: #222;
+}
+main section#portfolio-wrap .portfolio-area > h3 {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  margin-top: -50px;
+  font-size: 200px;
+  line-height: 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap {
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 7px 40px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  background-color: #fff;
+}
+@media screen and (min-width: 1028px) {
+  main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap {
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    border-radius: 50px;
+  }
+}
+main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap + .item-wrap {
+  margin-top: 100px;
+}
+@media screen and (min-width: 1028px) {
+  main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap + .item-wrap {
+    margin-top: 112px;
+  }
+}
+@media screen and (min-width: 1028px) {
+  main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap .item-inner {
+    display: flex;
+  }
+}
+main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-img {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-img {
+    height: 600px;
+  }
+}
+@media screen and (min-width: 1028px) {
+  main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-img {
+    width: 950px;
+    height: 100%;
+  }
+}
+main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-img img {
+  width: 100%;
+}
+@media screen and (min-width: 1028px) {
+  main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con {
+    width: 770px;
+  }
+}
+main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-box strong {
+  font-size: calc(1em + 6px);
+}
+@media screen and (min-width: 1028px) {
+  main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-box strong {
+    font-size: 30px;
+  }
+}
+main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-box span {
+  display: block;
+  color: #aaa;
+  font-size: calc(1em - 2px);
+}
+main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .portfolio-skill {
+  display: flex;
+}
+main section#portfolio-wrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .portfolio-skill li {
+  padding: 5px;
+  color: #ff5da2;
+  border: 1px solid #ff5da2;
+  border-radius: 50%;
 }/*# sourceMappingURL=profile.css.map */
