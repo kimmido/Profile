@@ -18,8 +18,14 @@
         }
     }
 
-    @else if $break == pc2-screens {
-        @media screen and(min-width:$break-pc2) {
+    @else if $break == pc-M-screens {
+        @media screen and(min-width:$break-pc-M) {
+            @content;
+        }
+    }
+
+    @else if $break == pc-L-screens {
+        @media screen and(min-width:$break-pc-L) {
             @content;
         }
     }
@@ -75,4 +81,31 @@
     &.bottom {transform: rotateX(-90deg) translateZ($depth);}
     &.left {transform: rotateY(-90deg) translateZ($depth);}
     &.right {transform: rotateY(90deg) translateZ($depth);}
+}
+
+// .index에서 선언
+@mixin index() {
+    display: flex;
+    justify-content: right;
+
+    span {
+        display: block;
+        @include square(11px);
+        margin-top: 16px;
+        border-radius: 50%;
+        background-color: #ddd;
+        
+        @include responsive(pc-screens) {
+            @include square(13px);
+            margin-top: 20px;
+        }
+
+        & + span {
+            margin-left: 18px;
+        }
+
+        &.now {
+            background-color: $point-neon;
+        }
+    }
 }

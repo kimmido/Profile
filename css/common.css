@@ -74,15 +74,6 @@ section > h2 {
   display: none;
 }
 
-.index-wrap > h3 {
-  font-size: 20px;
-}
-@media screen and (min-width: 1028px) {
-  .index-wrap > h3 {
-    font-size: 24px;
-  }
-}
-
 header, main, footer {
   display: block;
 }/*# sourceMappingURL=common.css.map */

@@ -88,14 +88,6 @@ section > h2 {
     display: none;
 }
 
-.index-wrap > h3 {
-    font-size: 20px;
-
-    @include responsive(pc-screens) {
-        font-size: 24px;
-    }
-}
-
 // select {
 //     -webkit-appearance: none;
 //     -moz-appearance: none;
