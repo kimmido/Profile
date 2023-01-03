@@ -294,8 +294,8 @@ header, main, footer {
   height: 10px;
   border-radius: 50%;
   background-color: #ff5da2;
-  -webkit-animation: 0.5s bounce alternate infinite cubic-bezier(0.7, 0.1, 0.1, 0.1);
-          animation: 0.5s bounce alternate infinite cubic-bezier(0.7, 0.1, 0.1, 0.1);
+  -webkit-animation: 0.5s bounce alternate infinite cubic-bezier(0.1, 0.1, 0.1, 0.8);
+          animation: 0.5s bounce alternate infinite cubic-bezier(0.1, 0.1, 0.1, 0.8);
 }
 @-webkit-keyframes bounce {
   from {
@@ -351,7 +351,7 @@ header, main, footer {
 .wrap main section#homeWrap {
   position: relative;
   background-color: #222;
-  transition: opacity 0.1s;
+  transition: opacity 0.15s ease-out;
 }
 @media screen and (min-width: 1028px) {
   .wrap main section#homeWrap {
@@ -715,6 +715,7 @@ header, main, footer {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.45);
   z-index: 1;
+  display: none;
 }
 .wrap main section#skillWrap .skill h3 {
   font-size: 20px;
@@ -953,6 +954,7 @@ header, main, footer {
 @media screen and (min-width: 1028px) {
   .wrap main section#skillWrap .skill .skill-detail {
     display: flex;
+    display: none;
     width: 100%;
   }
 }
@@ -1059,7 +1061,7 @@ header, main, footer {
 }
 @media screen and (min-width: 1028px) {
   .wrap main section#portfolioWrap {
-    padding: 56px 5.2083333333%;
+    padding: 80px 5.2083333333%;
   }
 }
 .wrap main section#portfolioWrap .portfolio-area {
