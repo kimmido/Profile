@@ -14,7 +14,7 @@
 body {
   color: #fff;
   letter-spacing: -0.04em;
-  background-color: #222;
+  background-color: #e3e0dd;
   font-size: 16px;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
@@ -136,7 +136,18 @@ header, main, footer {
   }
 }
 
-header {
+.wrap {
+  position: relative;
+}
+.wrap #cursor {
+  position: absolute;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #ff5da2;
+  border-radius: 50%;
+}
+.wrap header {
   position: fixed;
   width: 100%;
   height: 100px;
@@ -144,97 +155,97 @@ header {
   background-color: transparent;
 }
 @media screen and (min-width: 1028px) {
-  header {
+  .wrap header {
     border-bottom: 1px solid #fff;
     background-color: #222;
   }
 }
-header .header-inner {
+.wrap header .header-inner {
   margin: 30px 20px 0;
 }
 @media screen and (min-width: 1028px) {
-  header .header-inner {
+  .wrap header .header-inner {
     margin-bottom: 30px;
     margin-left: 100px;
   }
 }
-header .header-inner .logo {
+.wrap header .header-inner .logo {
   width: 34px;
   height: 34px;
   z-index: 80;
 }
 @media screen and (min-width: 768px) {
-  header .header-inner .logo {
+  .wrap header .header-inner .logo {
     width: 40px;
     height: 40px;
   }
 }
-header .header-inner .logo img {
+.wrap header .header-inner .logo img {
   width: 100%;
 }
-header .header-inner .mobile-menu-list,
-header .header-inner .gnb {
+.wrap header .header-inner .mobile-menu-list,
+.wrap header .header-inner .gnb {
   z-index: 90;
   position: absolute;
 }
-header .header-inner .mobile-menu-list li a,
-header .header-inner .gnb li a {
+.wrap header .header-inner .mobile-menu-list li a,
+.wrap header .header-inner .gnb li a {
   width: 100%;
   text-align: center;
 }
-header .header-inner .mobile-menu-list li a span,
-header .header-inner .gnb li a span {
+.wrap header .header-inner .mobile-menu-list li a span,
+.wrap header .header-inner .gnb li a span {
   font-weight: 500;
 }
-header .header-inner .mobile-menu-list li a span.kr,
-header .header-inner .gnb li a span.kr {
+.wrap header .header-inner .mobile-menu-list li a span.kr,
+.wrap header .header-inner .gnb li a span.kr {
   display: none;
 }
-header .header-inner .mobile-menu-list li a:hover .eng,
-header .header-inner .gnb li a:hover .eng {
+.wrap header .header-inner .mobile-menu-list li a:hover .eng,
+.wrap header .header-inner .gnb li a:hover .eng {
   display: none;
 }
-header .header-inner .mobile-menu-list li a:hover .kr,
-header .header-inner .gnb li a:hover .kr {
+.wrap header .header-inner .mobile-menu-list li a:hover .kr,
+.wrap header .header-inner .gnb li a:hover .kr {
   display: block;
 }
-header .header-inner .mobile-menu-wrap {
+.wrap header .header-inner .mobile-menu-wrap {
   background-color: violet;
 }
 @media screen and (min-width: 768px) {
-  header .header-inner .mobile-menu-wrap {
+  .wrap header .header-inner .mobile-menu-wrap {
     display: none;
   }
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box {
   position: absolute;
   right: 20px;
   top: 34px;
   z-index: 99;
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box span {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box span {
   display: block;
   width: 30px;
   height: 2px;
   background-color: #fff;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box span:nth-child(2) {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box span:nth-child(2) {
   background-color: #ddff0d;
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box span + span {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box span + span {
   margin-top: 10px;
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span {
   background-color: #222;
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span:nth-child(2) {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span:nth-child(2) {
   width: 34px;
   height: 34px;
   border-radius: 3px;
   background-color: #ddff0d;
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span:first-child, header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span:last-child {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span:first-child, .wrap header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span:last-child {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -242,16 +253,16 @@ header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span:first-chi
   width: 22px;
   height: 3px;
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span:first-child {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span:first-child {
   transform: translate(-50%, -50%) rotate(45deg);
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span:last-child {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span:last-child {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span + span {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span + span {
   margin-top: 0;
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-list {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-list {
   position: absolute;
   left: 100%;
   top: 0;
@@ -261,30 +272,48 @@ header .header-inner .mobile-menu-wrap .mobile-menu-list {
   background-size: 80%;
   transition: all 0.8s;
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-list.on {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-list.on {
   left: 0;
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-list li:first-child {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-list li:first-child {
   margin-top: 140px;
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-list li + li {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-list li + li {
   margin-top: 60px;
 }
-header .header-inner .mobile-menu-wrap .mobile-menu-list li a span {
+.wrap header .header-inner .mobile-menu-wrap .mobile-menu-list li a span {
   font-size: 34px;
 }
-header .header-inner .gnb-wrap .dot {
+.wrap header .header-inner .gnb-wrap .dot {
   display: block;
   position: absolute;
-  top: -12px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #ff5da2;
+  -webkit-animation: 0.5s bounce alternate infinite cubic-bezier(0.7, 0.1, 0.1, 0.1);
+          animation: 0.5s bounce alternate infinite cubic-bezier(0.7, 0.1, 0.1, 0.1);
 }
-header .header-inner .gnb-wrap .gnb {
+@-webkit-keyframes bounce {
+  from {
+    top: 0;
+  }
+  to {
+    top: -12px;
+  }
+}
+@keyframes bounce {
+  from {
+    top: 0;
+  }
+  to {
+    top: -12px;
+  }
+}
+.wrap header .header-inner .gnb-wrap .gnb {
   display: none;
   position: absolute;
   top: 35px;
@@ -292,206 +321,206 @@ header .header-inner .gnb-wrap .gnb {
   width: 540px;
 }
 @media screen and (min-width: 768px) {
-  header .header-inner .gnb-wrap .gnb {
+  .wrap header .header-inner .gnb-wrap .gnb {
     display: flex;
     justify-content: space-between;
   }
 }
-header .header-inner .gnb-wrap .gnb li {
+.wrap header .header-inner .gnb-wrap .gnb li {
   position: relative;
   width: 120px;
 }
-header .header-inner .gnb-wrap .gnb li a {
+.wrap header .header-inner .gnb-wrap .gnb li a {
   padding: 5px;
 }
-header .header-inner .gnb-wrap .gnb li a span {
+.wrap header .header-inner .gnb-wrap .gnb li a span {
   font-size: 24px;
 }
-
-main {
+.wrap main {
   overflow: hidden;
   word-break: keep-all;
 }
-main .index-wrap > h3 {
+.wrap main .index-wrap > h3 {
   font-size: 20px;
 }
 @media screen and (min-width: 1028px) {
-  main .index-wrap > h3 {
+  .wrap main .index-wrap > h3 {
     font-size: 24px;
   }
 }
-main section#homeWrap {
+.wrap main section#homeWrap {
+  position: relative;
+  background-color: #222;
+  transition: opacity 0.1s;
+}
+@media screen and (min-width: 1028px) {
+  .wrap main section#homeWrap {
+    cursor: none;
+  }
+}
+.wrap main section#homeWrap .home {
   position: relative;
 }
-main section#homeWrap .home {
-  position: relative;
-}
-main section#homeWrap .home .background-bk, main section#homeWrap .home .background-neon {
+.wrap main section#homeWrap .home .background-bk, .wrap main section#homeWrap .home .background-neon {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
-main section#homeWrap .home .home-txt {
+.wrap main section#homeWrap .home .home-txt {
   padding-top: 145px;
 }
 @media screen and (min-width: 1028px) {
-  main section#homeWrap .home .home-txt {
+  .wrap main section#homeWrap .home .home-txt {
     padding-top: 220px;
   }
 }
-main section#homeWrap .home .home-txt > span {
+.wrap main section#homeWrap .home .home-txt > span {
   font-size: 24px;
 }
 @media screen and (min-width: 768px) {
-  main section#homeWrap .home .home-txt > span {
+  .wrap main section#homeWrap .home .home-txt > span {
     font-size: 30px;
   }
 }
 @media screen and (min-width: 1028px) {
-  main section#homeWrap .home .home-txt > span {
+  .wrap main section#homeWrap .home .home-txt > span {
     font-size: 40px;
   }
 }
-main section#homeWrap .home .home-txt > span strong {
+.wrap main section#homeWrap .home .home-txt > span strong {
   font-size: 30px;
 }
 @media screen and (min-width: 768px) {
-  main section#homeWrap .home .home-txt > span strong {
+  .wrap main section#homeWrap .home .home-txt > span strong {
     font-size: calc(1em + 20px);
   }
 }
-main section#homeWrap .home .home-txt > span strong .point-txt {
+.wrap main section#homeWrap .home .home-txt > span strong .point-txt {
   color: #ff5da2;
 }
-main section#homeWrap .home .home-img {
+.wrap main section#homeWrap .home .home-img {
   width: 82.5641025641%;
   margin-top: 80px;
   margin-left: auto;
   margin-right: -23.0769230769%;
 }
 @media screen and (min-width: 1028px) {
-  main section#homeWrap .home .home-img {
+  .wrap main section#homeWrap .home .home-img {
     width: 39.4270833333%;
     margin-top: -25px;
     margin-left: auto;
     margin-right: 0;
   }
 }
-main section#homeWrap .home .mouse-pointer {
+.wrap main section#homeWrap .home .mouse-pointer {
   display: none;
   position: absolute;
-  left: 800px;
-  top: 250px;
+  top: -240px;
   width: 240px;
   height: 240px;
   overflow: hidden;
   border-radius: 50%;
 }
 @media screen and (min-width: 1028px) {
-  main section#homeWrap .home .mouse-pointer {
+  .wrap main section#homeWrap .home .mouse-pointer {
     display: block;
   }
 }
-main section#homeWrap .home .mouse-pointer .background-neon {
+.wrap main section#homeWrap .home .mouse-pointer .background-neon {
   position: absolute;
-  left: -800px;
-  top: -250px;
   background-color: #ddff0d;
 }
-main section#homeWrap .home .mouse-pointer .background-neon .home-box {
+.wrap main section#homeWrap .home .mouse-pointer .background-neon .home-box {
   position: relative;
   height: 100vh;
 }
-main section#homeWrap .home .mouse-pointer .background-neon .home-box .home-txt,
-main section#homeWrap .home .mouse-pointer .background-neon .home-box .hidden-txt {
+.wrap main section#homeWrap .home .mouse-pointer .background-neon .home-box .home-txt,
+.wrap main section#homeWrap .home .mouse-pointer .background-neon .home-box .hidden-txt {
   color: #222;
 }
-main section#homeWrap .home .mouse-pointer .background-neon .home-box .hidden-txt {
+.wrap main section#homeWrap .home .mouse-pointer .background-neon .home-box .hidden-txt {
   position: absolute;
   left: 23.9130434783%;
   top: 44.9275362319%;
   font-family: Cafe24Dongdong;
 }
-main section#homeWrap .home .mouse-pointer .background-neon .home-box .hidden-arrow {
+.wrap main section#homeWrap .home .mouse-pointer .background-neon .home-box .hidden-arrow {
   position: absolute;
   left: 50%;
   bottom: 27px;
   transform: translateX(-50%);
   width: 6.884057971%;
 }
-main section#aboutWrap {
-  background-color: #e3e0dd;
-}
-main section#aboutWrap .about {
+.wrap main section#aboutWrap .about {
   padding-top: 75px;
   color: #222;
 }
 @media screen and (min-width: 768px) {
-  main section#aboutWrap .about {
+  .wrap main section#aboutWrap .about {
     padding-top: 120px;
   }
 }
 @media screen and (min-width: 1028px) {
-  main section#aboutWrap .about {
+  .wrap main section#aboutWrap .about {
     padding-top: 230px;
   }
 }
-main section#aboutWrap .about .about-title {
+.wrap main section#aboutWrap .about .about-title {
   text-align: center;
 }
-main section#aboutWrap .about .about-title strong {
+.wrap main section#aboutWrap .about .about-title strong {
   display: block;
   font-size: 22px;
   line-height: 30px;
 }
 @media screen and (min-width: 768px) {
-  main section#aboutWrap .about .about-title strong {
+  .wrap main section#aboutWrap .about .about-title strong {
     font-size: 40px;
     line-height: 50px;
   }
 }
 @media screen and (min-width: 1028px) {
-  main section#aboutWrap .about .about-title strong {
+  .wrap main section#aboutWrap .about .about-title strong {
     font-size: 64px;
     line-height: 75px;
   }
 }
-main section#aboutWrap .about .about-title strong .point-txt {
+.wrap main section#aboutWrap .about .about-title strong .point-txt {
   color: #ff5da2;
 }
-main section#aboutWrap .about .about-flex {
+.wrap main section#aboutWrap .about .about-flex {
   margin-top: 100px;
 }
 @media screen and (min-width: 768px) {
-  main section#aboutWrap .about .about-flex {
+  .wrap main section#aboutWrap .about .about-flex {
     display: flex;
     justify-content: space-between;
   }
 }
 @media screen and (min-width: 1028px) {
-  main section#aboutWrap .about .about-flex {
+  .wrap main section#aboutWrap .about .about-flex {
     width: 84.0579710145%;
     margin-top: 200px;
   }
 }
-main section#aboutWrap .about .about-flex .about-txt {
+.wrap main section#aboutWrap .about .about-flex .about-txt {
   font-size: 1em;
   line-height: calc(1em + 10px);
 }
 @media screen and (min-width: 768px) {
-  main section#aboutWrap .about .about-flex .about-txt {
+  .wrap main section#aboutWrap .about .about-flex .about-txt {
     margin-top: 100px;
     width: 47.1014492754%;
     order: 2;
   }
 }
 @media screen and (min-width: 1028px) {
-  main section#aboutWrap .about .about-flex .about-txt {
+  .wrap main section#aboutWrap .about .about-flex .about-txt {
     margin-top: 10.8695652174%;
     width: 47.1014492754%;
   }
 }
-main section#aboutWrap .about .about-flex .about-img {
+.wrap main section#aboutWrap .about .about-flex .about-img {
   margin-top: 90px;
   margin-left: 20%;
   width: 200px;
@@ -499,7 +528,7 @@ main section#aboutWrap .about .about-flex .about-img {
   background-color: #eee;
 }
 @media screen and (min-width: 768px) {
-  main section#aboutWrap .about .about-flex .about-img {
+  .wrap main section#aboutWrap .about .about-flex .about-img {
     margin-top: 0;
     margin-left: 0;
     width: 300px;
@@ -507,27 +536,30 @@ main section#aboutWrap .about .about-flex .about-img {
   }
 }
 @media screen and (min-width: 1028px) {
-  main section#aboutWrap .about .about-flex .about-img {
+  .wrap main section#aboutWrap .about .about-flex .about-img {
     margin-left: 80px;
     width: 28.2608695652%;
   }
 }
-main section#attitudeWrap {
-  margin-top: 60px;
+.wrap main section#attitudeWrap {
+  padding-top: 60px;
+  padding-bottom: 50px;
+  background-color: #222;
 }
 @media screen and (min-width: 1028px) {
-  main section#attitudeWrap {
-    margin-top: 140px;
+  .wrap main section#attitudeWrap {
+    padding-top: 140px;
+    padding-bottom: 200px;
   }
 }
-main section#attitudeWrap .attitude .index-wrap {
+.wrap main section#attitudeWrap .attitude .index-wrap {
   text-align: right;
 }
-main section#attitudeWrap .attitude .index-wrap .index {
+.wrap main section#attitudeWrap .attitude .index-wrap .index {
   display: flex;
   justify-content: right;
 }
-main section#attitudeWrap .attitude .index-wrap .index span {
+.wrap main section#attitudeWrap .attitude .index-wrap .index span {
   display: block;
   width: 11px;
   height: 11px;
@@ -536,63 +568,63 @@ main section#attitudeWrap .attitude .index-wrap .index span {
   background-color: #ddd;
 }
 @media screen and (min-width: 1028px) {
-  main section#attitudeWrap .attitude .index-wrap .index span {
+  .wrap main section#attitudeWrap .attitude .index-wrap .index span {
     width: 13px;
     height: 13px;
     margin-top: 20px;
   }
 }
-main section#attitudeWrap .attitude .index-wrap .index span + span {
+.wrap main section#attitudeWrap .attitude .index-wrap .index span + span {
   margin-left: 18px;
 }
-main section#attitudeWrap .attitude .index-wrap .index span.now {
+.wrap main section#attitudeWrap .attitude .index-wrap .index span.now {
   background-color: #ddff0d;
 }
-main section#attitudeWrap .attitude .attitude-inner {
+.wrap main section#attitudeWrap .attitude .attitude-inner {
   margin-top: 50px;
 }
 @media screen and (min-width: 1028px) {
-  main section#attitudeWrap .attitude .attitude-inner {
+  .wrap main section#attitudeWrap .attitude .attitude-inner {
     margin-top: 66px;
   }
 }
-main section#attitudeWrap .attitude .attitude-inner .title {
+.wrap main section#attitudeWrap .attitude .attitude-inner .title {
   font-size: 60px;
 }
 @media screen and (min-width: 768px) {
-  main section#attitudeWrap .attitude .attitude-inner .title {
+  .wrap main section#attitudeWrap .attitude .attitude-inner .title {
     font-size: 100px;
   }
 }
 @media screen and (min-width: 1028px) {
-  main section#attitudeWrap .attitude .attitude-inner .title {
+  .wrap main section#attitudeWrap .attitude .attitude-inner .title {
     margin-left: 160px;
     font-size: 150px;
   }
 }
 @media screen and (min-width: 768px) {
-  main section#attitudeWrap .attitude .attitude-inner .attitude-flex {
+  .wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex {
     display: flex;
   }
 }
-main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box {
+.wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box {
   position: relative;
   margin: 0 auto;
   width: 240px;
 }
 @media screen and (min-width: 768px) {
-  main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box {
+  .wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box {
     margin-left: 55px;
     width: 320px;
   }
 }
 @media screen and (min-width: 1028px) {
-  main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box {
+  .wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box {
     width: 320px;
     margin-left: 21.7391304348%;
   }
 }
-main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img {
+.wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img {
   position: relative;
   margin-top: -20px;
   width: 100%;
@@ -601,16 +633,16 @@ main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove
   background-size: 110%;
 }
 @media screen and (min-width: 768px) {
-  main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img {
+  .wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img {
     margin-top: -30px;
   }
 }
 @media screen and (min-width: 1028px) {
-  main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img {
+  .wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img {
     margin-top: -45px;
   }
 }
-main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img::before {
+.wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .img::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -621,7 +653,7 @@ main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove
   background-color: #ff5da2;
   width: 0%;
 }
-main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .pagemove {
+.wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .pagemove {
   position: absolute;
   left: 50%;
   bottom: -24px;
@@ -631,50 +663,49 @@ main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove
   width: 158px;
 }
 @media screen and (min-width: 1028px) {
-  main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .pagemove {
+  .wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .pagemove {
     width: 178px;
   }
 }
-main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .pagemove .prev, main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .pagemove .next {
+.wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .pagemove .prev, .wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .img-pagemove-box .pagemove .next {
   width: 54px;
   height: 50px;
 }
-main section#attitudeWrap .attitude .attitude-inner .attitude-flex .attitude-txt {
+.wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .attitude-txt {
   margin-top: 50px;
   font-size: 1em;
   line-height: calc(1em + 10px);
 }
 @media screen and (min-width: 768px) {
-  main section#attitudeWrap .attitude .attitude-inner .attitude-flex .attitude-txt {
+  .wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .attitude-txt {
     margin-top: 70px;
     margin-left: 40px;
     margin-right: 40px;
   }
 }
 @media screen and (min-width: 1028px) {
-  main section#attitudeWrap .attitude .attitude-inner .attitude-flex .attitude-txt {
+  .wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .attitude-txt {
     margin-left: 70px;
     margin-right: 190px;
     width: 500px;
   }
 }
 @media screen and (min-width: 1400px) {
-  main section#attitudeWrap .attitude .attitude-inner .attitude-flex .attitude-txt {
+  .wrap main section#attitudeWrap .attitude .attitude-inner .attitude-flex .attitude-txt {
     margin-top: 140px;
   }
 }
-main section#skillWrap {
+.wrap main section#skillWrap {
   position: relative;
-  margin-top: 50px;
   padding-top: 50px;
+  background-color: #222;
 }
 @media screen and (min-width: 1028px) {
-  main section#skillWrap {
-    margin-top: 200px;
+  .wrap main section#skillWrap {
     padding-top: 150px;
   }
 }
-main section#skillWrap::before {
+.wrap main section#skillWrap::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -685,33 +716,33 @@ main section#skillWrap::before {
   background-color: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
-main section#skillWrap .skill h3 {
+.wrap main section#skillWrap .skill h3 {
   font-size: 20px;
 }
 @media screen and (min-width: 1028px) {
-  main section#skillWrap .skill h3 {
+  .wrap main section#skillWrap .skill h3 {
     font-size: 30px;
   }
 }
-main section#skillWrap .skill .skill-list .perspective,
-main section#skillWrap .skill .skill-detail .perspective {
+.wrap main section#skillWrap .skill .skill-list .perspective,
+.wrap main section#skillWrap .skill .skill-detail .perspective {
   position: relative;
   perspective: 2000px;
   perspective-origin: -600px 500px;
 }
-main section#skillWrap .skill .skill-list .perspective .cube,
-main section#skillWrap .skill .skill-detail .perspective .cube {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube,
+.wrap main section#skillWrap .skill .skill-detail .perspective .cube {
   position: relative;
   transform-style: preserve-3d;
 }
-main section#skillWrap .skill .skill-list .perspective .cube > div,
-main section#skillWrap .skill .skill-detail .perspective .cube > div {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube > div,
+.wrap main section#skillWrap .skill .skill-detail .perspective .cube > div {
   position: absolute;
   left: 0;
   top: 0;
 }
-main section#skillWrap .skill .skill-list .perspective .cube > div span,
-main section#skillWrap .skill .skill-detail .perspective .cube > div span {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube > div span,
+.wrap main section#skillWrap .skill .skill-detail .perspective .cube > div span {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -720,47 +751,47 @@ main section#skillWrap .skill .skill-detail .perspective .cube > div span {
   padding: auto;
   font-family: Cafe24Dongdong;
 }
-main section#skillWrap .skill .skill-list {
+.wrap main section#skillWrap .skill .skill-list {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 40px 0 20px;
 }
 @media screen and (min-width: 1028px) {
-  main section#skillWrap .skill .skill-list {
+  .wrap main section#skillWrap .skill .skill-list {
     margin-top: 80px;
     justify-content: space-between;
   }
 }
-main section#skillWrap .skill .skill-list .perspective {
+.wrap main section#skillWrap .skill .skill-list .perspective {
   padding-top: 20px;
   width: 50%;
   height: 160px;
 }
 @media screen and (min-width: 768px) {
-  main section#skillWrap .skill .skill-list .perspective {
+  .wrap main section#skillWrap .skill .skill-list .perspective {
     width: 25%;
     height: 180px;
   }
 }
 @media screen and (min-width: 1028px) {
-  main section#skillWrap .skill .skill-list .perspective {
+  .wrap main section#skillWrap .skill .skill-list .perspective {
     height: 360px;
   }
 }
-main section#skillWrap .skill .skill-list .perspective:nth-child(1) .cube, main section#skillWrap .skill .skill-list .perspective:nth-child(8) .cube {
+.wrap main section#skillWrap .skill .skill-list .perspective:nth-child(1) .cube, .wrap main section#skillWrap .skill .skill-list .perspective:nth-child(8) .cube {
   -webkit-animation-name: cuberotate01;
           animation-name: cuberotate01;
 }
-main section#skillWrap .skill .skill-list .perspective:nth-child(2) .cube, main section#skillWrap .skill .skill-list .perspective:nth-child(7) .cube {
+.wrap main section#skillWrap .skill .skill-list .perspective:nth-child(2) .cube, .wrap main section#skillWrap .skill .skill-list .perspective:nth-child(7) .cube {
   -webkit-animation-name: cuberotate02;
           animation-name: cuberotate02;
 }
-main section#skillWrap .skill .skill-list .perspective:nth-child(3) .cube, main section#skillWrap .skill .skill-list .perspective:nth-child(6) .cube {
+.wrap main section#skillWrap .skill .skill-list .perspective:nth-child(3) .cube, .wrap main section#skillWrap .skill .skill-list .perspective:nth-child(6) .cube {
   -webkit-animation-name: cuberotate03;
           animation-name: cuberotate03;
 }
-main section#skillWrap .skill .skill-list .perspective:nth-child(4) .cube, main section#skillWrap .skill .skill-list .perspective:nth-child(5) .cube {
+.wrap main section#skillWrap .skill .skill-list .perspective:nth-child(4) .cube, .wrap main section#skillWrap .skill .skill-list .perspective:nth-child(5) .cube {
   -webkit-animation-name: cuberotate04;
           animation-name: cuberotate04;
 }
@@ -828,7 +859,7 @@ main section#skillWrap .skill .skill-list .perspective:nth-child(4) .cube, main 
     transform: rotateX(230deg) rotateZ(230deg) rotateY(360deg);
   }
 }
-main section#skillWrap .skill .skill-list .perspective .cube {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube {
   margin: 0 auto;
   width: 80px;
   height: 80px;
@@ -840,79 +871,79 @@ main section#skillWrap .skill .skill-list .perspective .cube {
           animation-iteration-count: infinite;
   cursor: pointer;
 }
-main section#skillWrap .skill .skill-list .perspective .cube:hover {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube:hover {
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
 }
-main section#skillWrap .skill .skill-list .perspective .cube:hover > div {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube:hover > div {
   color: #222;
   border-color: #222;
   background-color: #e3e0dd;
 }
 @media screen and (min-width: 1028px) {
-  main section#skillWrap .skill .skill-list .perspective .cube {
+  .wrap main section#skillWrap .skill .skill-list .perspective .cube {
     width: 130px;
     height: 130px;
   }
 }
-main section#skillWrap .skill .skill-list .perspective .cube > div {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube > div {
   color: rgba(255, 255, 255, 0.6);
   border: 2px solid rgba(255, 255, 255, 0.6);
   background-color: #222;
   width: 80px;
   height: 80px;
 }
-main section#skillWrap .skill .skill-list .perspective .cube > div.front {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube > div.front {
   transform: translateZ(40px);
 }
-main section#skillWrap .skill .skill-list .perspective .cube > div.back {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube > div.back {
   transform: scaleX(-1) translateZ(-40px);
 }
-main section#skillWrap .skill .skill-list .perspective .cube > div.top {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube > div.top {
   transform: rotateX(90deg) translateZ(40px);
 }
-main section#skillWrap .skill .skill-list .perspective .cube > div.bottom {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube > div.bottom {
   transform: rotateX(-90deg) translateZ(40px);
 }
-main section#skillWrap .skill .skill-list .perspective .cube > div.left {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube > div.left {
   transform: rotateY(-90deg) translateZ(40px);
 }
-main section#skillWrap .skill .skill-list .perspective .cube > div.right {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube > div.right {
   transform: rotateY(90deg) translateZ(40px);
 }
 @media screen and (min-width: 1028px) {
-  main section#skillWrap .skill .skill-list .perspective .cube > div {
+  .wrap main section#skillWrap .skill .skill-list .perspective .cube > div {
     width: 130px;
     height: 130px;
   }
-  main section#skillWrap .skill .skill-list .perspective .cube > div.front {
+  .wrap main section#skillWrap .skill .skill-list .perspective .cube > div.front {
     transform: translateZ(65px);
   }
-  main section#skillWrap .skill .skill-list .perspective .cube > div.back {
+  .wrap main section#skillWrap .skill .skill-list .perspective .cube > div.back {
     transform: scaleX(-1) translateZ(-65px);
   }
-  main section#skillWrap .skill .skill-list .perspective .cube > div.top {
+  .wrap main section#skillWrap .skill .skill-list .perspective .cube > div.top {
     transform: rotateX(90deg) translateZ(65px);
   }
-  main section#skillWrap .skill .skill-list .perspective .cube > div.bottom {
+  .wrap main section#skillWrap .skill .skill-list .perspective .cube > div.bottom {
     transform: rotateX(-90deg) translateZ(65px);
   }
-  main section#skillWrap .skill .skill-list .perspective .cube > div.left {
+  .wrap main section#skillWrap .skill .skill-list .perspective .cube > div.left {
     transform: rotateY(-90deg) translateZ(65px);
   }
-  main section#skillWrap .skill .skill-list .perspective .cube > div.right {
+  .wrap main section#skillWrap .skill .skill-list .perspective .cube > div.right {
     transform: rotateY(90deg) translateZ(65px);
   }
 }
-main section#skillWrap .skill .skill-list .perspective .cube > div span {
+.wrap main section#skillWrap .skill .skill-list .perspective .cube > div span {
   font-size: calc(1em + 4px);
 }
 @media screen and (min-width: 1028px) {
-  main section#skillWrap .skill .skill-list .perspective .cube > div span {
+  .wrap main section#skillWrap .skill .skill-list .perspective .cube > div span {
     font-size: 32px;
   }
 }
-main section#skillWrap .skill .skill-detail {
+.wrap main section#skillWrap .skill .skill-detail {
   position: absolute;
   top: 50%;
   left: 0;
@@ -920,74 +951,74 @@ main section#skillWrap .skill .skill-detail {
   z-index: 2;
 }
 @media screen and (min-width: 1028px) {
-  main section#skillWrap .skill .skill-detail {
+  .wrap main section#skillWrap .skill .skill-detail {
     display: flex;
     width: 100%;
   }
 }
-main section#skillWrap .skill .skill-detail .perspective {
+.wrap main section#skillWrap .skill .skill-detail .perspective {
   margin-left: 60px;
   background-color: darkblue;
 }
-main section#skillWrap .skill .skill-detail .perspective .cube > div {
+.wrap main section#skillWrap .skill .skill-detail .perspective .cube > div {
   color: #555;
   border: 2px solid #555;
   background-color: #e3e0dd;
   width: 80px;
   height: 80px;
 }
-main section#skillWrap .skill .skill-detail .perspective .cube > div.front {
+.wrap main section#skillWrap .skill .skill-detail .perspective .cube > div.front {
   transform: translateZ(40px);
 }
-main section#skillWrap .skill .skill-detail .perspective .cube > div.back {
+.wrap main section#skillWrap .skill .skill-detail .perspective .cube > div.back {
   transform: scaleX(-1) translateZ(-40px);
 }
-main section#skillWrap .skill .skill-detail .perspective .cube > div.top {
+.wrap main section#skillWrap .skill .skill-detail .perspective .cube > div.top {
   transform: rotateX(90deg) translateZ(40px);
 }
-main section#skillWrap .skill .skill-detail .perspective .cube > div.bottom {
+.wrap main section#skillWrap .skill .skill-detail .perspective .cube > div.bottom {
   transform: rotateX(-90deg) translateZ(40px);
 }
-main section#skillWrap .skill .skill-detail .perspective .cube > div.left {
+.wrap main section#skillWrap .skill .skill-detail .perspective .cube > div.left {
   transform: rotateY(-90deg) translateZ(40px);
 }
-main section#skillWrap .skill .skill-detail .perspective .cube > div.right {
+.wrap main section#skillWrap .skill .skill-detail .perspective .cube > div.right {
   transform: rotateY(90deg) translateZ(40px);
 }
 @media screen and (min-width: 1028px) {
-  main section#skillWrap .skill .skill-detail .perspective .cube > div {
+  .wrap main section#skillWrap .skill .skill-detail .perspective .cube > div {
     width: 280px;
     height: 280px;
     border-width: 5px;
   }
-  main section#skillWrap .skill .skill-detail .perspective .cube > div.front {
+  .wrap main section#skillWrap .skill .skill-detail .perspective .cube > div.front {
     transform: translateZ(140px);
   }
-  main section#skillWrap .skill .skill-detail .perspective .cube > div.back {
+  .wrap main section#skillWrap .skill .skill-detail .perspective .cube > div.back {
     transform: scaleX(-1) translateZ(-140px);
   }
-  main section#skillWrap .skill .skill-detail .perspective .cube > div.top {
+  .wrap main section#skillWrap .skill .skill-detail .perspective .cube > div.top {
     transform: rotateX(90deg) translateZ(140px);
   }
-  main section#skillWrap .skill .skill-detail .perspective .cube > div.bottom {
+  .wrap main section#skillWrap .skill .skill-detail .perspective .cube > div.bottom {
     transform: rotateX(-90deg) translateZ(140px);
   }
-  main section#skillWrap .skill .skill-detail .perspective .cube > div.left {
+  .wrap main section#skillWrap .skill .skill-detail .perspective .cube > div.left {
     transform: rotateY(-90deg) translateZ(140px);
   }
-  main section#skillWrap .skill .skill-detail .perspective .cube > div.right {
+  .wrap main section#skillWrap .skill .skill-detail .perspective .cube > div.right {
     transform: rotateY(90deg) translateZ(140px);
   }
 }
-main section#skillWrap .skill .skill-detail .perspective .cube > div span {
+.wrap main section#skillWrap .skill .skill-detail .perspective .cube > div span {
   font-size: calc(1em + 4px);
 }
 @media screen and (min-width: 1028px) {
-  main section#skillWrap .skill .skill-detail .perspective .cube > div span {
+  .wrap main section#skillWrap .skill .skill-detail .perspective .cube > div span {
     font-size: 60px;
   }
 }
-main section#skillWrap .skill .skill-detail .txt-wrap {
+.wrap main section#skillWrap .skill .skill-detail .txt-wrap {
   width: calc(100% - 40px);
   margin-top: 40px;
   margin-left: 20px;
@@ -996,13 +1027,13 @@ main section#skillWrap .skill .skill-detail .txt-wrap {
   background-color: #e3e0dd;
 }
 @media screen and (min-width: 768px) {
-  main section#skillWrap .skill .skill-detail .txt-wrap {
+  .wrap main section#skillWrap .skill .skill-detail .txt-wrap {
     padding-left: 60px;
     padding-right: 60px;
   }
 }
 @media screen and (min-width: 1028px) {
-  main section#skillWrap .skill .skill-detail .txt-wrap {
+  .wrap main section#skillWrap .skill .skill-detail .txt-wrap {
     padding-left: 100px;
     padding-right: 100px;
     margin-top: 0;
@@ -1010,32 +1041,31 @@ main section#skillWrap .skill .skill-detail .txt-wrap {
     border-width: 5px;
   }
 }
-main section#skillWrap .skill .skill-detail .txt-wrap .txt-area p {
+.wrap main section#skillWrap .skill .skill-detail .txt-wrap .txt-area p {
   color: #222;
   font-size: calc(1em - 2px);
   line-height: calc(1em - 2px + 10px);
 }
-main section#portfolioWrap {
+.wrap main section#portfolioWrap {
   overflow: hidden;
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: #e3e0dd;
 }
 @media screen and (min-width: 768px) {
-  main section#portfolioWrap {
+  .wrap main section#portfolioWrap {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
 @media screen and (min-width: 1028px) {
-  main section#portfolioWrap {
+  .wrap main section#portfolioWrap {
     padding: 56px 5.2083333333%;
   }
 }
-main section#portfolioWrap .portfolio-area {
+.wrap main section#portfolioWrap .portfolio-area {
   color: #222;
 }
-main section#portfolioWrap .portfolio-area > h3 {
+.wrap main section#portfolioWrap .portfolio-area > h3 {
   display: none;
   position: absolute;
   left: 50%;
@@ -1047,7 +1077,7 @@ main section#portfolioWrap .portfolio-area > h3 {
   line-height: 0;
   color: rgba(255, 255, 255, 0.6);
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap {
   width: 100%;
   overflow: hidden;
   box-shadow: 0 7px 40px 4px rgba(0, 0, 0, 0.2);
@@ -1055,96 +1085,96 @@ main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap {
   background-color: #fff;
 }
 @media screen and (min-width: 1200px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap {
     margin: 0 auto;
     aspect-ratio: 16/9;
     border-radius: 50px;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap + .item-wrap {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap + .item-wrap {
   margin-top: 100px;
 }
 @media screen and (min-width: 1028px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap + .item-wrap {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap + .item-wrap {
     margin-top: 112px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner {
     display: flex;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-img {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-img {
   width: 100%;
   height: 330px;
   overflow: hidden;
 }
 @media screen and (min-width: 768px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-img {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-img {
     height: 600px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-img {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-img {
     width: 55.2325581395%;
     height: 100%;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-img img {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-img img {
   width: 100%;
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con {
   position: relative;
   padding: 50px 20px 80px;
 }
 @media screen and (min-width: 768px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con {
     padding-left: 60px;
     padding-right: 60px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con {
     width: 51.1627906977%;
     padding-left: 0;
     padding-right: 0;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap {
   position: absolute;
   left: 50%;
   bottom: 30px;
   transform: translateX(-50%);
 }
 @media screen and (min-width: 1200px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap {
     right: 30px;
     top: 30px;
     transform: none;
   }
 }
 @media screen and (min-width: 1400px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap {
     right: 11.3636363636%;
     top: 5.6818181818%;
     transform: none;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap h3 {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap h3 {
   display: none;
   text-align: right;
 }
 @media screen and (min-width: 1200px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap h3 {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap h3 {
     display: block;
     font-size: 20px;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index {
   display: flex;
   justify-content: right;
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span {
   display: block;
   width: 11px;
   height: 11px;
@@ -1153,210 +1183,210 @@ main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inne
   background-color: #ddd;
 }
 @media screen and (min-width: 1028px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span {
     width: 13px;
     height: 13px;
     margin-top: 20px;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span + span {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span + span {
   margin-left: 18px;
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span.now {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span.now {
   background-color: #ddff0d;
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span {
   width: 12px;
   height: 12px;
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span + span {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span + span {
   margin-left: 14px;
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span.now {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .index-wrap .index span.now {
   background-color: #222;
 }
 @media screen and (min-width: 1200px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link {
     margin-top: 80px;
     margin-left: 50px;
     margin-right: 50px;
   }
 }
 @media screen and (min-width: 1400px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link {
     margin-top: 22.7272727273%;
     margin-left: 11.3636363636%;
     margin-right: 27.2727272727%;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .title-box {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .title-box {
   text-align: center;
 }
 @media screen and (min-width: 1200px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .title-box {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .title-box {
     text-align: left;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .title-box strong {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .title-box strong {
   font-size: calc(1em + 6px);
 }
 @media screen and (min-width: 1200px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .title-box strong {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .title-box strong {
     font-size: 30px;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .title-box span {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .title-box span {
   display: block;
   color: #aaa;
   font-size: calc(1em - 2px);
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box {
   margin-top: 30px;
 }
 @media screen and (min-width: 768px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box {
     margin-top: 50px;
   }
 }
 @media screen and (min-width: 1200px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box {
     margin-top: 60px;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p, main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p, .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li {
   display: flex;
   font-size: 1em;
   line-height: calc(1em + 10px);
 }
 @media screen and (min-width: 768px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p, main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p, .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li {
     font-size: 18px;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p + li, main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li + li {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p + li, .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li + li {
   margin-top: 10px;
 }
 @media screen and (min-width: 768px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p + li, main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li + li {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p + li, .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li + li {
     margin-top: 20px;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p b, main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li b {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p b, .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li b {
   width: 20%;
 }
 @media screen and (min-width: 1200px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p b, main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li b {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p b, .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li b {
     width: 25%;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p span, main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li span {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p span, .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li span {
   width: 80%;
 }
 @media screen and (min-width: 1200px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p span, main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li span {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box p span, .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .text-box li span {
     width: 75%;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .link-box {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .link-box {
   display: flex;
   margin-top: 45px;
 }
 @media screen and (min-width: 1400px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .link-box {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .link-box {
     margin-top: 80px;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .link-box li {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .link-box li {
   padding: 3px 10px;
   border: 1px solid #ff5da2;
   border-radius: 100px;
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .link-box li + li {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .link-box li + li {
   margin-left: 5px;
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .link-box li a {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .title-text-link .link-box li a {
   width: 65px;
   text-align: center;
   font-size: 1em;
   line-height: calc(1em + 10px);
   color: #ff5da2;
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .more-box {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .more-box {
   display: none;
   position: absolute;
   right: 20px;
   top: 20px;
 }
 @media screen and (min-width: 1200px) {
-  main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .more-box {
+  .wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .more-box {
     bottom: 0;
   }
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .more-box .more-bt {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .more-box .more-bt {
   width: 36px;
   height: 36px;
   text-align: center;
   border-radius: 50%;
   background-color: #ff5da2;
 }
-main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .more-box .more-bt span {
+.wrap main section#portfolioWrap .portfolio-area .portfolio-list .item-wrap .item-inner .item-con .more-box .more-bt span {
   font-size: 38px;
   line-height: 30px;
   font-weight: lighter;
   color: #fff;
 }
-
-footer {
-  margin-top: 60px;
+.wrap footer {
+  padding-top: 60px;
+  background-color: #222;
 }
 @media screen and (min-width: 1028px) {
-  footer {
-    margin-top: 180px;
+  .wrap footer {
+    padding-top: 180px;
   }
 }
-footer .footer-inner .txt-wrap {
+.wrap footer .footer-inner .txt-wrap {
   text-align: center;
 }
 @media screen and (min-width: 1028px) {
-  footer .footer-inner .txt-wrap {
+  .wrap footer .footer-inner .txt-wrap {
     text-align: left;
     margin-left: 80px;
   }
 }
-footer .footer-inner .txt-wrap span, footer .footer-inner .txt-wrap strong {
+.wrap footer .footer-inner .txt-wrap span, .wrap footer .footer-inner .txt-wrap strong {
   display: block;
 }
-footer .footer-inner .txt-wrap span {
+.wrap footer .footer-inner .txt-wrap span {
   font-size: 16px;
 }
 @media screen and (min-width: 1028px) {
-  footer .footer-inner .txt-wrap span {
+  .wrap footer .footer-inner .txt-wrap span {
     font-size: 26px;
   }
 }
-footer .footer-inner .txt-wrap strong {
+.wrap footer .footer-inner .txt-wrap strong {
   margin-top: 5px;
   font-size: 24px;
 }
 @media screen and (min-width: 1028px) {
-  footer .footer-inner .txt-wrap strong {
+  .wrap footer .footer-inner .txt-wrap strong {
     font-size: 44px;
   }
 }
-footer .footer-inner .txt-wrap strong .point-txt {
+.wrap footer .footer-inner .txt-wrap strong .point-txt {
   color: #ff5da2;
 }
-footer .footer-inner .email-wrap {
+.wrap footer .footer-inner .email-wrap {
   margin-top: 50px;
   text-align: center;
 }
 @media screen and (min-width: 1028px) {
-  footer .footer-inner .email-wrap {
+  .wrap footer .footer-inner .email-wrap {
     text-align: left;
     margin-left: 49.2753623188%;
   }
 }
-footer .footer-inner .email-wrap img {
+.wrap footer .footer-inner .email-wrap img {
   width: 220px;
   -webkit-animation: 1.5s linear email-bounce infinite;
           animation: 1.5s linear email-bounce infinite;
@@ -1390,33 +1420,33 @@ footer .footer-inner .email-wrap img {
   }
 }
 @media screen and (min-width: 1028px) {
-  footer .footer-inner .email-wrap img {
+  .wrap footer .footer-inner .email-wrap img {
     width: 300px;
   }
 }
-footer .footer-inner .email-wrap img:hover {
+.wrap footer .footer-inner .email-wrap img:hover {
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
 }
-footer .footer-inner .email-wrap a {
+.wrap footer .footer-inner .email-wrap a {
   display: none;
   text-decoration: underline;
 }
-footer .footer-inner .copyright {
+.wrap footer .footer-inner .copyright {
   margin: 60px 0 20px;
   text-align: center;
 }
 @media screen and (min-width: 1028px) {
-  footer .footer-inner .copyright {
+  .wrap footer .footer-inner .copyright {
     margin-top: 120px;
   }
 }
-footer .footer-inner .copyright span {
+.wrap footer .footer-inner .copyright span {
   font-weight: lighter;
   font-size: calc(1em - 2px);
 }
 @media screen and (min-width: 1028px) {
-  footer .footer-inner .copyright span {
+  .wrap footer .footer-inner .copyright span {
     font-size: 16px;
   }
 }/*# sourceMappingURL=index.css.map */
