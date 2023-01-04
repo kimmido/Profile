@@ -255,8 +255,9 @@
                         position: relative;
                         width: 120px;
 
-                        &:hover {
-                            .dot {
+                        span{
+
+                            &.dot {
                                 display: block;
                                 position: absolute;
                                 top: 0; left: 50%; 

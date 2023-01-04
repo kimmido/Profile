@@ -304,7 +304,7 @@ header, main, footer {
   position: relative;
   width: 120px;
 }
-.wrap header .header-inner .gnb-wrap .gnb li:hover .dot {
+.wrap header .header-inner .gnb-wrap .gnb li span.dot {
   display: block;
   position: absolute;
   top: 0;

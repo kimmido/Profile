@@ -54,18 +54,32 @@ window.onload = function() {
     
 
     
-    window.addEventListener("scroll", backColorChange);
     
+    window.addEventListener("scroll", scrollEvent);
+    
+    let pos;
+    function scrollEvent() {
+        pos = document.documentElement.scrollTop;
+
+        backColorChange();
+        currentLocation();
+    }
+
     // 스크롤 위치에 따른 배경색 변경
     function backColorChange() {
-        let pos = document.documentElement.scrollTop;
-
-        if(pos > 0) {
-            home.style.opacity = 0;
-        } else {
-            home.style.opacity = 1;
-        }
+        pos > 0 ? home.style.opacity = 0 : home.style.opacity = 1
     }
+
+    // 스크롤 위치에 따른 gnb 포인트
+    function currentLocation(){
+        for(let i = 0; i < gnbA.length; i++) {
+            if(pos >= targetTop[i] && pos < targetBottom[i]) {
+                gnbA[i].previousSibling.previousSibling.classList.add('dot');
+            } else {
+                gnbA[i].previousSibling.previousSibling.classList.remove('dot');
+            }
+        }; 
+    } 
 
 
     
@@ -81,21 +95,22 @@ window.onload = function() {
 
     const gnbA = document.querySelectorAll(".gnb li a")
     
-    let target;
     let targetTop = [];
+    let targetBottom = [];
+
+    gnbA.forEach(a => {
+        let target = a.getAttribute('href');
+        targetTop.push(document.querySelector(target).offsetTop);
+        targetBottom.push(document.querySelector(target).offsetTop + document.querySelector(target).offsetHeight); 
+    });
     
     // gnb 클릭시 부드러운 이동
-    for(let a of gnbA) {
-        a.addEventListener("click", e => {
+    for(let i = 0; i < gnbA.length; i++) {
+        gnbA[i].addEventListener("click", e => {
+            // console.log(target);
             e.preventDefault();
-            target = a.getAttribute('href');
-            targetTop = document.querySelector(target).offsetTop;
-            console.log(target);
-            
-            window.scrollTo({ left: 0, top: targetTop, behavior: "smooth" });
+            window.scrollTo({ left: 0, top: targetTop[i] + 1, behavior: "smooth" });
         });
-        window.scroll(console.log(targetTop));
-        console.log(targetTop);
     }
     
     // for(let i = 0; i < gnbA.length; i++) {
