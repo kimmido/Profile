@@ -5,87 +5,111 @@ window.onload = function() {
 
     // 모바일 메뉴 열고 닫기
     function menuToggle() {
-        
-        let list = this.parentNode.nextSibling.nextSibling;
+        let Mgnb = this.parentNode.nextSibling.nextSibling;
         
         this.classList.toggle('on');
-        list.classList.toggle('on');
-        
-        console.log(list);
+        Mgnb.classList.toggle('on');
     } 
 
-    // gnb 이동
-    // const gnbItem = document.querySelectorAll(".gnb > li");
-    // const home = document.getElementById("homeWrap");
-    // const about = document.getElementById("aboutWrap");
-    // const attitude = document.getElementById("attitudeWrap");
-    // const skill = document.getElementById("skillWrap");
-    // const portfolio = document.getElementById("portfolioWrap");
-    // console.log(gnbItem);
-    
-    // for(let i = 0; i < gnbItem.length; i++) {
-    //     gnbItem[i].querySelector("a").addEventListener("click", dotToggle);
-    // }
 
-    // function dotToggle() {
-    //     this.previousSibling.previousSibling.classList.add('dot');
-    // }
+    
     const home = document.getElementById("homeWrap");
-    const mouse = document.querySelector(".mouse-pointer");
-    const hiddenCon = mouse.querySelector(".background-neon");
-    console.log(getComputedStyle(mouse).width);
+    // const mainCursor = document.getElementById("cursor");
+    const homeCursor = document.querySelector(".mouse-pointer");
+    const hiddenCon = homeCursor.querySelector(".background-neon");
 
-    home.addEventListener("mousemove", mousePointer);
+    // document.addEventListener("mousemove", mainCursorOn);
+    home.addEventListener("mousemove", homeCursorOn);
+    home.addEventListener("mouseout", homeCursorOff);
     
-    // 마우스 포인터 위치 조정
-    function mousePointer(e) {
+    // 색상 반전 마우스 포인터 생성
+    function homeCursorOn(e) {
+        // e.stopPropagation();
+        // mainCursorOff();
         let hiddenConLeft = e.pageX - 120;
         let hiddenConTop = e.pageY - 120;
 
-        mouse.style.left = hiddenConLeft + "px";
-        mouse.style.top = hiddenConTop + "px";
+        homeCursor.classList.add('scale');
+        homeCursor.style.left = hiddenConLeft + "px";
+        homeCursor.style.top = hiddenConTop + "px";
         hiddenCon.style.left = -hiddenConLeft + "px";
         hiddenCon.style.top = -hiddenConTop + "px";
     }
-    
 
-
-    const cursor = document.getElementById("cursor");
-
-    document.addEventListener("mousemove", cursorPointer);
-
-    function cursorPointer(e) {
-        // console.log(getComputedStyle(cursor).width);
-        console.log(e.pageX);
-        cursor.style.left = e.pageX;
-        cursor.style.top = e.pageY;
+    // 색상반전 마우스 포인터 삭제
+    function homeCursorOff() {
+        homeCursor.classList.remove('scale');
     }
+
+    // function mainCursorOff() {
+    //     mainCursor.classList.remove('on');
+    // }
+
+    // function mainCursorOn(e) {
+    //     mainCursor.classList.add('on');
+        
+    //     mainCursor.style.left = e.pageX - 6 + "px";
+    //     mainCursor.style.top = e.pageY - 6 + "px";
+    // }
     
-    window.addEventListener("scroll", colorChange);
 
     
-    function colorChange() {
+    window.addEventListener("scroll", backColorChange);
+    
+    // 스크롤 위치에 따른 배경색 변경
+    function backColorChange() {
         let pos = document.documentElement.scrollTop;
-        console.log(pos);
 
         if(pos > 0) {
             home.style.opacity = 0;
-            cursor.style.zIndex = 95;
         } else {
             home.style.opacity = 1;
-            cursor.style.zIndex = 0;
         }
     }
+
+
+    
+    const logo = document.querySelector(".logo > a");
+    
+    // 로고 클릭시 맨 위로 이동
+    logo.addEventListener("click", e => {
+        e.preventDefault();
+        window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+    });
+
+
+
+    const gnbA = document.querySelectorAll(".gnb li a")
+    
+    let target;
+    let targetTop = [];
+    
+    // gnb 클릭시 부드러운 이동
+    for(let a of gnbA) {
+        a.addEventListener("click", e => {
+            e.preventDefault();
+            target = a.getAttribute('href');
+            targetTop = document.querySelector(target).offsetTop;
+            console.log(target);
+            
+            window.scrollTo({ left: 0, top: targetTop, behavior: "smooth" });
+        });
+        window.scroll(console.log(targetTop));
+        console.log(targetTop);
+    }
+    
+    // for(let i = 0; i < gnbA.length; i++) {
+    // }
+
+    // console.log(targetTop);
+
 }
 
-// $(function() {
-//     $(".logo a").on("click", e => {
-//         e.preventDefault();
-//         $('html').animate({scrollTop : 0 }, 300);
-//     });
-//     const gnbBt = $(".gnb a");
-//     gnbBt.on("mouseover", e => {
-//         e.prev().addClass("dot");
-//         // gnbBt.prev().removeClass("dot");
-//     })
-// })
+$(function() {
+    // const idx = $("attitudeWrap .index");
+    // const txt = $("attitudeWrap .attitude-txt").children("li");
+    
+    // console.log(idx);
+    // console.log(txt);
+
+});
