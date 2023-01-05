@@ -51,7 +51,15 @@
     }
 }
 
-.wraper {
+#wraper {
+
+    // #cursor {
+    //     position: absolute;
+    //     @include square(12px);
+    //     border-radius: 50%;
+    //     background-color: $point-pink;
+    //     z-index: 99;
+    // }
 
     header {
         position: fixed;
@@ -430,7 +438,21 @@
                     strong {
                         display: block;
                         @include font_height(22px, 30px);
-    
+
+                        transition: transform .8s;
+                        
+                        &:first-child {
+                            transform: translateX(-100%);
+                        }
+                        
+                        &:last-child {
+                            transform: translateX(100%);
+                        }
+                        
+                        &.center-in {
+                            transform: translate(0);
+                        }
+
                         @include responsive(tablet-screens) {
                             @include font_height(40px, 50px)
                         }
@@ -438,7 +460,7 @@
                         @include responsive(pc-screens) {
                             @include font_height(64px, 75px)
                         }
-    
+
                         .point-txt {
                             color: $point-pink;
                         }

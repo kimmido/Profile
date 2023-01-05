@@ -137,19 +137,29 @@ window.onload = function() {
         });
     }
 
-    const idx = document.querySelector(".attitude-inner .index");
+    const $attd = document.querySelector(".attitude-inner");
+    const indexArea = $attd.querySelector(".index");
+    const index = indexArea.children;
+    console.log($attd);
+    console.log(indexArea);
+    console.log(index);
 
-    idx.addEventListener("click", paging);
+    indexArea.addEventListener("click", paging);
 
     function paging(e) {
         if(e.target.matches('.inedx > span')) {
-            
+            index.forEach(idx => {
+                idx.classList.remove("on");
+                e.target.classList.add("on");
+            });
         }
     }
     
-    
+   const aboutTitle = document.querySelectorAll(".about-title > strong");
 
-
+    function aboutTitleMove() {
+        aboutTitle.forEach
+    }
     // for(let i = 0; i < gnbA.length; i++) {
     // }
 
