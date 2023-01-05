@@ -12,7 +12,7 @@ window.onload = function() {
     } 
 
 
-    
+    // ********** 마우스 포인터 이벤트 **********
     const home = document.getElementById("homeWrap");
     // const mainCursor = document.getElementById("cursor");
     const homeCursor = document.querySelector(".mouse-pointer");
@@ -53,16 +53,54 @@ window.onload = function() {
     // }
     
 
+    // ********** 헤더 클릭 이벤트 ********** 
+    const gnbA = document.querySelectorAll(".gnb li a")
     
+    let target;
+    let targetTop = [];
+    let targetBottom = [];
+
+    gnbA.forEach(a => {
+        target = a.getAttribute('href');
+        targetTop.push(document.querySelector(target).offsetTop);
+        targetBottom.push(document.querySelector(target).offsetTop + document.querySelector(target).offsetHeight); 
+    });
     
+    // gnb 클릭시 부드러운 이동
+    for(let i = 0; i < gnbA.length; i++) {
+        gnbA[i].addEventListener("click", function(e) {
+            // console.log(e);
+            console.log(this); 
+            // console.log(target);
+            e.preventDefault();
+            window.scrollTo({ left: 0, top: targetTop[i] + 1, behavior: "smooth" });
+        });
+    }
+    
+    const logo = document.querySelector(".logo > a");
+    
+    // 로고 클릭시 맨 위로 이동
+    logo.onclick = function(e) {
+        e.preventDefault();
+        window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+    };
+    // logo.addEventListener("click", (e) => {
+    //     e.preventDefault();
+    //     console.log(e.target);
+    //     console.log(e.currentTarget);
+    //     window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+    // });
+
+
+    // ********** 스크롤 이벤트 ********** 
     window.addEventListener("scroll", scrollEvent);
     
     let pos;
     function scrollEvent() {
         pos = document.documentElement.scrollTop;
-
         backColorChange();
         currentLocation();
+        itemUp();
     }
 
     // 스크롤 위치에 따른 배경색 변경
@@ -82,37 +120,36 @@ window.onload = function() {
     } 
 
 
-    
-    const logo = document.querySelector(".logo > a");
-    
-    // 로고 클릭시 맨 위로 이동
-    logo.addEventListener("click", e => {
-        e.preventDefault();
-        window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
-    });
+    // 포트폴리오 등장 이벤트
+    function itemUp() {
+        const itemWrap = document.querySelectorAll(".portfolio-list .item-wrap");
+        let vh_03 = window.innerHeight * 0.3;
+        let item;
+        let upPos;
 
+        itemWrap.forEach(wrap => {
+            item = wrap.querySelector(".item-inner")
+            upPos = pos + vh_03
 
-
-    const gnbA = document.querySelectorAll(".gnb li a")
-    
-    let targetTop = [];
-    let targetBottom = [];
-
-    gnbA.forEach(a => {
-        let target = a.getAttribute('href');
-        targetTop.push(document.querySelector(target).offsetTop);
-        targetBottom.push(document.querySelector(target).offsetTop + document.querySelector(target).offsetHeight); 
-    });
-    
-    // gnb 클릭시 부드러운 이동
-    for(let i = 0; i < gnbA.length; i++) {
-        gnbA[i].addEventListener("click", e => {
-            // console.log(target);
-            e.preventDefault();
-            window.scrollTo({ left: 0, top: targetTop[i] + 1, behavior: "smooth" });
+            if(upPos > wrap.offsetTop) {
+                item.classList.add("up");
+            };
         });
     }
+
+    const idx = document.querySelector(".attitude-inner .index");
+
+    idx.addEventListener("click", paging);
+
+    function paging(e) {
+        if(e.target.matches('.inedx > span')) {
+            
+        }
+    }
     
+    
+
+
     // for(let i = 0; i < gnbA.length; i++) {
     // }
 

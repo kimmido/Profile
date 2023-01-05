@@ -51,20 +51,7 @@
     }
 }
 
-.wrap {
-    position: relative;
-    
-    #cursor {
-        position: absolute;
-        display: block;
-        @include square(12px);
-        background-color: $point-pink;
-        border-radius: 50%;
-        
-        &.on {
-            z-index: 98;
-        }
-    }
+.wraper {
 
     header {
         position: fixed;
@@ -514,6 +501,10 @@
             padding-bottom: 50px;
             background-color: $main-color;
             
+            @include responsive(tablet-screens) {
+                padding-top: 100px;
+                padding-bottom: 120px;
+            }
             
             @include responsive(pc-screens) {
                 padding-top: 140px;
@@ -650,6 +641,10 @@
             padding-top: 50px;
             background-color: $main-color;
             
+            @include responsive(tablet-screens) {
+                padding-top: 100px;
+            }
+
             @include responsive(pc-screens) {
                 padding-top: 150px;
             }
@@ -901,24 +896,14 @@
                 
                     @include font_height(200px, 0);
                     color: rgba(255, 255, 255, 0.6);
-                    // background-color: darkblue;
                 }
     
-                .portfolio-list {
+                ul.portfolio-list {
                     
-                    .item-wrap {
-                        width: 100%;
-                        overflow: hidden;
-                        box-shadow: 0 7px 40px 4px rgba(0, 0, 0, 0.2);
-                        border-radius: 30px;
-                        background-color: #fff;
+                    li.item-wrap {
+                        perspective: 2000px;
+                        // perspective-origin: 500px 500px;
                         
-                        @include responsive(pc-M-screens) {
-                            margin: 0 auto;
-                            aspect-ratio: 16 / 9;
-                            border-radius: 50px;
-                        }
-    
                         & + .item-wrap {
                             margin-top: 100px;
                             
@@ -926,233 +911,255 @@
                                 margin-top: 112px;
                             }
                         }
-    
+                        
                         .item-inner {
+                            width: 100%;
+                            overflow: hidden;
+                            border-radius: 30px;
+                            background-color: #fff;
+                            
+                            transition: {
+                                property: box-shadow, transform;
+                                delay : 1s, 0;
+                                duration : 1s, 1s;
+                            }
+                            
+                            transform: rotateX(60deg) translateZ(-400px) translateY(180px);
+                            
                             
                             @include responsive(pc-M-screens) {
-                                display: flex;
+                                margin: 0 auto 0;
+                                aspect-ratio: 16 / 9;
+                                border-radius: 50px;
+                                transform: rotateX(60deg) translateZ(-400px) translateY(400px);
                             }
                             
-                            .item-img {
-                                width: 100%; height: 330px;
-                                overflow: hidden;
-                               
-                                @include responsive(tablet-screens) {
-                                    height: 600px;
-                                }
-    
-                                @include responsive(pc-M-screens) {
-                                    width: calc(950px / 1720px) * 100%; 
-                                    height: 100%;
-                                }
-        
-                                img {
-                                    width: 100%;
-                                }
+                            &.up {
+                                box-shadow: 0 7px 40px 4px rgba(0, 0, 0, 0.2);
+                                transform: rotateX(0) translateZ(0) translateY(0);
                             }
                             
-                            .item-con {
-                                $wrap: 880px;
-    
-                                position: relative;
-                                padding: 50px 20px 80px;
-    
-                                @include responsive(tablet-screens) {
-                                    padding-left: 60px;
-                                    padding-right: 60px;
-                                }
+                            .item-area {
                                 
                                 @include responsive(pc-M-screens) {
-                                    width: calc($wrap / 1720px) * 100%; 
-                                    padding-left: 0;
-                                    padding-right: 0;
+                                    display: flex;
                                 }
+                                
+                                .item-img {
+                                    width: 100%; height: 330px;
+                                    overflow: hidden;
+                                   
+                                    @include responsive(tablet-screens) {
+                                        height: 600px;
+                                    }
         
-                                .index-wrap {
-                                    position: absolute;
-                                    left: 50%; bottom: 30px;
-                                    transform: translateX(-50%);
-                                    
                                     @include responsive(pc-M-screens) {
-                                        right: 30px; 
-                                        top: 30px;
-                                        transform: none;
+                                        width: calc(950px / 1720px) * 100%; 
+                                        height: 100%;
                                     }
-    
-                                    @include responsive(pc-L-screens) {
-                                        right: calc(100px / $wrap) * 100%; 
-                                        top: calc(50px / $wrap) * 100%;
-                                        transform: none;
-                                    }
-                                    
-                                    h3 {
-                                        display: none;
-                                        text-align: right;
-                                        
-                                        @include responsive(pc-M-screens) {
-                                            display: block;
-                                            font-size: 20px;
-                                        }
-                                        
-                                        @include responsive(pc2-screens) {
-                                            font-size: 24px;
-                                        }
-                                    }
-    
-                                    .index {
-                                        @include index();
-                                        
-                                        span {
-                                            @include square(12px);
-    
-                                            & + span {
-                                                margin-left: 14px;
-                                            }
-    
-                                            &.now {
-                                                background-color: $main-color;
-                                            }
-                                        }
+            
+                                    img {
+                                        width: 100%;
                                     }
                                 }
-     
-                                .title-text-link {
+                                
+                                .item-con {
+                                    display: flex;
+                                    flex-direction: column;
+                                    position: relative;
+                                    padding: 50px 20px 50px;
+        
+                                    @include responsive(tablet-screens) {
+                                        padding-left: 60px;
+                                        padding-right: 60px;
+                                    }
                                     
                                     @include responsive(pc-M-screens) {
-                                        margin-top: 80px;
-                                        margin-left: 50px;
-                                        margin-right: 50px;
+                                        width: calc(880px / 1720px) * 100%; 
+                                        padding: 65px 50px;
                                     }
-    
+
                                     @include responsive(pc-L-screens) {
-                                        margin-top: calc(200px / $wrap) * 100%;
-                                        margin-left: calc(100px / $wrap) * 100%;
-                                        margin-right: calc(240px / $wrap) * 100%;
+                                        padding: 100px;
                                     }
-    
-                                    .title-box {
-                                        text-align: center;
             
+                                    .index-wrap {
+                                        order: 2;
+                                        margin: 30px auto 0;
+                                        
                                         @include responsive(pc-M-screens) {
-                                            text-align: left;
+                                            order: 1;
+                                            margin: 0;
                                         }
-    
-                                        strong {
-                                            font-size: calc(1em + 6px);
+                                        
+                                        h3 {
+                                            display: none;
+                                            text-align: right;
                                             
                                             @include responsive(pc-M-screens) {
-                                                font-size: 30px;
-                                            }
-                                        }
-                                        
-                                        span {
-                                            display: block;
-                                            color: #aaa;
-                                            font-size: calc(1em - 2px);
-                                        }
-                                    }
-        
-                                    .text-box {
-                                        margin-top: 30px;
-    
-                                        @include responsive(tablet-screens) {
-                                            margin-top: 50px;
-                                        }
-    
-                                        @include responsive(pc-M-screens) {
-                                            margin-top: 60px;
-                                        }
-    
-                                        p, li {
-                                            display: flex;
-                                            @include font_height(1em);
-    
-                                            @include responsive(tablet-screens) {
-                                                font-size: 18px;
+                                                display: block;
+                                                font-size: 20px;
                                             }
                                             
-                                            & + li {
-                                                margin-top: 10px;
-                                                
-                                                @include responsive(tablet-screens) {
-                                                    margin-top: 20px;
-                                                }
-    
-                                                // @include responsive(pc-M-screens) {
-                                                //     margin-top: 25px;
-                                                // }
+                                            @include responsive(pc2-screens) {
+                                                font-size: 24px;
                                             }
-    
-                                            b {
-                                                width: 20%;
-    
+                                        }
+        
+                                        .index {
+                                            @include index();
+                                            
+                                            span {
+                                                @include square(12px);
+        
+                                                & + span {
+                                                    margin-left: 14px;
+                                                }
+        
+                                                &.now {
+                                                    background-color: $main-color;
+                                                }
+                                            }
+                                        }
+                                    }
+         
+                                    .title-text-link {
+                                        order: 1;
+                                        
+                                        @include responsive(pc-M-screens) {
+                                            order: 2;
+                                            margin-top: 30px;
+                                        }
+
+                                        @include responsive(pc-L-screens) {
+                                            order: 2;
+                                            margin-top: calc(80px / 680px) * 100%;
+                                        }
+        
+                                        .title-box {
+                                            text-align: center;
+                
+                                            @include responsive(pc-M-screens) {
+                                                text-align: left;
+                                            }
+        
+                                            strong {
+                                                font-size: calc(1em + 6px);
+                                                
                                                 @include responsive(pc-M-screens) {
-                                                    width: 25%;
+                                                    font-size: 30px;
                                                 }
                                             }
                                             
                                             span {
-                                                width: 80%;
-    
-                                                @include responsive(pc-M-screens) {
-                                                    width: 75%;
+                                                display: block;
+                                                color: #aaa;
+                                                font-size: calc(1em - 2px);
+                                            }
+                                        }
+            
+                                        .text-box {
+                                            margin-top: 30px;
+        
+                                            @include responsive(tablet-screens) {
+                                                margin-top: 50px;
+                                            }
+        
+                                            @include responsive(pc-M-screens) {
+                                                margin-top: 60px;
+                                            }
+        
+                                            p, li {
+                                                display: flex;
+                                                @include font_height(1em);
+        
+                                                @include responsive(tablet-screens) {
+                                                    font-size: 18px;
+                                                }
+                                                
+                                                & + li {
+                                                    margin-top: 10px;
+                                                    
+                                                    @include responsive(tablet-screens) {
+                                                        margin-top: 20px;
+                                                    }
+        
+                                                    // @include responsive(pc-M-screens) {
+                                                    //     margin-top: 25px;
+                                                    // }
+                                                }
+        
+                                                b {
+                                                    width: 20%;
+        
+                                                    @include responsive(pc-M-screens) {
+                                                        width: 25%;
+                                                    }
+                                                }
+                                                
+                                                span {
+                                                    width: 80%;
+        
+                                                    @include responsive(pc-M-screens) {
+                                                        width: 75%;
+                                                    }
                                                 }
                                             }
                                         }
-                                    }
-            
-                                    .link-box {
-                                        display: flex;
-                                        margin-top: 45px;
-                                        
-                                        @include responsive(pc-L-screens) {
-                                            margin-top: 80px;
-                                        }
-            
-                                        li {
-                                            padding: 3px 10px;
-                                            border: 1px solid opacify($point-pink, 0.5);
-                                            border-radius: 100px;
+                
+                                        .link-box {
+                                            display: flex;
+                                            margin-top: 45px;
                                             
-                                            & + li {
-                                                margin-left: 5px;
+                                            @include responsive(pc-L-screens) {
+                                                margin-top: calc(80px / 680px) * 100%;
                                             }
-                                            
-                                            a {
-                                                width: 65px;
-                                                text-align: center;
-                                                @include font_height(1em);
-                                                color: $point-pink;
+                
+                                            li {
+                                                padding: 3px 10px;
+                                                border: 1px solid opacify($point-pink, 0.5);
+                                                border-radius: 100px;
+                                                
+                                                & + li {
+                                                    margin-left: 5px;
+                                                }
+                                                
+                                                a {
+                                                    width: 65px;
+                                                    text-align: center;
+                                                    @include font_height(1em);
+                                                    color: $point-pink;
+                                                }
                                             }
                                         }
-                                    }
-                                } // title-text-skill
-                                
-                                .more-box {
-                                    display: none;
-                                    position: absolute;
-                                    right: 20px; top: 20px;                                
+                                    } // title-text-skill
                                     
-                                    @include responsive(pc-M-screens) {
-                                        bottom: 0;
-                                    }
-    
-                                    .more-bt {
-                                        @include square(36px);
-                                        text-align: center;
-                                        border-radius: 50%;
-                                        background-color: $point-pink;
+                                    .more-box {
+                                        display: none;
+                                        position: absolute;
+                                        right: 20px; top: 20px;                                
                                         
-                                        
-                                        span {
-                                            @include font_height(38px, 30px);
-                                            font-weight: lighter;
-                                            color: #fff;
+                                        @include responsive(pc-M-screens) {
+                                            bottom: 0;
+                                        }
+        
+                                        .more-bt {
+                                            @include square(36px);
+                                            text-align: center;
+                                            border-radius: 50%;
+                                            background-color: $point-pink;
+                                            
+                                            
+                                            span {
+                                                @include font_height(38px, 30px);
+                                                font-weight: lighter;
+                                                color: #fff;
+                                            }
                                         }
                                     }
-                                }
-                            } // item-con
-                        } // item-inner
+                                } // item-con
+                            } // item-inner
+                        } // item-wrap
                     } // item-wrap
                 } // portfolio-list
             } // portfolio-area
@@ -1242,7 +1249,7 @@
             } // email-wrap
 
             .copyright {
-                margin: 60px 0 20px;
+                padding: 60px 0 20px;
                 text-align: center;
 
                 @include responsive(pc-screens) {
@@ -1260,4 +1267,4 @@
             } // copyright
         } // footer-inner
     } // footer
-}
+} // wraper
