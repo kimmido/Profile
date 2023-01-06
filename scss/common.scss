@@ -61,6 +61,13 @@ a {
     color: #fff;
 }
 
+.click {
+    
+    div, h1, span, img {
+        pointer-events: none;
+    }
+}
+
 address {
     font-style: normal;
 }

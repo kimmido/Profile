@@ -53,13 +53,27 @@
 
 #wraper {
 
-    // #cursor {
-    //     position: absolute;
-    //     @include square(12px);
-    //     border-radius: 50%;
-    //     background-color: $point-pink;
-    //     z-index: 99;
-    // }
+    #cursor {
+        position: absolute;
+        @include square(12px);
+        pointer-events: none;
+        transform: scale(0);
+        border-radius: 50%;
+        background-color: $point-pink;
+
+        transition: all .3s;
+        
+        &.on {
+            z-index: 99;
+            transform: scale(1);
+        }
+        
+        // &.pointer {
+        //     transform: scale(2);
+        //     opacity: .5;
+        //     background-color: $point-neon;
+        // }
+    }
 
     header {
         position: fixed;
@@ -67,10 +81,15 @@
         height: 100px;
         z-index: 87;
         background-color: transparent;
+
+        transition: all .3s;
         
         @include responsive(pc-screens) {
             border-bottom: 1px solid #fff;
-            background-color: $main-color;
+            
+            &:hover {
+                background-color: $main-color;
+            }
         }
     
         .header-inner {
@@ -90,9 +109,12 @@
                 @include responsive(tablet-screens) {
                     @include square(40px);
                 }
-    
-                img {
-                    width: 100%;
+
+                a {
+
+                    img {
+                        width: 100%;
+                    }
                 }
             }
     
@@ -251,7 +273,7 @@
                         width: 120px;
 
                         span{
-
+                            
                             &.dot {
                                 display: block;
                                 position: absolute;
@@ -262,7 +284,7 @@
                                 background-color: $point-pink;
                                 
                                 animation: .5s bounce alternate infinite cubic-bezier(.1, .1, .1, .8);
-                
+                                
                                 @keyframes bounce {
                                     from {top: 0;}
                                     to {top: -12px;}
@@ -272,6 +294,7 @@
                         
                         a {
                             padding: 5px;
+                            text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
                             span {
                                 font-size: 24px;
                             }
@@ -439,7 +462,7 @@
                         display: block;
                         @include font_height(22px, 30px);
 
-                        transition: transform .8s;
+                        transition: transform 1.2s ease-in-out;
                         
                         &:first-child {
                             transform: translateX(-100%);
@@ -600,11 +623,20 @@
                                 @include responsive(pc-screens) {
                                     margin-top: -45px;
                                 }
-    
+
                                 &::before {
                                     @include overlay($point-pink);
-                                    width: 0%;
+
+                                    transition: width .5s;
                                 }
+
+                                &.coverOut {
+                                    &::before {
+                                        width: 0%;
+                                    }
+                                }
+    
+
                             }
     
                             .pagemove {
@@ -630,14 +662,14 @@
                             @include font_height(1em);
                             
                             @include responsive(tablet-screens) {
-                                margin-top: 70px;
-                                margin-left: 40px;
-                                margin-right: 40px;
+                                margin: 70px 40px 0;
+                                font-size: 18px;
                             }
                             
                             @include responsive(pc-screens) {
                                 margin-left: 70px;
                                 margin-right: 190px;
+                                font-size: 20px;
                                 width: 500px;
                             }
                             

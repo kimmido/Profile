@@ -14,20 +14,45 @@ window.onload = function() {
 
     // ********** 마우스 포인터 이벤트 **********
     const home = document.getElementById("homeWrap");
-    // const mainCursor = document.getElementById("cursor");
+    const mainCursor = document.getElementById("cursor");
     const homeCursor = document.querySelector(".mouse-pointer");
     const hiddenCon = homeCursor.querySelector(".background-neon");
+    // const clickInner = document.getElementsByClassName("a");
+    // console.log(clickInner);
+    // console.log(clickInner[0].children);
 
-    // document.addEventListener("mousemove", mainCursorOn);
+    // document.addEventListener("mousemove", mouseEvent);
+    document.addEventListener("mouseout", mainCursorOff);
+    document.addEventListener("mousemove", mainCursorOn);
     home.addEventListener("mousemove", homeCursorOn);
     home.addEventListener("mouseout", homeCursorOff);
     
+    function mainCursorOn(e) {
+        mainCursor.classList.add('on');
+        
+        mainCursor.style.left = e.pageX - 6 + "px";
+        mainCursor.style.top = e.pageY - 6 + "px";
+        
+        // if(e.target.matches(".click")) { 
+        //     mainCursor.classList.add('pointer'); 
+        // } else {
+        //     mainCursor.classList.remove('pointer'); 
+        // }
+    }
+    
+    function mainCursorOff() {
+        mainCursor.classList.remove('on');
+    }
+    
     // 색상 반전 마우스 포인터 생성
+    let hiddenConLeft;
+    let hiddenConTop;
+
     function homeCursorOn(e) {
-        // e.stopPropagation();
-        // mainCursorOff();
-        let hiddenConLeft = e.pageX - 120;
-        let hiddenConTop = e.pageY - 120;
+        if(pos < 1) { e.stopPropagation(); }
+
+        hiddenConLeft = e.pageX - 120;
+        hiddenConTop = e.pageY - 120;
 
         homeCursor.classList.add('scale');
         homeCursor.style.left = hiddenConLeft + "px";
@@ -36,22 +61,13 @@ window.onload = function() {
         hiddenCon.style.top = -hiddenConTop + "px";
     }
 
+
     // 색상반전 마우스 포인터 삭제
     function homeCursorOff() {
         homeCursor.classList.remove('scale');
     }
-
-    // function mainCursorOff() {
-    //     mainCursor.classList.remove('on');
-    // }
-
-    // function mainCursorOn(e) {
-    //     mainCursor.classList.add('on');
-        
-    //     mainCursor.style.left = e.pageX - 6 + "px";
-    //     mainCursor.style.top = e.pageY - 6 + "px";
-    // }
     
+
 
     // ********** 헤더 클릭 이벤트 ********** 
     const gnbA = document.querySelectorAll(".gnb li a")
@@ -92,15 +108,25 @@ window.onload = function() {
     // });
 
 
+
     // ********** 스크롤 이벤트 ********** 
     window.addEventListener("scroll", scrollEvent);
     
-    let pos;
+    let pos = document.documentElement.scrollTop;
+    let vh_03 = window.innerHeight * 0.3;
+    let vh_06 = window.innerHeight * 0.6;
+
     function scrollEvent() {
         pos = document.documentElement.scrollTop;
         backColorChange();
         currentLocation();
         itemUp();
+        mouseEvent2();
+        aboutTitleMove();
+    }
+
+    function mouseEvent2() {
+        pos < 1 ? mainCursorOff() : homeCursorOff()
     }
 
     // 스크롤 위치에 따른 배경색 변경
@@ -116,20 +142,45 @@ window.onload = function() {
             } else {
                 gnbA[i].previousSibling.previousSibling.classList.remove('dot');
             }
-        }; 
+        }
     } 
+
+    // 스크롤 위치에 따른 about 강조글씨 등장
+    const aboutTitle = document.querySelector(".about-title");
+    let titleIN = document.querySelector("#aboutWrap").offsetTop - vh_06;
+
+    function aboutTitleMove() {
+        if(pos > titleIN) {            
+            [...aboutTitle.children].forEach(t => {
+                t.classList.add("center-in");
+            });
+        } else {
+            [...aboutTitle.children].forEach(t => {
+                t.classList.remove("center-in");
+            });
+        }
+    }
+
+
+
+
+    const $attd = document.querySelector(".attitude-inner");
+    const $attdImg = $attd.querySelector(".img");
+
+    $attdImg.classList.add("coverOut");
+
+
+
 
 
     // 포트폴리오 등장 이벤트
+    const itemWrap = document.querySelectorAll(".portfolio-list .item-wrap");
+    let item;
+    let upPos;
     function itemUp() {
-        const itemWrap = document.querySelectorAll(".portfolio-list .item-wrap");
-        let vh_03 = window.innerHeight * 0.3;
-        let item;
-        let upPos;
-
         itemWrap.forEach(wrap => {
-            item = wrap.querySelector(".item-inner")
-            upPos = pos + vh_03
+            item = wrap.querySelector(".item-inner");
+            upPos = pos + vh_03;
 
             if(upPos > wrap.offsetTop) {
                 item.classList.add("up");
@@ -137,9 +188,12 @@ window.onload = function() {
         });
     }
 
-    const $attd = document.querySelector(".attitude-inner");
+
+
+
+    // attitude 페이징
     const indexArea = $attd.querySelector(".index");
-    const index = indexArea.children;
+    const index = indexArea.childNodes;
     console.log($attd);
     console.log(indexArea);
     console.log(index);
@@ -147,23 +201,18 @@ window.onload = function() {
     indexArea.addEventListener("click", paging);
 
     function paging(e) {
-        if(e.target.matches('.inedx > span')) {
-            index.forEach(idx => {
+        if(e.target.matches('span')) {
+            [...indexArea.children].forEach(idx => {
+                // console.log(idx);
                 idx.classList.remove("on");
-                e.target.classList.add("on");
             });
+            e.target.classList.add("on");
         }
     }
     
-   const aboutTitle = document.querySelectorAll(".about-title > strong");
 
-    function aboutTitleMove() {
-        aboutTitle.forEach
-    }
-    // for(let i = 0; i < gnbA.length; i++) {
-    // }
 
-    // console.log(targetTop);
+   
 
 }
 
