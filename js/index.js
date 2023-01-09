@@ -33,11 +33,11 @@ window.onload = function() {
         mainCursor.style.left = e.pageX - 6 + "px";
         mainCursor.style.top = e.pageY - 6 + "px";
         
-        // if(e.target.matches(".click")) { 
-        //     mainCursor.classList.add('pointer'); 
-        // } else {
-        //     mainCursor.classList.remove('pointer'); 
-        // }
+        if(e.target.matches(".click")) { 
+            mainCursor.classList.add('pointer'); 
+        } else {
+            mainCursor.classList.remove('pointer'); 
+        }
     }
     
     function mainCursorOff() {
@@ -123,6 +123,7 @@ window.onload = function() {
         itemUp();
         mouseEvent2();
         aboutTitleMove();
+        attitudeImgCover();
     }
 
     function mouseEvent2() {
@@ -161,18 +162,12 @@ window.onload = function() {
         }
     }
 
-
-
-
-    const $attd = document.querySelector(".attitude-inner");
-    const $attdImg = $attd.querySelector(".img");
-
-    $attdImg.classList.add("coverOut");
-
-
-
-
-
+    // 스크롤 위치에 따른 attitude 커버 이벤트
+    function attitudeImgCover() {
+        pos > $attd.offsetTop ? 
+        $attdImg.classList.add("coverOut") : $attdImg.classList.remove("coverOut")
+    }
+    
     // 포트폴리오 등장 이벤트
     const itemWrap = document.querySelectorAll(".portfolio-list .item-wrap");
     let item;
@@ -181,38 +176,101 @@ window.onload = function() {
         itemWrap.forEach(wrap => {
             item = wrap.querySelector(".item-inner");
             upPos = pos + vh_03;
-
+            
             if(upPos > wrap.offsetTop) {
                 item.classList.add("up");
             };
         });
     }
+    
 
-
-
-
-    // attitude 페이징
+    
+    
+    
+    // **** attitude섹션 인덱스와 버튼 클릭 시 내용 변경 ****
+    const $attd = document.getElementById("attitudeWrap");
+    const $attdImg = document.getElementById("img");
     const indexArea = $attd.querySelector(".index");
-    const index = indexArea.childNodes;
-    console.log($attd);
-    console.log(indexArea);
-    console.log(index);
+    const $attdTitle = $attd.querySelectorAll(".title > li");
+    const $attdTexT = $attd.querySelectorAll(".attitude-txt > li");
+    const $attdPrev = $attd.querySelector(".prev");
+    const $attdNext = $attd.querySelector(".next");
+    let $attdCounter = 0;
+    
+    // 클릭 이벤트
+    $attdPrev.onclick = function(e) {
+        e.preventDefault();
+        $attdCounter--;
+        if($attdCounter < 0) { $attdCounter = 2; }
+        attdConChange();
+    }
+    
+    $attdNext.onclick = function(e) {
+        e.preventDefault();
+        $attdCounter++;
+        if($attdCounter > 2) { $attdCounter = 0; }
+        attdConChange();
+    }
 
     indexArea.addEventListener("click", paging);
 
     function paging(e) {
         if(e.target.matches('span')) {
-            [...indexArea.children].forEach(idx => {
-                // console.log(idx);
-                idx.classList.remove("on");
-            });
-            e.target.classList.add("on");
+            $attdCounter = [...indexArea.children].indexOf(e.target);
+            attdConChange();
         }
     }
-    
+
+    // 내용 변경 함수
+    function attdConChange() {
+        console.log($attdCounter);
+
+        [...indexArea.children].forEach(idx => {
+            idx == [...indexArea.children][$attdCounter] ?
+            idx.classList.add("on") :
+            idx.classList.remove("on") 
+        });
+        
+        $attdTexT.forEach(txt => {
+            txt == $attdTexT[$attdCounter] ?
+            txt.classList.add("on") :
+            txt.classList.remove("on")
+        });
+
+        $attdTitle.forEach(title => {
+            title == $attdTitle[$attdCounter] ?
+            title.classList.add("on") :
+            title.classList.remove("on")
+        });
+
+        $attdImg.classList.toggle("coverOut");
+        setTimeout(() => {
+            $attdImg.style.backgroundImage = `url('./images/attitude(${$attdCounter}).png')`;
+            $attdImg.classList.toggle("coverOut")
+        }, 500)
+    }
 
 
-   
+    const skillList = document.getElementById("skillList");
+    const cubeInner = ["front", "back", "top", "bottom", "left", "right"]
+    const skill = ["Java script", "SASS", "HTML", "React", "JQuery", "CSS", "Ps", "Ai"]
+
+    let cube;
+
+    // skill.forEach(sk => {
+    //     cube += '<div class="perspective">';
+    //     cube += '<div class="cube click">';
+    //     cubeInner.forEach(inner => {
+    //         inner == "front" && inner == "back" ?
+    //         cube += `<div class="front"><span>${sk}</span></div>` :
+    //         cube += `<div class=${inner}></div>`
+    //     });
+    //     cube += '</div>';
+    //     cube += '</div>';
+    // });
+
+    // skillList.innerHTML = `${cube}`;
+    console.log(cube);
 
 }
 

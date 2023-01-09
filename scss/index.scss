@@ -68,11 +68,11 @@
             transform: scale(1);
         }
         
-        // &.pointer {
-        //     transform: scale(2);
-        //     opacity: .5;
-        //     background-color: $point-neon;
-        // }
+        &.pointer {
+            transform: scale(2);
+            opacity: .5;
+            background-color: $point-neon;
+        }
     }
 
     header {
@@ -574,15 +574,30 @@
                     }
                     
                     .title {
-                        font-size: 60px;
-    
-                        @include responsive(tablet-screens) {
-                            font-size: 100px;
-                        }
-    
-                        @include responsive(pc-screens) {
-                            margin-left: 160px;
-                            font-size: 150px;
+                        
+                        li {
+                            display: none;
+                            height: 0;
+                            
+                            transition: height .5s;
+                            
+                            &.on {
+                                display: block;
+                                height: 100%;
+                            }
+                            
+                            h4 {
+                                font-size: 60px;
+            
+                                @include responsive(tablet-screens) {
+                                    font-size: 100px;
+                                }
+            
+                                @include responsive(pc-screens) {
+                                    margin-left: 160px;
+                                    font-size: 150px;
+                                }
+                            }
                         }
                     }
     
@@ -608,14 +623,14 @@
                             }
                             
     
-                            .img {
+                            #img {
                                 position: relative;
                                 margin-top: -20px;
                                 width: 100%;
                                 aspect-ratio: 32 / 39;
                                 background: url(../images/attitude\(1\).png) no-repeat center top;
                                 background-size: 110%;
-                                
+
                                 @include responsive(tablet-screens) {
                                     margin-top: -30px;
                                 }
@@ -627,7 +642,7 @@
                                 &::before {
                                     @include overlay($point-pink);
 
-                                    transition: width .5s;
+                                    transition: width .3s linear;
                                 }
 
                                 &.coverOut {
@@ -719,12 +734,12 @@
                     }
                 }
     
-                .skill-list .perspective,
+                #skillList .perspective,
                 .skill-detail .perspective {
                     position: relative;
                     perspective: 2000px;
                     perspective-origin: -600px 500px;
-    
+                    
                     .cube{
                         position: relative;
                         transform-style: preserve-3d;
@@ -743,7 +758,7 @@
                     }
                 }
                 
-                .skill-list {
+                #skillList {
                     display: flex;
                     justify-content: space-around;
                     flex-wrap: wrap;
@@ -846,7 +861,7 @@
                             }
                         } // cube
                     } // perspective
-                } // skill-list
+                } // skillList
     
                 .skill-detail {
                     position: absolute;

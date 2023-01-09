@@ -154,6 +154,11 @@ header, main, footer {
   z-index: 99;
   transform: scale(1);
 }
+#wraper #cursor.pointer {
+  transform: scale(2);
+  opacity: 0.5;
+  background-color: #ddff0d;
+}
 #wraper header {
   position: fixed;
   width: 100%;
@@ -623,16 +628,25 @@ header, main, footer {
     margin-top: 66px;
   }
 }
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .title {
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .title li {
+  display: none;
+  height: 0;
+  transition: height 0.5s;
+}
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .title li.on {
+  display: block;
+  height: 100%;
+}
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .title li h4 {
   font-size: 60px;
 }
 @media screen and (min-width: 768px) {
-  #wraper main section#attitudeWrap .attitude-inner .attitude-area .title {
+  #wraper main section#attitudeWrap .attitude-inner .attitude-area .title li h4 {
     font-size: 100px;
   }
 }
 @media screen and (min-width: 1028px) {
-  #wraper main section#attitudeWrap .attitude-inner .attitude-area .title {
+  #wraper main section#attitudeWrap .attitude-inner .attitude-area .title li h4 {
     margin-left: 160px;
     font-size: 150px;
   }
@@ -659,7 +673,7 @@ header, main, footer {
     margin-left: 21.7391304348%;
   }
 }
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box .img {
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box #img {
   position: relative;
   margin-top: -20px;
   width: 100%;
@@ -668,16 +682,16 @@ header, main, footer {
   background-size: 110%;
 }
 @media screen and (min-width: 768px) {
-  #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box .img {
+  #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box #img {
     margin-top: -30px;
   }
 }
 @media screen and (min-width: 1028px) {
-  #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box .img {
+  #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box #img {
     margin-top: -45px;
   }
 }
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box .img::before {
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box #img::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -686,9 +700,9 @@ header, main, footer {
   width: 100%;
   height: 100%;
   background-color: #ff5da2;
-  transition: width 0.5s;
+  transition: width 0.3s linear;
 }
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box .img.coverOut::before {
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box #img.coverOut::before {
   width: 0%;
 }
 #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box .pagemove {
@@ -774,24 +788,24 @@ header, main, footer {
     font-size: 30px;
   }
 }
-#wraper main section#skillWrap .skill .skill-list .perspective,
+#wraper main section#skillWrap .skill #skillList .perspective,
 #wraper main section#skillWrap .skill .skill-detail .perspective {
   position: relative;
   perspective: 2000px;
   perspective-origin: -600px 500px;
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube,
+#wraper main section#skillWrap .skill #skillList .perspective .cube,
 #wraper main section#skillWrap .skill .skill-detail .perspective .cube {
   position: relative;
   transform-style: preserve-3d;
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube > div,
+#wraper main section#skillWrap .skill #skillList .perspective .cube > div,
 #wraper main section#skillWrap .skill .skill-detail .perspective .cube > div {
   position: absolute;
   left: 0;
   top: 0;
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube > div span,
+#wraper main section#skillWrap .skill #skillList .perspective .cube > div span,
 #wraper main section#skillWrap .skill .skill-detail .perspective .cube > div span {
   position: absolute;
   left: 50%;
@@ -801,47 +815,47 @@ header, main, footer {
   padding: auto;
   font-family: Cafe24Dongdong;
 }
-#wraper main section#skillWrap .skill .skill-list {
+#wraper main section#skillWrap .skill #skillList {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 40px 0 20px;
 }
 @media screen and (min-width: 1028px) {
-  #wraper main section#skillWrap .skill .skill-list {
+  #wraper main section#skillWrap .skill #skillList {
     margin-top: 80px;
     justify-content: space-between;
   }
 }
-#wraper main section#skillWrap .skill .skill-list .perspective {
+#wraper main section#skillWrap .skill #skillList .perspective {
   padding-top: 20px;
   width: 50%;
   height: 160px;
 }
 @media screen and (min-width: 768px) {
-  #wraper main section#skillWrap .skill .skill-list .perspective {
+  #wraper main section#skillWrap .skill #skillList .perspective {
     width: 25%;
     height: 180px;
   }
 }
 @media screen and (min-width: 1028px) {
-  #wraper main section#skillWrap .skill .skill-list .perspective {
+  #wraper main section#skillWrap .skill #skillList .perspective {
     height: 360px;
   }
 }
-#wraper main section#skillWrap .skill .skill-list .perspective:nth-child(1) .cube, #wraper main section#skillWrap .skill .skill-list .perspective:nth-child(8) .cube {
+#wraper main section#skillWrap .skill #skillList .perspective:nth-child(1) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(8) .cube {
   -webkit-animation-name: cuberotate01;
           animation-name: cuberotate01;
 }
-#wraper main section#skillWrap .skill .skill-list .perspective:nth-child(2) .cube, #wraper main section#skillWrap .skill .skill-list .perspective:nth-child(7) .cube {
+#wraper main section#skillWrap .skill #skillList .perspective:nth-child(2) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(7) .cube {
   -webkit-animation-name: cuberotate02;
           animation-name: cuberotate02;
 }
-#wraper main section#skillWrap .skill .skill-list .perspective:nth-child(3) .cube, #wraper main section#skillWrap .skill .skill-list .perspective:nth-child(6) .cube {
+#wraper main section#skillWrap .skill #skillList .perspective:nth-child(3) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(6) .cube {
   -webkit-animation-name: cuberotate03;
           animation-name: cuberotate03;
 }
-#wraper main section#skillWrap .skill .skill-list .perspective:nth-child(4) .cube, #wraper main section#skillWrap .skill .skill-list .perspective:nth-child(5) .cube {
+#wraper main section#skillWrap .skill #skillList .perspective:nth-child(4) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(5) .cube {
   -webkit-animation-name: cuberotate04;
           animation-name: cuberotate04;
 }
@@ -909,7 +923,7 @@ header, main, footer {
     transform: rotateX(230deg) rotateZ(230deg) rotateY(360deg);
   }
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube {
+#wraper main section#skillWrap .skill #skillList .perspective .cube {
   margin: 0 auto;
   width: 80px;
   height: 80px;
@@ -921,75 +935,75 @@ header, main, footer {
           animation-iteration-count: infinite;
   cursor: pointer;
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube:hover {
+#wraper main section#skillWrap .skill #skillList .perspective .cube:hover {
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube:hover > div {
+#wraper main section#skillWrap .skill #skillList .perspective .cube:hover > div {
   color: #222;
   border-color: #222;
   background-color: #e3e0dd;
 }
 @media screen and (min-width: 1028px) {
-  #wraper main section#skillWrap .skill .skill-list .perspective .cube {
+  #wraper main section#skillWrap .skill #skillList .perspective .cube {
     width: 130px;
     height: 130px;
   }
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube > div {
+#wraper main section#skillWrap .skill #skillList .perspective .cube > div {
   color: rgba(255, 255, 255, 0.6);
   border: 2px solid rgba(255, 255, 255, 0.6);
   background-color: #222;
   width: 80px;
   height: 80px;
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube > div.front {
+#wraper main section#skillWrap .skill #skillList .perspective .cube > div.front {
   transform: translateZ(40px);
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube > div.back {
+#wraper main section#skillWrap .skill #skillList .perspective .cube > div.back {
   transform: scaleX(-1) translateZ(-40px);
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube > div.top {
+#wraper main section#skillWrap .skill #skillList .perspective .cube > div.top {
   transform: rotateX(90deg) translateZ(40px);
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube > div.bottom {
+#wraper main section#skillWrap .skill #skillList .perspective .cube > div.bottom {
   transform: rotateX(-90deg) translateZ(40px);
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube > div.left {
+#wraper main section#skillWrap .skill #skillList .perspective .cube > div.left {
   transform: rotateY(-90deg) translateZ(40px);
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube > div.right {
+#wraper main section#skillWrap .skill #skillList .perspective .cube > div.right {
   transform: rotateY(90deg) translateZ(40px);
 }
 @media screen and (min-width: 1028px) {
-  #wraper main section#skillWrap .skill .skill-list .perspective .cube > div {
+  #wraper main section#skillWrap .skill #skillList .perspective .cube > div {
     width: 130px;
     height: 130px;
   }
-  #wraper main section#skillWrap .skill .skill-list .perspective .cube > div.front {
+  #wraper main section#skillWrap .skill #skillList .perspective .cube > div.front {
     transform: translateZ(65px);
   }
-  #wraper main section#skillWrap .skill .skill-list .perspective .cube > div.back {
+  #wraper main section#skillWrap .skill #skillList .perspective .cube > div.back {
     transform: scaleX(-1) translateZ(-65px);
   }
-  #wraper main section#skillWrap .skill .skill-list .perspective .cube > div.top {
+  #wraper main section#skillWrap .skill #skillList .perspective .cube > div.top {
     transform: rotateX(90deg) translateZ(65px);
   }
-  #wraper main section#skillWrap .skill .skill-list .perspective .cube > div.bottom {
+  #wraper main section#skillWrap .skill #skillList .perspective .cube > div.bottom {
     transform: rotateX(-90deg) translateZ(65px);
   }
-  #wraper main section#skillWrap .skill .skill-list .perspective .cube > div.left {
+  #wraper main section#skillWrap .skill #skillList .perspective .cube > div.left {
     transform: rotateY(-90deg) translateZ(65px);
   }
-  #wraper main section#skillWrap .skill .skill-list .perspective .cube > div.right {
+  #wraper main section#skillWrap .skill #skillList .perspective .cube > div.right {
     transform: rotateY(90deg) translateZ(65px);
   }
 }
-#wraper main section#skillWrap .skill .skill-list .perspective .cube > div span {
+#wraper main section#skillWrap .skill #skillList .perspective .cube > div span {
   font-size: calc(1em + 4px);
 }
 @media screen and (min-width: 1028px) {
-  #wraper main section#skillWrap .skill .skill-list .perspective .cube > div span {
+  #wraper main section#skillWrap .skill #skillList .perspective .cube > div span {
     font-size: 32px;
   }
 }
