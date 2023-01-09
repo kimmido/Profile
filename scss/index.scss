@@ -721,7 +721,7 @@
             &::before {
                 @include overlay(rgba(0, 0, 0, 0.45));
                 z-index: 1;
-                display: none;
+                // display: none;
             }
     
             .skill {
@@ -734,29 +734,32 @@
                     }
                 }
     
-                #skillList .perspective,
-                .skill-detail .perspective {
-                    position: relative;
-                    perspective: 2000px;
-                    perspective-origin: -600px 500px;
-                    
-                    .cube{
+                #skillList,
+                #skillDetail {
+
+                    .perspective {
                         position: relative;
-                        transform-style: preserve-3d;
-    
-                        > div {
-                            position: absolute;
-                            left: 0; top: 0;
-    
-                            span {
-                                @include position_center();
-                                display: block;
-                                padding: auto;
-                                font-family: $point-font;
+                        perspective: 2000px;
+                        perspective-origin: -600px 500px;
+                        
+                        .cube{
+                            position: relative;
+                            transform-style: preserve-3d;
+        
+                            > div {
+                                position: absolute;
+                                left: 0; top: 0;
+        
+                                span {
+                                    @include position_center();
+                                    display: block;
+                                    padding: auto;
+                                    font-family: $point-font;
+                                }
                             }
                         }
                     }
-                }
+                } // #skillList, #skillDetail
                 
                 #skillList {
                     display: flex;
@@ -863,15 +866,15 @@
                     } // perspective
                 } // skillList
     
-                .skill-detail {
-                    position: absolute;
+                #skillDetail {
+                    position: fixed;
                     top: 50%; left: 0;
                     transform: translateY(-50%);
                     z-index: 2;
                     
                     @include responsive(pc-screens) {
                         display: flex;
-                        display: none;
+                        // display: none;
                         width: 100%;
                     }
                     
@@ -934,7 +937,7 @@
                             }
                         }
                     }
-                } // skill-detail
+                } // skillDetail
             } // skill
         } // section#skillWrap
     

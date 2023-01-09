@@ -778,7 +778,6 @@ header, main, footer {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.45);
   z-index: 1;
-  display: none;
 }
 #wraper main section#skillWrap .skill h3 {
   font-size: 20px;
@@ -789,24 +788,24 @@ header, main, footer {
   }
 }
 #wraper main section#skillWrap .skill #skillList .perspective,
-#wraper main section#skillWrap .skill .skill-detail .perspective {
+#wraper main section#skillWrap .skill #skillDetail .perspective {
   position: relative;
   perspective: 2000px;
   perspective-origin: -600px 500px;
 }
 #wraper main section#skillWrap .skill #skillList .perspective .cube,
-#wraper main section#skillWrap .skill .skill-detail .perspective .cube {
+#wraper main section#skillWrap .skill #skillDetail .perspective .cube {
   position: relative;
   transform-style: preserve-3d;
 }
 #wraper main section#skillWrap .skill #skillList .perspective .cube > div,
-#wraper main section#skillWrap .skill .skill-detail .perspective .cube > div {
+#wraper main section#skillWrap .skill #skillDetail .perspective .cube > div {
   position: absolute;
   left: 0;
   top: 0;
 }
 #wraper main section#skillWrap .skill #skillList .perspective .cube > div span,
-#wraper main section#skillWrap .skill .skill-detail .perspective .cube > div span {
+#wraper main section#skillWrap .skill #skillDetail .perspective .cube > div span {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1007,83 +1006,82 @@ header, main, footer {
     font-size: 32px;
   }
 }
-#wraper main section#skillWrap .skill .skill-detail {
-  position: absolute;
+#wraper main section#skillWrap .skill #skillDetail {
+  position: fixed;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   z-index: 2;
 }
 @media screen and (min-width: 1028px) {
-  #wraper main section#skillWrap .skill .skill-detail {
+  #wraper main section#skillWrap .skill #skillDetail {
     display: flex;
-    display: none;
     width: 100%;
   }
 }
-#wraper main section#skillWrap .skill .skill-detail .perspective {
+#wraper main section#skillWrap .skill #skillDetail .perspective {
   margin-left: 60px;
   background-color: darkblue;
 }
-#wraper main section#skillWrap .skill .skill-detail .perspective .cube > div {
+#wraper main section#skillWrap .skill #skillDetail .perspective .cube > div {
   color: #555;
   border: 2px solid #555;
   background-color: #e3e0dd;
   width: 80px;
   height: 80px;
 }
-#wraper main section#skillWrap .skill .skill-detail .perspective .cube > div.front {
+#wraper main section#skillWrap .skill #skillDetail .perspective .cube > div.front {
   transform: translateZ(40px);
 }
-#wraper main section#skillWrap .skill .skill-detail .perspective .cube > div.back {
+#wraper main section#skillWrap .skill #skillDetail .perspective .cube > div.back {
   transform: scaleX(-1) translateZ(-40px);
 }
-#wraper main section#skillWrap .skill .skill-detail .perspective .cube > div.top {
+#wraper main section#skillWrap .skill #skillDetail .perspective .cube > div.top {
   transform: rotateX(90deg) translateZ(40px);
 }
-#wraper main section#skillWrap .skill .skill-detail .perspective .cube > div.bottom {
+#wraper main section#skillWrap .skill #skillDetail .perspective .cube > div.bottom {
   transform: rotateX(-90deg) translateZ(40px);
 }
-#wraper main section#skillWrap .skill .skill-detail .perspective .cube > div.left {
+#wraper main section#skillWrap .skill #skillDetail .perspective .cube > div.left {
   transform: rotateY(-90deg) translateZ(40px);
 }
-#wraper main section#skillWrap .skill .skill-detail .perspective .cube > div.right {
+#wraper main section#skillWrap .skill #skillDetail .perspective .cube > div.right {
   transform: rotateY(90deg) translateZ(40px);
 }
 @media screen and (min-width: 1028px) {
-  #wraper main section#skillWrap .skill .skill-detail .perspective .cube > div {
+  #wraper main section#skillWrap .skill #skillDetail .perspective .cube > div {
     width: 280px;
     height: 280px;
     border-width: 5px;
   }
-  #wraper main section#skillWrap .skill .skill-detail .perspective .cube > div.front {
+  #wraper main section#skillWrap .skill #skillDetail .perspective .cube > div.front {
     transform: translateZ(140px);
   }
-  #wraper main section#skillWrap .skill .skill-detail .perspective .cube > div.back {
+  #wraper main section#skillWrap .skill #skillDetail .perspective .cube > div.back {
     transform: scaleX(-1) translateZ(-140px);
   }
-  #wraper main section#skillWrap .skill .skill-detail .perspective .cube > div.top {
+  #wraper main section#skillWrap .skill #skillDetail .perspective .cube > div.top {
     transform: rotateX(90deg) translateZ(140px);
   }
-  #wraper main section#skillWrap .skill .skill-detail .perspective .cube > div.bottom {
+  #wraper main section#skillWrap .skill #skillDetail .perspective .cube > div.bottom {
     transform: rotateX(-90deg) translateZ(140px);
   }
-  #wraper main section#skillWrap .skill .skill-detail .perspective .cube > div.left {
+  #wraper main section#skillWrap .skill #skillDetail .perspective .cube > div.left {
     transform: rotateY(-90deg) translateZ(140px);
   }
-  #wraper main section#skillWrap .skill .skill-detail .perspective .cube > div.right {
+  #wraper main section#skillWrap .skill #skillDetail .perspective .cube > div.right {
     transform: rotateY(90deg) translateZ(140px);
   }
 }
-#wraper main section#skillWrap .skill .skill-detail .perspective .cube > div span {
+#wraper main section#skillWrap .skill #skillDetail .perspective .cube > div span {
   font-size: calc(1em + 4px);
 }
 @media screen and (min-width: 1028px) {
-  #wraper main section#skillWrap .skill .skill-detail .perspective .cube > div span {
+  #wraper main section#skillWrap .skill #skillDetail .perspective .cube > div span {
     font-size: 60px;
   }
 }
-#wraper main section#skillWrap .skill .skill-detail .txt-wrap {
+#wraper main section#skillWrap .skill #skillDetail .txt-wrap {
   width: calc(100% - 40px);
   margin-top: 40px;
   margin-left: 20px;
@@ -1092,13 +1090,13 @@ header, main, footer {
   background-color: #e3e0dd;
 }
 @media screen and (min-width: 768px) {
-  #wraper main section#skillWrap .skill .skill-detail .txt-wrap {
+  #wraper main section#skillWrap .skill #skillDetail .txt-wrap {
     padding-left: 60px;
     padding-right: 60px;
   }
 }
 @media screen and (min-width: 1028px) {
-  #wraper main section#skillWrap .skill .skill-detail .txt-wrap {
+  #wraper main section#skillWrap .skill #skillDetail .txt-wrap {
     padding-left: 100px;
     padding-right: 100px;
     margin-top: 0;
@@ -1106,7 +1104,7 @@ header, main, footer {
     border-width: 5px;
   }
 }
-#wraper main section#skillWrap .skill .skill-detail .txt-wrap .txt-area p {
+#wraper main section#skillWrap .skill #skillDetail .txt-wrap .txt-area p {
   color: #222;
   font-size: calc(1em - 2px);
   line-height: calc(1em - 2px + 10px);

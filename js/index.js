@@ -127,7 +127,13 @@ window.onload = function() {
     }
 
     function mouseEvent2() {
-        pos < 1 ? mainCursorOff() : homeCursorOff()
+        if(pos > 0) {
+            homeCursorOff();
+            home.style.cursor = "default";
+        } else {
+            mainCursorOff();
+            home.style.cursor = "none";
+        }
     }
 
     // 스크롤 위치에 따른 배경색 변경
@@ -252,26 +258,39 @@ window.onload = function() {
 
 
     const skillList = document.getElementById("skillList");
+    const skillDetail = document.getElementById("skillDetail");
     const cubeInner = ["front", "back", "top", "bottom", "left", "right"]
     const skill = ["Java script", "SASS", "HTML", "React", "JQuery", "CSS", "Ps", "Ai"]
 
-    let cube;
+    let cube = "";
+    // let cubeList = [];
+    
+    skill.forEach(sk => {
+        cube += '<div class="perspective">';
+        cube += '<div class="cube click">';
+        cubeInner.forEach(inner => {
+            inner == "front" || inner == "back" ?
+            cube += `<div class=${inner}><span>${sk}</span></div>` :
+            cube += `<div class=${inner}></div>`
+        });
+        cube += '</div>';
+        cube += '</div>';
+    });
+    // cubeList.push(cube);
+    // cube = "";
 
-    // skill.forEach(sk => {
-    //     cube += '<div class="perspective">';
-    //     cube += '<div class="cube click">';
-    //     cubeInner.forEach(inner => {
-    //         inner == "front" && inner == "back" ?
-    //         cube += `<div class="front"><span>${sk}</span></div>` :
-    //         cube += `<div class=${inner}></div>`
-    //     });
-    //     cube += '</div>';
-    //     cube += '</div>';
-    // });
+    // 클릭한 큐브의 써있는 스킬을 변수로 받아서 디테일에 모달로 출력 + 스킬변수로 몇 번째 인덱스인지 받아서 같은 순서에 있는 상세 설명 출력
 
-    // skillList.innerHTML = `${cube}`;
-    console.log(cube);
+    skillList.innerHTML = `${cube}`;
 
+    skillList.onclick = function(e) {
+        // console.log(e.target);
+        if(e.target.matches(".cube")) {
+            let title = e.target.querySelector(".front > span").innerText; 
+            skillDetail.querySelector(".front > span").innerText = title;
+            skillDetail.querySelector(".back > span").innerText = title;
+        }
+    }
 }
 
 $(function() {
