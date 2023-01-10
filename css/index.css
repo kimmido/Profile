@@ -88,7 +88,12 @@ body {
   overflow-x: hidden;
 }
 body::-webkit-scrollbar {
-  width: 10px; /* 스크롤바의 너비 */
+  width: 8px; /* 스크롤바의 너비 */
+}
+@media screen and (min-width: 768px) {
+  body::-webkit-scrollbar {
+    width: 10px;
+  }
 }
 body::-webkit-scrollbar-thumb {
   height: 10%; /* 스크롤바의 길이 */
@@ -154,29 +159,29 @@ body::-webkit-scrollbar-thumb {
 #wraper header .header-inner .logo a img {
   width: 100%;
 }
-#wraper header .header-inner .mobile-gnb,
+#wraper header .header-inner #mobileGnb,
 #wraper header .header-inner .gnb {
   z-index: 89;
   position: absolute;
 }
-#wraper header .header-inner .mobile-gnb li a,
+#wraper header .header-inner #mobileGnb li a,
 #wraper header .header-inner .gnb li a {
   width: 100%;
   text-align: center;
 }
-#wraper header .header-inner .mobile-gnb li a span,
+#wraper header .header-inner #mobileGnb li a span,
 #wraper header .header-inner .gnb li a span {
   font-weight: 500;
 }
-#wraper header .header-inner .mobile-gnb li a span.kr,
+#wraper header .header-inner #mobileGnb li a span.kr,
 #wraper header .header-inner .gnb li a span.kr {
   display: none;
 }
-#wraper header .header-inner .mobile-gnb li a:hover .eng,
+#wraper header .header-inner #mobileGnb li a:hover .eng,
 #wraper header .header-inner .gnb li a:hover .eng {
   display: none;
 }
-#wraper header .header-inner .mobile-gnb li a:hover .kr,
+#wraper header .header-inner #mobileGnb li a:hover .kr,
 #wraper header .header-inner .gnb li a:hover .kr {
   display: block;
 }
@@ -233,7 +238,7 @@ body::-webkit-scrollbar-thumb {
 #wraper header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span + span {
   margin-top: 0;
 }
-#wraper header .header-inner .mobile-menu-wrap .mobile-gnb {
+#wraper header .header-inner .mobile-menu-wrap #mobileGnb {
   position: absolute;
   left: 100%;
   top: 0;
@@ -243,19 +248,19 @@ body::-webkit-scrollbar-thumb {
   background-size: 80%;
   transition: all 0.8s;
 }
-#wraper header .header-inner .mobile-menu-wrap .mobile-gnb.on {
+#wraper header .header-inner .mobile-menu-wrap #mobileGnb.on {
   left: 0;
 }
-#wraper header .header-inner .mobile-menu-wrap .mobile-gnb li:first-child {
+#wraper header .header-inner .mobile-menu-wrap #mobileGnb li:first-child {
   margin-top: 140px;
 }
-#wraper header .header-inner .mobile-menu-wrap .mobile-gnb li + li {
+#wraper header .header-inner .mobile-menu-wrap #mobileGnb li + li {
   margin-top: 60px;
 }
-#wraper header .header-inner .mobile-menu-wrap .mobile-gnb li a span {
+#wraper header .header-inner .mobile-menu-wrap #mobileGnb li a span {
   font-size: 34px;
 }
-#wraper header .header-inner .gnb-wrap .gnb {
+#wraper header .header-inner #gnbWrap .gnb {
   display: none;
   position: absolute;
   top: 35px;
@@ -263,16 +268,16 @@ body::-webkit-scrollbar-thumb {
   width: 540px;
 }
 @media screen and (min-width: 768px) {
-  #wraper header .header-inner .gnb-wrap .gnb {
+  #wraper header .header-inner #gnbWrap .gnb {
     display: flex;
     justify-content: space-between;
   }
 }
-#wraper header .header-inner .gnb-wrap .gnb li {
+#wraper header .header-inner #gnbWrap .gnb li {
   position: relative;
   width: 120px;
 }
-#wraper header .header-inner .gnb-wrap .gnb li span.dot {
+#wraper header .header-inner #gnbWrap .gnb li span.dot {
   display: block;
   position: absolute;
   top: 0;
@@ -301,15 +306,14 @@ body::-webkit-scrollbar-thumb {
     top: -12px;
   }
 }
-#wraper header .header-inner .gnb-wrap .gnb li a {
+#wraper header .header-inner #gnbWrap .gnb li a {
   padding: 5px;
   text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
 }
-#wraper header .header-inner .gnb-wrap .gnb li a span {
+#wraper header .header-inner #gnbWrap .gnb li a span {
   font-size: 24px;
 }
 #wraper main {
-  overflow: hidden;
   word-break: keep-all;
 }
 #wraper main .index-wrap > h3 {
@@ -584,28 +588,33 @@ body::-webkit-scrollbar-thumb {
     margin-top: 66px;
   }
 }
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .title li {
-  display: none;
-  height: 0;
-  transition: height 0.5s;
-}
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .title li.on {
-  display: block;
-  height: 100%;
-}
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .title li h4 {
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .title h4 {
+  position: relative;
   font-size: 60px;
 }
 @media screen and (min-width: 768px) {
-  #wraper main section#attitudeWrap .attitude-inner .attitude-area .title li h4 {
+  #wraper main section#attitudeWrap .attitude-inner .attitude-area .title h4 {
     font-size: 100px;
   }
 }
 @media screen and (min-width: 1028px) {
-  #wraper main section#attitudeWrap .attitude-inner .attitude-area .title li h4 {
+  #wraper main section#attitudeWrap .attitude-inner .attitude-area .title h4 {
     margin-left: 160px;
     font-size: 150px;
   }
+}
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .title h4::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  transition: height 0.4s;
+}
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .title h4.up::after {
+  height: 0%;
 }
 @media screen and (min-width: 768px) {
   #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex {
@@ -634,7 +643,7 @@ body::-webkit-scrollbar-thumb {
   margin-top: -20px;
   width: 100%;
   aspect-ratio: 32/39;
-  background: url(../images/attitude\(1\).png) no-repeat center top;
+  background: url(../images/attitude\(0\).png) no-repeat center top;
   background-size: 110%;
 }
 @media screen and (min-width: 768px) {
@@ -678,6 +687,10 @@ body::-webkit-scrollbar-thumb {
 #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box .pagemove .prev, #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box .pagemove .next {
   width: 54px;
   height: 50px;
+  transition: all 0.3s;
+}
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box .pagemove .prev:hover, #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-pagemove-box .pagemove .next:hover {
+  transform: scale(1.2);
 }
 #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt {
   margin-top: 50px;
@@ -703,11 +716,21 @@ body::-webkit-scrollbar-thumb {
     margin-top: 140px;
   }
 }
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt li {
-  display: none;
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt p {
+  position: relative;
 }
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt li.on {
-  display: block;
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt p::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  transition: height 0.4s;
+}
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt p.up::after {
+  height: 0%;
 }
 #wraper main section#skillWrap {
   position: relative;
@@ -1103,7 +1126,6 @@ body::-webkit-scrollbar-thumb {
   line-height: calc(1em - 2px + 10px);
 }
 #wraper main section#portfolioWrap {
-  overflow: hidden;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -1120,18 +1142,6 @@ body::-webkit-scrollbar-thumb {
 }
 #wraper main section#portfolioWrap .portfolio-area {
   color: #222;
-}
-#wraper main section#portfolioWrap .portfolio-area > h3 {
-  display: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  position: fixed;
-  margin-top: -50px;
-  font-size: 200px;
-  line-height: 0;
-  color: rgba(255, 255, 255, 0.6);
 }
 #wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap {
   perspective: 2000px;
@@ -1152,14 +1162,14 @@ body::-webkit-scrollbar-thumb {
   transition-property: box-shadow, transform;
   transition-delay: 1s, 0;
   transition-duration: 1s, 1s;
-  transform: rotateX(60deg) translateZ(-400px) translateY(180px);
+  transform: rotateX(30deg) translateZ(-400px) translateY(180px);
 }
 @media screen and (min-width: 1200px) {
   #wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner {
     margin: 0 auto 0;
     aspect-ratio: 16/9;
     border-radius: 50px;
-    transform: rotateX(60deg) translateZ(-400px) translateY(400px);
+    transform: rotateX(30deg) translateZ(-400px) translateY(400px);
   }
 }
 #wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner.up {

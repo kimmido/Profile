@@ -30,7 +30,7 @@
             }
 
             @include responsive(pc-screens) {
-                font-size: 40px;
+                font-size: 60px;
             }
 
             &.on {
@@ -44,7 +44,7 @@
         transform: translateX(-50%);
         width: 200px;
         top:30%;
-        animation: .4s ease-out drop-shadow;
+        animation: 1s ease-out drop-shadow;
         
         transition: top .5s;
         

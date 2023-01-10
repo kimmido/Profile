@@ -117,7 +117,7 @@ header, main, footer {
 }
 @media screen and (min-width: 1028px) {
   .landing .txt b {
-    font-size: 40px;
+    font-size: 60px;
   }
 }
 .landing .txt b.on {
@@ -131,8 +131,8 @@ header, main, footer {
   transform: translateX(-50%);
   width: 200px;
   top: 30%;
-  -webkit-animation: 0.4s ease-out drop-shadow;
-          animation: 0.4s ease-out drop-shadow;
+  -webkit-animation: 1s ease-out drop-shadow;
+          animation: 1s ease-out drop-shadow;
   transition: top 0.5s;
 }
 @media screen and (min-width: 768px) {
