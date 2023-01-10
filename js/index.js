@@ -1,15 +1,17 @@
 window.onload = function() {
+
+    // 모바일 메뉴 열고 닫기
     const menuBt = document.querySelector(".mobile-menu-bt > .bt-box")
 
     menuBt.addEventListener("click", menuToggle);
 
-    // 모바일 메뉴 열고 닫기
     function menuToggle() {
         let Mgnb = this.parentNode.nextSibling.nextSibling;
         
         this.classList.toggle('on');
         Mgnb.classList.toggle('on');
     } 
+
 
 
     // ********** 마우스 포인터 이벤트 **********
@@ -61,16 +63,14 @@ window.onload = function() {
         hiddenCon.style.top = -hiddenConTop + "px";
     }
 
-
     // 색상반전 마우스 포인터 삭제
     function homeCursorOff() {
         homeCursor.classList.remove('scale');
     }
     
 
-
     // ********** 헤더 클릭 이벤트 ********** 
-    const gnbA = document.querySelectorAll(".gnb li a")
+    const gnbA = document.querySelectorAll(".gnb li a");
     
     let target;
     let targetTop = [];
@@ -126,6 +126,7 @@ window.onload = function() {
         attitudeImgCover();
     }
 
+    // home섹션 지나면 마우스 포인트 변경
     function mouseEvent2() {
         if(pos > 0) {
             homeCursorOff();
@@ -136,12 +137,12 @@ window.onload = function() {
         }
     }
 
-    // 스크롤 위치에 따른 배경색 변경
+    // home섹션 지나면 배경색 변경
     function backColorChange() {
         pos > 0 ? home.style.opacity = 0 : home.style.opacity = 1
     }
 
-    // 스크롤 위치에 따른 gnb 포인트
+    // 섹션 위치에 해당하는 gnb 강조 효과
     function currentLocation(){
         for(let i = 0; i < gnbA.length; i++) {
             if(pos >= targetTop[i] && pos < targetBottom[i]) {
@@ -152,7 +153,7 @@ window.onload = function() {
         }
     } 
 
-    // 스크롤 위치에 따른 about 강조글씨 등장
+    // about섹션 강조글씨 등장
     const aboutTitle = document.querySelector(".about-title");
     let titleIN = document.querySelector("#aboutWrap").offsetTop - vh_06;
 
@@ -168,7 +169,7 @@ window.onload = function() {
         }
     }
 
-    // 스크롤 위치에 따른 attitude 커버 이벤트
+    // attitude 이미지 커버 여닫기
     function attitudeImgCover() {
         pos > $attd.offsetTop ? 
         $attdImg.classList.add("coverOut") : $attdImg.classList.remove("coverOut")
@@ -189,21 +190,19 @@ window.onload = function() {
         });
     }
     
-
-    
     
     
     // **** attitude섹션 인덱스와 버튼 클릭 시 내용 변경 ****
     const $attd = document.getElementById("attitudeWrap");
     const $attdImg = document.getElementById("img");
-    const indexArea = $attd.querySelector(".index");
+    const $attdIndex = $attd.querySelector(".index");
     const $attdTitle = $attd.querySelectorAll(".title > li");
     const $attdTexT = $attd.querySelectorAll(".attitude-txt > li");
     const $attdPrev = $attd.querySelector(".prev");
     const $attdNext = $attd.querySelector(".next");
     let $attdCounter = 0;
     
-    // 클릭 이벤트
+    // 이전, 다음, 인덱스 버튼 클릭 이벤트
     $attdPrev.onclick = function(e) {
         e.preventDefault();
         $attdCounter--;
@@ -218,11 +217,11 @@ window.onload = function() {
         attdConChange();
     }
 
-    indexArea.addEventListener("click", paging);
+    $attdIndex.addEventListener("click", paging);
 
     function paging(e) {
         if(e.target.matches('span')) {
-            $attdCounter = [...indexArea.children].indexOf(e.target);
+            $attdCounter = [...$attdIndex.children].indexOf(e.target);
             attdConChange();
         }
     }
@@ -231,8 +230,8 @@ window.onload = function() {
     function attdConChange() {
         console.log($attdCounter);
 
-        [...indexArea.children].forEach(idx => {
-            idx == [...indexArea.children][$attdCounter] ?
+        [...$attdIndex.children].forEach(idx => {
+            idx == [...$attdIndex.children][$attdCounter] ?
             idx.classList.add("on") :
             idx.classList.remove("on") 
         });
@@ -257,15 +256,30 @@ window.onload = function() {
     }
 
 
-    const skillList = document.getElementById("skillList");
-    const skillDetail = document.getElementById("skillDetail");
-    const cubeInner = ["front", "back", "top", "bottom", "left", "right"]
-    const skill = ["Java script", "SASS", "HTML", "React", "JQuery", "CSS", "Ps", "Ai"]
-
-    let cube = "";
-    // let cubeList = [];
     
-    skill.forEach(sk => {
+    // ***** skill섹션 모달 기능 *****
+    const body = document.querySelector("body");
+    const skillList = document.getElementById("skillList");
+    
+    const cubeInner = ["front", "back", "top", "bottom", "left", "right"]
+    const skill = { 
+        sk : ["Java script", "SASS", "HTML", "React", "JQuery", "CSS", "Ps", "Ai"],
+        desc : [
+            "", 
+            "", 
+            "표준에 맞추어 html을 구성하고 접근성을 고려하여 작성할 수 있습니다. 시멘틱 태그를 적절히 사용하며, 태그의 용도를 알기 쉽게 클래스 이름을 부여합니다.", 
+            "", 
+            "", 
+            "", 
+            "", 
+            ""
+        ]
+    }
+
+    // skill큐브 리스트 생성
+    let cube = "";
+
+    skill.sk.forEach(sk => {
         cube += '<div class="perspective">';
         cube += '<div class="cube click">';
         cubeInner.forEach(inner => {
@@ -276,21 +290,84 @@ window.onload = function() {
         cube += '</div>';
         cube += '</div>';
     });
-    // cubeList.push(cube);
-    // cube = "";
-
-    // 클릭한 큐브의 써있는 스킬을 변수로 받아서 디테일에 모달로 출력 + 스킬변수로 몇 번째 인덱스인지 받아서 같은 순서에 있는 상세 설명 출력
-
     skillList.innerHTML = `${cube}`;
 
+    // skill설명 모달창 열기
+    const skillDetail = document.getElementById("skillDetail");
+    const detailClose = skillDetail.querySelector(".close");
     skillList.onclick = function(e) {
-        // console.log(e.target);
+        
         if(e.target.matches(".cube")) {
-            let title = e.target.querySelector(".front > span").innerText; 
-            skillDetail.querySelector(".front > span").innerText = title;
-            skillDetail.querySelector(".back > span").innerText = title;
+            let sk = e.target.querySelector(".front > span").innerText;
+            let idx = skill.sk.indexOf(sk);
+
+            skillDetail.querySelector(".front > span").innerText = sk;
+            skillDetail.querySelector(".back > span").innerText = sk;
+            skillDetail.querySelector(".txt-inner > p").innerText = skill.desc[idx];
+            skillDetail.classList.add("on");
+            toggleScroll();
         }
     }
+    
+    // skill설명 모달창 닫기
+    detailClose.onclick = function(e) {
+        skillDetail.classList.remove("on");
+        toggleScroll();
+    }
+
+    let toggle = false;
+    let modalPos;
+    function toggleScroll() {
+        toggle = !toggle;
+        if(toggle) {
+            modalPos = document.documentElement.scrollTop;
+            body.style.overflowY = "overlay";
+            body.style.height = "100%";
+            body.style.position = 'fixed';
+            body.style.top = `-${modalPos}px`;
+        } else {
+            body.style.removeProperty("overflow");
+            body.style.removeProperty("height");
+            body.style.removeProperty("top");
+            body.style.removeProperty("position");
+            window.scrollTo(0, modalPos);
+        }
+    }
+
+
+
+    // ****** portfolio섹션 인덱스 클릭시 부드러운 이동 ******
+    const pofol = document.getElementById("portfolioWrap");
+    const pofolIndex = pofol.querySelectorAll(".index");
+    const pofolItem = pofol.getElementsByClassName("item-wrap");
+    
+    pofolIndex.forEach(idx => {
+        idx.onclick = function(e) {
+            if(e.target.matches('span')) {
+                let pofolCounter = [...idx.children].indexOf(e.target);
+                let itemTop = pofolItem[pofolCounter].offsetTop;
+                window.scrollTo({ left: 0, top: itemTop, behavior: "smooth" });
+                // attdConChange();
+            }
+        }
+    });
+    
+    const emailImg = document.querySelector(".email-wrap > img");
+
+    emailImg.addEventListener("mouseover", function() {
+        this.setAttribute("src", "./images/email_open.svg");
+    })
+
+    emailImg.addEventListener("mouseout", function() {
+        this.setAttribute("src", "./images/email.svg");
+    })
+
+    // 내용 변경 함수
+        // [...indexArea.children].forEach(idx => {
+        //     idx == [...indexArea.children][$attdCounter] ?
+        //     idx.classList.add("on") :
+        //     idx.classList.remove("on") 
+        // });
 }
 
 $(function() {

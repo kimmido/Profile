@@ -3,56 +3,72 @@
 @import './common.scss';
 @import './mixin.scss';
 
-.landing {
-    display: none;
-    position: relative;
-    width: 100vw; height: 100vh;
-    background-color: $point-neon;
+body {
+    overflow-y: overlay;
+    overflow-x: hidden;
 
-    .txt {
-        @include position_center();
-
-        @include responsive(tablet-screens) {
-            bottom: 300px;
-        }
-        
-        @include responsive(pc-screens) {
-            bottom: 350px;
-        }
-
-        b {
-            color: $point-pink;
-            font-size: 20px;
-
-            @include responsive(tablet-screens) {
-                font-size: 30px;
-            }
-
-            @include responsive(pc-screens) {
-                font-size: 40px;
-            }
-        }
+    &::-webkit-scrollbar {
+        width: 10px;  /* 스크롤바의 너비 */
     }
-
-    .img {
-        @include position_center();
-        top:40%;
-        transform: translateX(-50%);
-        width: 200px;
+    
+    &::-webkit-scrollbar-thumb {
+        height: 10%; /* 스크롤바의 길이 */
+        background: $point-pink; /* 스크롤바의 색상 */
         
-        @include responsive(tablet-screens) {
-            top: 30%;
-            width: 300px;
-        }
-
-        @include responsive(pc-screens) {
-            width: 390px;
-        }
+        border-radius: 10px;
     }
 }
 
-#wraper {
+// .landing {
+//     // display: none;
+//     position: relative;
+//     width: 100vw; height: 100vh;
+//     background-color: $point-neon;
 
+//     .txt {
+//         @include position_center();
+
+//         @include responsive(tablet-screens) {
+//             bottom: 300px;
+//         }
+        
+//         @include responsive(pc-screens) {
+//             bottom: 350px;
+//         }
+
+//         b {
+//             color: $point-pink;
+//             font-size: 20px;
+
+//             @include responsive(tablet-screens) {
+//                 font-size: 30px;
+//             }
+
+//             @include responsive(pc-screens) {
+//                 font-size: 40px;
+//             }
+//         }
+//     }
+
+//     .img {
+//         @include position_center();
+//         top:40%;
+//         transform: translateX(-50%);
+//         width: 200px;
+        
+//         @include responsive(tablet-screens) {
+//             top: 30%;
+//             width: 300px;
+//         }
+
+//         @include responsive(pc-screens) {
+//             width: 390px;
+//         }
+//     }
+// }
+
+#wraper {
+    
     #cursor {
         position: absolute;
         @include square(12px);
@@ -717,11 +733,15 @@
             @include responsive(pc-screens) {
                 padding-top: 150px;
             }
-    
-            &::before {
-                @include overlay(rgba(0, 0, 0, 0.45));
-                z-index: 1;
-                // display: none;
+            
+            &.detail-overlay {
+                overflow: hidden;
+
+                &::before {
+                    @include overlay(rgba(0, 0, 0, 0.45));
+                    z-index: 1;
+                    // display: none;
+                }
             }
     
             .skill {
@@ -867,76 +887,102 @@
                 } // skillList
     
                 #skillDetail {
+                    @include overlay(rgba(0, 0, 0, 0.45));
                     position: fixed;
-                    top: 50%; left: 0;
-                    transform: translateY(-50%);
                     z-index: 2;
+                    display: none;
+
+                    transition: opacity .1s;
+
+                    opacity: 0;
                     
-                    @include responsive(pc-screens) {
-                        display: flex;
-                        // display: none;
-                        width: 100%;
+                    &.on {
+                        display: block;
+                        opacity: 1;
                     }
                     
-                    .perspective {
-                        margin-left: 60px;
-                        background-color: darkblue;
-    
-                        .cube {
-    
-                            > div {
-                                color: #555;
-                                border: 2px solid #555;
-                                background-color: $main-color02;
-                                
-                                @include create_cube(80px);
-                                
-                                @include responsive(pc-screens) {
-                                    @include create_cube(280px);
-                                    border-width: 5px;
-                                }
-    
-                                span {
-                                    font-size: calc(1em + 4px);
+                    .detail-inner {
+                        @include position_center;
+                        width: 100%;
+                        padding: 0 20px;
+                        
+
+                        @include responsive(pc-L-screens) {
+                            width: 1380px;
+                        }
+
+                        .perspective {
+                            transform: translate(60px, -20px);
+                            
+                            @include responsive(pc-screens) {
+                                transform: translate(40px, 20px);
+                            }
+                            
+                            .cube {
+        
+                                > div {
+                                    color: #555;
+                                    border: 2px solid #555;
+                                    background-color: $main-color02;
+                                    
+                                    @include create_cube(80px);
                                     
                                     @include responsive(pc-screens) {
-                                        font-size: 60px;
+                                        @include create_cube(280px);
+                                        border-width: 5px;
                                     }
+        
+                                    span {
+                                        font-size: calc(1em + 4px);
+                                        
+                                        @include responsive(pc-screens) {
+                                            font-size: 60px;
+                                        }
+                                    }
+                                }
+                            } // cube
+                        } // perspective
+        
+                        .txt-wrap {
+                            border: 2px solid #555;
+                            background-color: $main-color02;
+                            
+                            @include responsive(pc-screens) {
+                                border-width: 5px;
+                                margin-left: 330px;
+                            }
+                            
+                            .close {
+                                margin: 20px 20px auto auto;
+                                @include square(25px);
+
+                                transition: transform .3s;
+
+                                &:hover {
+                                    transform: rotateZ(180deg);
+                                }
+                            }
+                            
+                            .txt-inner {
+                                padding: 50px 22px 60px;
+
+                                @include responsive(tablet-screens) {
+                                    padding: 70px 60px 90px;
+                                }
+                                
+                                @include responsive(pc-screens) {
+                                    padding-left: 100px;
+                                    padding-right: 100px;
+                                }
+                                
+                                p {
+                                    text-align: justify;
+                                    color: $main-color;
+                                    @include font_height(calc(1em - 2px));
                                 }
                             }
                         }
-                    }
-    
-                    .txt-wrap {
-                        width: calc(100% - 40px);
-                        margin-top: 40px;
-                        margin-left: 20px;
-                        padding: 90px 28px;
-                        border: 2px solid #555;
-                        background-color: $main-color02;
-    
-                        @include responsive(tablet-screens) {
-                            padding-left: 60px;
-                            padding-right: 60px;
-                        }
-                        
-                        @include responsive(pc-screens) {
-                            padding-left: 100px;
-                            padding-right: 100px;
-                            margin-top: 0;
-                            margin-left: 330px;
-                            // width: calc(900px / 1380px) * 100%;
-                            border-width: 5px;
-                        }
-    
-                        .txt-area {
-                            
-                            p {
-                                color: $main-color;
-                                @include font_height(calc(1em - 2px));
-                            }
-                        }
-                    }
+                    } // detail-inner
                 } // skillDetail
             } // skill
         } // section#skillWrap
@@ -1088,7 +1134,7 @@
                                                     margin-left: 14px;
                                                 }
         
-                                                &.now {
+                                                &.on {
                                                     background-color: $main-color;
                                                 }
                                             }
@@ -1188,19 +1234,25 @@
                                             }
                 
                                             li {
-                                                padding: 3px 10px;
+                                                overflow: hidden;
                                                 border: 1px solid opacify($point-pink, 0.5);
                                                 border-radius: 100px;
                                                 
                                                 & + li {
-                                                    margin-left: 5px;
+                                                    margin-left: 8px;
                                                 }
                                                 
                                                 a {
-                                                    width: 65px;
+                                                    padding: 3px 10px;
+                                                    min-width: 60px;
                                                     text-align: center;
                                                     @include font_height(1em);
                                                     color: $point-pink;
+
+                                                    &:hover {
+                                                        color: #fff;
+                                                        background-color: $point-pink;
+                                                    }
                                                 }
                                             }
                                         }
