@@ -984,15 +984,14 @@ body {
             .portfolio-area {
                 color: $main-color;
     
-                // > h3 {
-                //     display: none;
-                //     @include position_center();
-                //     position: fixed;
-                //     margin-top: -50px;
-                
-                //     @include font_height(200px, 0);
-                //     color: rgba(255, 255, 255, 0.6);
-                // }
+                > h3 {
+                    display: none;
+                    @include position_center();
+                    position: fixed;
+                    z-index: -1;
+                    font-size: 200px;
+                    color: rgba(255, 255, 255, 0.6);
+                }
     
                 ul.portfolio-list {
                     
@@ -1277,10 +1276,21 @@ body {
         }
 
         @include responsive(pc-screens) {
+            padding-top: 150px;
+        }
+
+        @include responsive(pc-L-screens) {
             padding-top: 180px;
         }
 
         .footer-inner {
+            position: relative;
+            height: 370px;
+            // background-color: aqua;
+
+            @include responsive(pc-screens) {
+                height: 500px;
+            }
             
             .txt-wrap {
                 text-align: center;
@@ -1314,49 +1324,50 @@ body {
                 }
             } // txt-wrap
 
-            .email-wrap {
-                margin-top: 50px;
+            #contact {
+                position: absolute;
+                left: 0; bottom: 80px;
+                width: 100%;
                 text-align: center;
+                // background-color: cadetblue;
                 
                 @include responsive(pc-screens) {
-                    text-align: left;
-                    margin-left: calc(680px / 1380px) * 100%;
-                }
-                
-                img {
-                    width: 220px;
-                    animation: 1.5s linear email-bounce infinite;
-                    
-                    @keyframes email-bounce {
-                        from { transform: rotateZ(30deg); }
-                        20% { transform: rotateZ(0deg); }
-                        80% { transform: rotateZ(0deg); }
-                        to { transform: rotateZ(30deg); }
-                    }
-                    
-                    @include responsive(pc-screens) {
-                        width: 300px;
-                    }
-
-                    &:hover {
-                        animation-play-state: paused;
-                    }
+                    width: auto;
+                    left: calc(680px / 1380px) * 100%;
+                    bottom: 140px;
                 }
 
                 a {
-                    display: none;
-                    text-decoration: underline;
-                }
+                    transition: all .3s;
 
+                    img {
+                        width: 220px;
+                        animation: 1.5s linear email-bounce infinite;
+                        
+                        @keyframes email-bounce {
+                            from { transform: rotateZ(30deg); }
+                            20% { transform: rotateZ(0deg); }
+                            80% { transform: rotateZ(0deg); }
+                            to { transform: rotateZ(30deg); }
+                        }
+                        
+                        @include responsive(pc-screens) {
+                            width: 300px;
+                        }
+    
+                        &:hover {
+                            animation-play-state: paused;
+                        }
+                    }
+                }
             } // email-wrap
 
             .copyright {
-                padding: 60px 0 20px;
+                position: absolute;
+                bottom: 20px;
+                width: 100%;
                 text-align: center;
-
-                @include responsive(pc-screens) {
-                    margin-top: 120px;
-                }
+                // background-color: rebeccapurple;
 
                 span {
                     font-weight: lighter;

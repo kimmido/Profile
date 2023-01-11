@@ -16,7 +16,7 @@ window.onload = function() {
         },
         {
             title : "CURIOSITY",
-            txt : "내용 2내 용2내  용 2내용2 내용2내 용 2내용2내용2내 용2내용2내용 2 내 용2내용2 내용2내용 2내 용2내용2 내용 2내용 2내 용2내용 2내용2내 용2 내 용2내용2내 용2 내용 2내용2내용 2내용2 내용 2내용2"
+            txt : "호기심이 많습니다. 단순한 해결 방법만이 아니라 그 해결 방법을 사용해야하는 이유부터 알고자 합니다."
         },
         {
             title : "RECORD",
@@ -43,16 +43,13 @@ window.onload = function() {
             idx.classList.add("on") :
             idx.classList.remove("on") 
         });
-        
-        $attdTitle.innerText = `${attitude[$attdCounter].title}`
-        // $attdTitle.classList.toggle("up");
-        // setTimeout(() => {
-        //     $attdTitle.classList.toggle("up");
-        // }, 600)
-        
+            
+        $attdTitle.classList.toggle("up");
         $attdText.classList.toggle("up");
         setTimeout(() => {
+            $attdTitle.innerText = `${attitude[$attdCounter].title}`
             $attdText.innerText = `${attitude[$attdCounter].txt}`
+            $attdTitle.classList.toggle("up");
             $attdText.classList.toggle("up");
         }, 600)
         
@@ -154,15 +151,11 @@ window.onload = function() {
      
     logo.onclick = function(e) {
         e.preventDefault();
+        console.log(this);
+        console.log(e.target);
+        console.log(e.currentTarget);
         window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
     };
-    // logo.addEventListener("click", (e) => {
-    //     e.preventDefault();
-    //     console.log(e.target);
-    //     console.log(e.currentTarget);
-    //     window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
-    // });
-
 
 
     // ***** 모바일 메뉴 열고 닫기 *****
@@ -184,11 +177,7 @@ window.onload = function() {
     const mainCursor = document.getElementById("cursor");
     const homeCursor = document.querySelector(".mouse-pointer");
     const hiddenCon = homeCursor.querySelector(".background-neon");
-    // const clickInner = document.getElementsByClassName("a");
-    // console.log(clickInner);
-    // console.log(clickInner[0].children);
 
-    // document.addEventListener("mousemove", mouseEvent);
     document.addEventListener("mouseout", mainCursorOff);
     document.addEventListener("mousemove", mainCursorOn);
     home.addEventListener("mousemove", homeCursorOn);
@@ -231,103 +220,9 @@ window.onload = function() {
     // 색상반전 마우스 포인터 삭제
     function homeCursorOff() {
         homeCursor.classList.remove('scale');
-    }
-    
-
-    
-    // ********** 스크롤 이벤트 ********** 
-    window.addEventListener("scroll", scrollEvent);
-    
-    let pos = document.documentElement.scrollTop;
-    let vh_03 = window.innerHeight * 0.3;
-    let vh_06 = window.innerHeight * 0.6;
-
-    function scrollEvent() {
-        pos = document.documentElement.scrollTop;
-
-        backColorChange();
-        currentLocation();
-        itemUp();
-        mouseEvent2();
-        aboutTitleMove();
-        attitudeImgCover();
-    }
-
-    // home섹션 지나면 마우스 포인트 변경
-    function mouseEvent2() {
-        if(pos > 0) {
-            homeCursorOff();
-            home.style.cursor = "default";
-        } else {
-            mainCursorOff();
-            home.style.cursor = "none";
-        }
-    }
-
-    // home섹션 지나면 배경색 변경
-    function backColorChange() {
-        pos > 0 ? home.style.opacity = 0 : home.style.opacity = 1
-    }
-
-    // 섹션 위치에 해당하는 gnb 강조 효과
-    function currentLocation(){
-        for(let i = 0; i < gnbA.length; i++) {
-            if(pos >= targetTop[i] && pos < targetBottom[i]) {
-                gnbA[i].previousSibling.previousSibling.classList.add('dot');
-            } else {
-                gnbA[i].previousSibling.previousSibling.classList.remove('dot');
-            }
-        }
     } 
-
-    // about섹션 강조글씨 등장
-    const aboutTitle = document.querySelector(".about-title");
-    let titleIN = document.querySelector("#aboutWrap").offsetTop - vh_06;
-
-    function aboutTitleMove() {
-        if(pos > titleIN) {            
-            [...aboutTitle.children].forEach(t => {
-                t.classList.add("center-in");
-            });
-        } else {
-            [...aboutTitle.children].forEach(t => {
-                t.classList.remove("center-in");
-            });
-        }
-    }
-
-    // attitude섹션 이미지 커버 여닫기
-    function attitudeImgCover() {
-        if(pos > $attd.offsetTop) {
-            $attdTitle.classList.add("up");
-            $attdText.classList.add("up");
-            $attdImg.classList.add("coverOut");
-        } else {
-            $attdTitle.classList.remove("up");
-            $attdText.classList.remove("up");
-            $attdImg.classList.remove("coverOut");
-        }
-    }
-    
-    // portfolio섹션 등장 이벤트
-    const itemWrap = document.querySelectorAll(".portfolio-list .item-wrap");
-    let item;
-    let upPos;
-    function itemUp() {
-        itemWrap.forEach(wrap => {
-            item = wrap.querySelector(".item-inner");
-            upPos = pos + vh_03;
-            
-            if(upPos > wrap.offsetTop) {
-                item.classList.add("up");
-            };
-        });
-    }
     
     
-    
-    
-
     
     // ***** skill섹션 모달 기능 *****
     // skill설명 모달창 열기
@@ -390,31 +285,124 @@ window.onload = function() {
         }
     });
     
-    const emailImg = document.querySelector(".email-wrap > img");
-
-    emailImg.addEventListener("mouseover", function() {
-        this.setAttribute("src", "./images/email_open.svg");
-    })
-
-    emailImg.addEventListener("mouseout", function() {
-        this.setAttribute("src", "./images/email.svg");
-    })
 
 
+    // footer
+    const contact = document.querySelector("#contact > a");
     
-    // 내용 변경 함수
-        // [...indexArea.children].forEach(idx => {
-        //     idx == [...indexArea.children][$attdCounter] ?
-        //     idx.classList.add("on") :
-        //     idx.classList.remove("on") 
-        // });
+    contact.addEventListener("mouseover", function() {
+        this.querySelector("img").setAttribute("src", "./images/envelope_open2.svg");
+    })
+
+    contact.addEventListener("mouseout", function() {
+        this.querySelector("img").setAttribute("src", "./images/envelope.svg");
+    })
+
+
+    contact.addEventListener("mousedown", function() {
+        this.style.transform = "scale(0.8)";
+        setTimeout(() => {
+            this.style.transform = "scale(1)";
+        }, 300)
+    })
+
+
+
+    // ********** 스크롤 이벤트 ********** 
+    window.addEventListener("scroll", scrollEvent);
+    
+    let pos = document.documentElement.scrollTop;
+    let vh_03 = window.innerHeight * 0.3;
+    let vh_06 = window.innerHeight * 0.6;
+
+    function scrollEvent() {
+        pos = document.documentElement.scrollTop;
+
+        backColorChange();
+        currentLocation();
+        itemUp();
+        mouseEvent2();
+        aboutTitleMove();
+        attitudeImgCover();
+        pofolTitleShow();
+    }
+
+    // home섹션 지나면 마우스 포인트 변경
+    function mouseEvent2() {
+        if(pos > 0) {
+            homeCursorOff();
+            home.style.cursor = "default";
+        } else {
+            mainCursorOff();
+            home.style.cursor = "none";
+        }
+    }
+
+    // home섹션 지나면 배경색 변경
+    function backColorChange() {
+        pos > 0 ? home.style.opacity = 0 : home.style.opacity = 1
+    }
+
+    // 섹션 위치에 해당하는 gnb 강조 효과
+    function currentLocation(){
+        for(let i = 0; i < gnbA.length; i++) {
+            if(pos >= targetTop[i] && pos < targetBottom[i]) {
+                gnbA[i].previousSibling.previousSibling.classList.add('dot');                
+            } else {
+                gnbA[i].previousSibling.previousSibling.classList.remove('dot');
+            }
+        }
+    } 
+
+    // about섹션 강조글씨 등장
+    const aboutTitle = document.querySelector(".about-title");
+    let titleIN = document.querySelector("#aboutWrap").offsetTop - vh_06;
+
+    function aboutTitleMove() {
+        if(pos > titleIN) {            
+            [...aboutTitle.children].forEach(t => {
+                t.classList.add("center-in");
+            });
+        } else {
+            [...aboutTitle.children].forEach(t => {
+                t.classList.remove("center-in");
+            });
+        }
+    }
+
+    // attitude섹션 내용 커버 여닫기
+    function attitudeImgCover() {
+        if(pos > $attd.offsetTop) {
+            $attdTitle.classList.add("up");
+            $attdText.classList.add("up");
+            $attdImg.classList.add("coverOut");
+        } else {
+            $attdTitle.classList.remove("up");
+            $attdText.classList.remove("up");
+            $attdImg.classList.remove("coverOut");
+        }
+    }
+    
+    // portfolio섹션 등장 이벤트
+    const itemWrap = document.querySelectorAll(".portfolio-list .item-wrap");
+    let item;
+    let upPos;
+    function itemUp() {
+        itemWrap.forEach(wrap => {
+            item = wrap.querySelector(".item-inner");
+            upPos = pos + vh_03;
+            
+            if(upPos > wrap.offsetTop) {
+                item.classList.add("up");
+            };
+        });
+    }
+    
+    function pofolTitleShow() {
+        if(pos > pofol.offsetTop - 500) {
+            pofol.getElementsByTagName("h3")[0].style.display = "block";
+        } else {
+            pofol.getElementsByTagName("h3")[0].style.display = "none";
+        }
+    }
 }
-
-$(function() {
-    // const idx = $("attitudeWrap .index");
-    // const txt = $("attitudeWrap .attitude-txt").children("li");
-    
-    // console.log(idx);
-    // console.log(txt);
-
-});

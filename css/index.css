@@ -1143,6 +1143,17 @@ body::-webkit-scrollbar-thumb {
 #wraper main section#portfolioWrap .portfolio-area {
   color: #222;
 }
+#wraper main section#portfolioWrap .portfolio-area > h3 {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: -1;
+  font-size: 200px;
+  color: rgba(255, 255, 255, 0.6);
+}
 #wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap {
   perspective: 2000px;
 }
@@ -1423,7 +1434,21 @@ body::-webkit-scrollbar-thumb {
 }
 @media screen and (min-width: 1028px) {
   #wraper footer {
+    padding-top: 150px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  #wraper footer {
     padding-top: 180px;
+  }
+}
+#wraper footer .footer-inner {
+  position: relative;
+  height: 370px;
+}
+@media screen and (min-width: 1028px) {
+  #wraper footer .footer-inner {
+    height: 500px;
   }
 }
 #wraper footer .footer-inner .txt-wrap {
@@ -1458,17 +1483,24 @@ body::-webkit-scrollbar-thumb {
 #wraper footer .footer-inner .txt-wrap strong .point-txt {
   color: #ff5da2;
 }
-#wraper footer .footer-inner .email-wrap {
-  margin-top: 50px;
+#wraper footer .footer-inner #contact {
+  position: absolute;
+  left: 0;
+  bottom: 80px;
+  width: 100%;
   text-align: center;
 }
 @media screen and (min-width: 1028px) {
-  #wraper footer .footer-inner .email-wrap {
-    text-align: left;
-    margin-left: 49.2753623188%;
+  #wraper footer .footer-inner #contact {
+    width: auto;
+    left: 49.2753623188%;
+    bottom: 140px;
   }
 }
-#wraper footer .footer-inner .email-wrap img {
+#wraper footer .footer-inner #contact a {
+  transition: all 0.3s;
+}
+#wraper footer .footer-inner #contact a img {
   width: 220px;
   -webkit-animation: 1.5s linear email-bounce infinite;
           animation: 1.5s linear email-bounce infinite;
@@ -1502,26 +1534,19 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @media screen and (min-width: 1028px) {
-  #wraper footer .footer-inner .email-wrap img {
+  #wraper footer .footer-inner #contact a img {
     width: 300px;
   }
 }
-#wraper footer .footer-inner .email-wrap img:hover {
+#wraper footer .footer-inner #contact a img:hover {
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
 }
-#wraper footer .footer-inner .email-wrap a {
-  display: none;
-  text-decoration: underline;
-}
 #wraper footer .footer-inner .copyright {
-  padding: 60px 0 20px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
   text-align: center;
-}
-@media screen and (min-width: 1028px) {
-  #wraper footer .footer-inner .copyright {
-    margin-top: 120px;
-  }
 }
 #wraper footer .footer-inner .copyright span {
   font-weight: lighter;
