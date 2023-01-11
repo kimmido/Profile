@@ -1150,9 +1150,19 @@ body::-webkit-scrollbar-thumb {
   top: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
+  font-size: 100px;
   z-index: -1;
-  font-size: 200px;
   color: rgba(255, 255, 255, 0.6);
+}
+@media screen and (min-width: 768px) {
+  #wraper main section#portfolioWrap .portfolio-area > h3 {
+    font-size: 140px;
+  }
+}
+@media screen and (min-width: 1028px) {
+  #wraper main section#portfolioWrap .portfolio-area > h3 {
+    font-size: 200px;
+  }
 }
 #wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap {
   perspective: 2000px;

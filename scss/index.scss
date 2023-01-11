@@ -988,9 +988,17 @@ body {
                     display: none;
                     @include position_center();
                     position: fixed;
+                    font-size: 100px;
                     z-index: -1;
-                    font-size: 200px;
                     color: rgba(255, 255, 255, 0.6);
+
+                    @include responsive(tablet-screens) {
+                        font-size: 140px;
+                    }
+
+                    @include responsive(pc-screens) {
+                        font-size: 200px;
+                    }
                 }
     
                 ul.portfolio-list {

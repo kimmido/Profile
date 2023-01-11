@@ -74,7 +74,7 @@
 // 요소에 선언(div), $side: 정사각형 한 변의 길이
 @mixin create_cube($side) {
     @include square($side);
-    $depth: ($side / 2);
+    $depth: calc($side / 2);
     &.front {transform: translateZ($depth);}
     &.back {transform: scaleX(-1) translateZ(-$depth);}
     &.top {transform: rotateX(90deg) translateZ($depth);}
