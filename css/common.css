@@ -53,6 +53,9 @@ a {
   color: #fff;
 }
 
+.click {
+  cursor: pointer;
+}
 .click div, .click h1, .click span, .click img {
   pointer-events: none;
 }
