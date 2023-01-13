@@ -610,7 +610,7 @@ body {
                             }
                             
     
-                            #img {
+                            .img {
                                 position: relative;
                                 margin-top: -20px;
                                 width: 100%;
@@ -901,7 +901,7 @@ body {
                         }
 
                         .perspective {
-                            transform: translate(60px, -20px);
+                            transform: translate(60px, -30px);
                             
                             @include responsive(pc-screens) {
                                 transform: translate(40px, 20px);
@@ -933,10 +933,16 @@ body {
                         } // perspective
         
                         .txt-wrap {
+                            height: 200px;
                             border: 2px solid #555;
                             background-color: $main-color02;
+
+                            @include responsive(tablet-screens) {
+                                height: 240px;  
+                            }
                             
                             @include responsive(pc-screens) {
+                                height: 280px;  
                                 border-width: 5px;
                                 margin-left: 330px;
                             }
@@ -953,15 +959,14 @@ body {
                             }
                             
                             .txt-inner {
-                                padding: 50px 22px 60px;
+                                padding: 40px 22px 60px;
 
                                 @include responsive(tablet-screens) {
-                                    padding: 70px 60px 90px;
+                                    padding: 50px 60px 90px;
                                 }
                                 
                                 @include responsive(pc-screens) {
-                                    padding-left: 100px;
-                                    padding-right: 100px;
+                                    padding: 70px 100px 0;
                                 }
                                 
                                 p {

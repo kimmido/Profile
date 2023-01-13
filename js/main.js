@@ -2,7 +2,7 @@ window.onload = function() {
 
     // **** attitude섹션 내용 생성 및 변경 ****
     const attitude = document.getElementById("attitudeWrap");
-    const attitudeImg = document.getElementById("img");
+    const attitudeImg = attitude.querySelector(".img");
     const attitudeIndex = attitude.querySelector(".index");
     const attitudeTitle = attitude.querySelector(".title > h4");
     const attitudeText = attitude.querySelector(".attitude-txt > p");
@@ -20,7 +20,7 @@ window.onload = function() {
         },
         {
             title : "PERSONALITY",
-            txt : "엉덩이가 무겁습니다. 고등학생 때는 반순이, 하루 8시간의 작업 중 일어나는 횟수는 약 3회, 진득하게 앉아 과제에 몰입하는 성향을 가지고 있습니다."
+            txt : "엉덩이가 무겁습니다. 고등학생 때는 반순이, 하루 8시간의 작업 중 일어나는 횟수는 평균 3회, 진득하게 앉아 과제에 몰입하는 성향을 가지고 있습니다."
         }
     ]
 
@@ -77,7 +77,7 @@ window.onload = function() {
     attitudeIndex.onclick = function(e) {
         if(e.target.matches('span')) {
             attitudeCounter = [...attitudeIndex.children].indexOf(e.target);
-            attdConChange();
+            attdConChange(attitudeCounter);
         }
     }
 
@@ -92,13 +92,13 @@ window.onload = function() {
         sk : ["Java script", "SASS", "HTML", "React", "JQuery", "CSS", "Ps", "Ai"],
         desc : [
             "",
-            "",
+            "mixin과 변수를 활용하여 신속하게 효율적으로 코드를 작성할 수 있습니다.",
             "표준에 맞추어 html을 구성하고 접근성을 고려하여 작성할 수 있습니다. 시멘틱 태그를 적절히 사용하며, 태그의 용도를 알기 쉽게 클래스 이름을 부여합니다.", 
+            "컴포넌트 간의 관계를 이해하고 구성할 수 있습니다. useState를 이용한 상태관리와 라우터를 활용한 설계를 할 수 있습니다.",
             "",
             "",
             "",
-            "",
-            ""
+            "다양한 모양을 자유롭게 드로잉할 수 있습니다."
         ]
     }
 
