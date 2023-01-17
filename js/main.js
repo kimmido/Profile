@@ -237,13 +237,14 @@ window.onload = function() {
     // skill설명 모달창 닫기
     const detailClose = skillDetail.querySelector(".close");
 
-    detailClose.onclick = function(e) {
+    detailClose.onclick = function() {
         skillDetail.classList.remove("on");
         toggleScroll();
     }
 
     let toggle = false;
     let modalPos;
+
     function toggleScroll() {
         toggle = !toggle;
         if(toggle) {
@@ -303,8 +304,7 @@ window.onload = function() {
     // ********** 스크롤 이벤트 ********** 
     window.addEventListener("scroll", scrollEvent);
     
-    // let pos = document.documentElement.scrollTop;
-    let pos;
+    let pos = document.documentElement.scrollTop;
 
     function scrollEvent() {
         pos = document.documentElement.scrollTop;
