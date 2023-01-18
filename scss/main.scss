@@ -766,7 +766,7 @@ body {
                                 position: absolute;
                                 left: 0; top: 0;
         
-                                span {
+                                > span {
                                     @include position_center();
                                     display: block;
                                     padding: auto;
@@ -915,11 +915,16 @@ body {
                                         border-width: 5px;
                                     }
         
-                                    span {
+                                    & > span {
+                                        text-align: center;
                                         font-size: calc(1em + 4px);
                                         
                                         @include responsive(pc-screens) {
                                             font-size: 60px;
+                                        }
+                                        
+                                        span {
+                                            display: block;
                                         }
                                     }
                                 }
@@ -1069,6 +1074,15 @@ body {
                                         height: 100%;
                                     }
                                     
+                                    .flex-box {
+                                        display: flex;
+                                        width: 600%;
+                                        
+                                        li {
+                                            width: calc(1 / 6) * 100%;
+                                        }
+                                    }
+                                            
                                     img {
                                         width: 100%;
                                     }

@@ -89,7 +89,8 @@ window.onload = function() {
     
     const cubeInner = ["front", "back", "top", "bottom", "left", "right"]
     const skill = { 
-        sk : ["Java script", "SASS", "HTML", "React", "JQuery", "CSS", "Ps", "Ai"],
+        title : ["Java script", "SASS", "HTML", "React", "JQuery", "CSS", "Ps", "Ai"],
+        percent : ["80%", "80%", "80%", "80%", "80%", "80%", "80%", "80%"],
         desc : [
             "",
             "mixin과 변수를 활용하여 신속하게 효율적으로 코드를 작성할 수 있습니다.",
@@ -105,18 +106,59 @@ window.onload = function() {
     // skill큐브 리스트 생성
     let cube = "";
 
-    skill.sk.forEach(sk => {
+    skill.title.forEach(title => {
         cube += '<div class="perspective">';
         cube += '<div class="cube click">';
         cubeInner.forEach(inner => {
             inner == "front" || inner == "back" ?
-            cube += `<div class=${inner}><span>${sk}</span></div>` :
+            cube += `<div class=${inner}><span>${title}</span></div>` :
             cube += `<div class=${inner}></div>`
         });
         cube += '</div>';
         cube += '</div>';
     });
     skillList.innerHTML = `${cube}`;
+
+
+    // ***** skill섹션 모달 기능 *****
+    // skill설명 모달창 열기
+    const skillDetail = document.getElementById("skillDetail");
+    
+    skillList.onclick = function(e) {
+        if(e.target.matches(".cube")) {
+            let title = e.target.querySelector(".front > span").innerText;
+            let idx = skill.title.indexOf(title);
+            
+            skillDetail.querySelector(".front > span").innerHTML = `${title}<span>${skill.percent[idx]}</span>`;
+            skillDetail.querySelector(".txt-inner > p").innerText = skill.desc[idx];
+            skillDetail.classList.add("on");
+            toggleScroll();
+        }
+    }
+    
+    // skill설명 모달창 닫기
+    const detailClose = skillDetail.querySelector(".close");
+
+    detailClose.onclick = function() {
+        skillDetail.classList.remove("on");
+        toggleScroll();
+    }
+
+    let toggle = false;
+    let modalPos;
+
+    function toggleScroll() {
+        toggle = !toggle;
+        if(toggle) {
+            modalPos = document.documentElement.scrollTop;
+            body.classList.add("scroll-stop");
+            body.style.top = `-${modalPos}px`;
+        } else {
+            body.classList.remove("scroll-stop");
+            body.style.removeProperty("top");
+            window.scrollTo(0, modalPos);
+        }
+    }
 
 
 
@@ -215,49 +257,6 @@ window.onload = function() {
         homeCursor.classList.remove('scale');
     } 
     
-    
-    
-    // ***** skill섹션 모달 기능 *****
-    // skill설명 모달창 열기
-    const skillDetail = document.getElementById("skillDetail");
-    
-    skillList.onclick = function(e) {
-        if(e.target.matches(".cube")) {
-            let sk = e.target.querySelector(".front > span").innerText;
-            let idx = skill.sk.indexOf(sk);
-            
-            skillDetail.querySelector(".front > span").innerText = sk;
-            skillDetail.querySelector(".back > span").innerText = sk;
-            skillDetail.querySelector(".txt-inner > p").innerText = skill.desc[idx];
-            skillDetail.classList.add("on");
-            toggleScroll();
-        }
-    }
-    
-    // skill설명 모달창 닫기
-    const detailClose = skillDetail.querySelector(".close");
-
-    detailClose.onclick = function() {
-        skillDetail.classList.remove("on");
-        toggleScroll();
-    }
-
-    let toggle = false;
-    let modalPos;
-
-    function toggleScroll() {
-        toggle = !toggle;
-        if(toggle) {
-            modalPos = document.documentElement.scrollTop;
-            body.classList.add("scroll-stop");
-            body.style.top = `-${modalPos}px`;
-        } else {
-            body.classList.remove("scroll-stop");
-            body.style.removeProperty("top");
-            window.scrollTo(0, modalPos);
-        }
-    }
-
 
 
     // ****** portfolio섹션 인덱스 클릭시 부드러운 이동 ******
@@ -279,7 +278,30 @@ window.onload = function() {
             }
         });
     })();
+
+    const portfolioImgWrap = document.querySelectorAll("#portfolioWrap .item-img")
+    // const portfolioImg = document.querySelectorAll(".item-img > img")
+    const portfolioImgWidth = portfolioImgWrap[0].offsetWidth;
     
+    console.log(portfolioImgWidth);
+
+    let portfolioImg;
+    let imgBox;
+
+    portfolioImgWrap.forEach(imgWrap => {
+        portfolioImg = imgWrap.querySelectorAll("img")
+        
+        // console.log(imgBox);
+        if(portfolioImg.length > 1) {
+            imgBox = imgWrap.querySelector(".flex-box")
+        
+            setInterval(() => {
+                imgBox.style.marginLeft = `-${portfolioImgWidth}px`;
+            }, 500)
+        }
+    });
+
+    // ***** footer 이메일 마우스 이벤트 *****
     (function contactImgEvent() {
         const contact = document.querySelector("#contact > a");
         

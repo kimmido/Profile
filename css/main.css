@@ -801,8 +801,8 @@ body.scroll-stop {
   left: 0;
   top: 0;
 }
-#wraper main section#skillWrap .skill #skillList .perspective .cube > div span,
-#wraper main section#skillWrap .skill #skillDetail .perspective .cube > div span {
+#wraper main section#skillWrap .skill #skillList .perspective .cube > div > span,
+#wraper main section#skillWrap .skill #skillDetail .perspective .cube > div > span {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1074,13 +1074,17 @@ body.scroll-stop {
     transform: rotateY(90deg) translateZ(140px);
   }
 }
-#wraper main section#skillWrap .skill #skillDetail .detail-inner .perspective .cube > div span {
+#wraper main section#skillWrap .skill #skillDetail .detail-inner .perspective .cube > div > span {
+  text-align: center;
   font-size: calc(1em + 4px);
 }
 @media screen and (min-width: 1028px) {
-  #wraper main section#skillWrap .skill #skillDetail .detail-inner .perspective .cube > div span {
+  #wraper main section#skillWrap .skill #skillDetail .detail-inner .perspective .cube > div > span {
     font-size: 60px;
   }
+}
+#wraper main section#skillWrap .skill #skillDetail .detail-inner .perspective .cube > div > span span {
+  display: block;
 }
 #wraper main section#skillWrap .skill #skillDetail .detail-inner .txt-wrap {
   height: 200px;
@@ -1219,6 +1223,13 @@ body.scroll-stop {
     width: 55.2325581395%;
     height: 100%;
   }
+}
+#wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .flex-box {
+  display: flex;
+  width: 600%;
+}
+#wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .flex-box li {
+  width: 16.6666666667%;
 }
 #wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img img {
   width: 100%;
