@@ -89,16 +89,16 @@ window.onload = function() {
     
     const cubeInner = ["front", "back", "top", "bottom", "left", "right"]
     const skill = { 
-        title : ["Java script", "SASS", "HTML", "React", "JQuery", "CSS", "Ps", "Ai"],
-        percent : ["80%", "80%", "80%", "80%", "80%", "80%", "80%", "80%"],
+        name : ["Java script", "SASS", "HTML", "React", "JQuery", "CSS", "Ps", "Ai"],
+        percent : ["80%", "90%", "90%", "70%", "70%", "85%", "70%", "85%"],
         desc : [
-            "",
-            "mixin과 변수를 활용하여 신속하게 효율적으로 코드를 작성할 수 있습니다.",
+            "css와 함께 동적인 UI를 구성할 수 있습니다. 함수와 배열을 이용하여 코드의 반복을 줄이고 간결하게 정리할 수 있습니다.",
+            "scss를 사용하여 신속한 작업이 가능하고, mixin과 변수를 활용하여 효율적으로 코드를 작성할 수 있습니다.",
             "표준에 맞추어 html을 구성하고 접근성을 고려하여 작성할 수 있습니다. 시멘틱 태그를 적절히 사용하며, 태그의 용도를 알기 쉽게 클래스 이름을 부여합니다.", 
             "컴포넌트 간의 관계를 이해하고 구성할 수 있습니다. useState를 이용한 상태관리와 라우터를 활용한 설계를 할 수 있습니다.",
-            "",
-            "",
-            "",
+            "자바스크립트와 제이쿼리 문법의 차이를 알고 작성할 수 있으며, 적절한 라이브러리를 선택하여 적용할 수 있습니다.",
+            "디자인의 구조를 파악하여 적절한 속성을 사용할 수 있고, 애니메이션과 transition을 이용하여 화려하고 동적인 UI를 구성할 수 있습니다.",
+            "가이드라인, 시안을 다룰 수 있다.",
             "다양한 모양을 자유롭게 드로잉할 수 있습니다."
         ]
     }
@@ -106,12 +106,12 @@ window.onload = function() {
     // skill큐브 리스트 생성
     let cube = "";
 
-    skill.title.forEach(title => {
+    skill.name.forEach(name => {
         cube += '<div class="perspective">';
         cube += '<div class="cube click">';
         cubeInner.forEach(inner => {
             inner == "front" || inner == "back" ?
-            cube += `<div class=${inner}><span>${title}</span></div>` :
+            cube += `<div class=${inner}><span>${name}</span></div>` :
             cube += `<div class=${inner}></div>`
         });
         cube += '</div>';
@@ -126,10 +126,10 @@ window.onload = function() {
     
     skillList.onclick = function(e) {
         if(e.target.matches(".cube")) {
-            let title = e.target.querySelector(".front > span").innerText;
-            let idx = skill.title.indexOf(title);
+            let name = e.target.querySelector(".front > span").innerText;
+            let idx = skill.name.indexOf(name);
             
-            skillDetail.querySelector(".front > span").innerHTML = `${title}<span>${skill.percent[idx]}</span>`;
+            skillDetail.querySelector(".front > span").innerHTML = `${name}<span>${skill.percent[idx]}</span>`;
             skillDetail.querySelector(".txt-inner > p").innerText = skill.desc[idx];
             skillDetail.classList.add("on");
             toggleScroll();
@@ -279,27 +279,47 @@ window.onload = function() {
         });
     })();
 
-    const portfolioImgWrap = document.querySelectorAll("#portfolioWrap .item-img")
-    // const portfolioImg = document.querySelectorAll(".item-img > img")
-    const portfolioImgWidth = portfolioImgWrap[0].offsetWidth;
     
-    console.log(portfolioImgWidth);
+    (function() {const portfolioImgWrap = document.querySelectorAll("#portfolioWrap .item-img")
+    const portfolioImgWidth = portfolioImgWrap[0].offsetWidth;
 
     let portfolioImg;
     let imgBox;
+    let moveLeft;
+    let moveRight;
+    let move = 0;
 
     portfolioImgWrap.forEach(imgWrap => {
         portfolioImg = imgWrap.querySelectorAll("img")
         
-        // console.log(imgBox);
         if(portfolioImg.length > 1) {
-            imgBox = imgWrap.querySelector(".flex-box")
-        
-            setInterval(() => {
-                imgBox.style.marginLeft = `-${portfolioImgWidth}px`;
-            }, 500)
+            imgBox = imgWrap.querySelector(".flex-box");
+            moveLeft = imgWrap.querySelector(".left");
+            moveRight = imgWrap.querySelector(".right");
+
+            moveLeft.addEventListener("click", function() {
+                slideMove(imgBox, "plus", portfolioImgWidth)
+            })
+
+            moveRight.addEventListener("click", function() {
+                slideMove(imgBox, "minus", portfolioImgWidth)
+            })
         }
     });
+
+    function slideMove(moveElement, calc, moveValue) {
+        if(calc == "plus") {
+            move += moveValue
+            if(move > 0) { move = 0; } 
+        }
+        if(calc == "minus") {
+            move -= moveValue
+            if(move <= -moveElement.offsetWidth) { move = -moveElement.offsetWidth + moveValue; } 
+        }
+        moveElement.style.marginLeft = `${move}px`;
+    }})();
+
+
 
     // ***** footer 이메일 마우스 이벤트 *****
     (function contactImgEvent() {

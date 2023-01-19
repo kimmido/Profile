@@ -74,10 +74,6 @@ input:focus {
   outline: none;
 }
 
-a, input, button, select, label {
-  cursor: pointer;
-}
-
 section > h2 {
   display: none;
 }
@@ -1209,6 +1205,7 @@ body.scroll-stop {
   }
 }
 #wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img {
+  position: relative;
   width: 100%;
   height: 330px;
   overflow: hidden;
@@ -1221,18 +1218,42 @@ body.scroll-stop {
 @media screen and (min-width: 1200px) {
   #wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img {
     width: 55.2325581395%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 95/97;
   }
-}
-#wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .flex-box {
-  display: flex;
-  width: 600%;
-}
-#wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .flex-box li {
-  width: 16.6666666667%;
 }
 #wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img img {
   width: 100%;
+}
+#wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .flex-box {
+  display: flex;
+  width: 900%;
+  transition: margin 0.5s linear;
+}
+#wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .flex-box li {
+  width: 11.1111111111%;
+}
+#wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .move-btn {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+}
+#wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .move-btn button {
+  display: block;
+  width: 30px;
+}
+#wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .move-btn button.left {
+  transform: rotateZ(90deg);
+  filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.3));
+}
+#wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .move-btn button.right {
+  transform: rotateZ(-90deg);
+  filter: drop-shadow(-2px 0 2px rgba(0, 0, 0, 0.3));
 }
 #wraper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con {
   display: flex;

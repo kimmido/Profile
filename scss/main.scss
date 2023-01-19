@@ -1062,6 +1062,7 @@ body {
                                 }
                                 
                                 .item-img {
+                                    position: relative;
                                     width: 100%; height: 330px;
                                     overflow: hidden;
                                    
@@ -1071,22 +1072,52 @@ body {
         
                                     @include responsive(pc-M-screens) {
                                         width: calc(950px / 1720px) * 100%; 
-                                        height: 100%;
+                                        height: auto;
+                                        aspect-ratio: 95 / 97;
+                                    }
+                                            
+                                    img {
+                                        width: 100%;   
                                     }
                                     
                                     .flex-box {
                                         display: flex;
-                                        width: 600%;
+                                        width: 100% * 9;
+
+                                        transition: margin 0.5s linear;
                                         
                                         li {
-                                            width: calc(1 / 6) * 100%;
+                                            width: calc(1 / 9) * 100%;
+                                            
                                         }
                                     }
-                                            
-                                    img {
+
+                                    .move-btn {
+                                        position: absolute;
+                                        left: 0; top: 50%;
+                                        transform: translateY(-50%);
+                                        display: flex;
+                                        justify-content: space-between;
                                         width: 100%;
+                                        padding: 0 10px;
+
+                                        button {
+                                            display: block;
+                                            width: 30px;
+
+                                            &.left {
+                                                transform: rotateZ(90deg);
+                                                filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.3));
+                                            }
+                                            
+                                            &.right {
+                                                transform: rotateZ(-90deg);
+                                                filter: drop-shadow(-2px 0 2px rgba(0, 0, 0, 0.3));
+                                            }
+
+                                        }
                                     }
-                                }
+                                } // item-img
                                 
                                 .item-con {
                                     display: flex;
