@@ -334,7 +334,7 @@ window.onload = function() {
         })
     
         contact.addEventListener("mousedown", function() {
-            this.style.transform = "scale(0.8)";
+            this.style.transform = "scale(0.9)";
             setTimeout(() => {
                 this.style.transform = "scale(1)";
             }, 300)

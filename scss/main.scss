@@ -507,7 +507,7 @@ body {
                         }
                         
                         @include responsive(pc-screens) {
-                            margin-top: calc(100px / 1380px) * 100%;
+                            margin-top: calc(120px / 1380px) * 100%;
                             width: calc(650px / 1380px) * 100%;
                         }
                         
@@ -518,15 +518,15 @@ body {
                     }
     
                     .about-img {
-                        margin-top: 90px;
+                        margin-top: 30px;
                         margin-left: 20%;
                         width: 200px;
                         aspect-ratio: 4/5;
-                        background-color: #eee;
                         
                         @include responsive(tablet-screens) {
                             margin-top: 0;
                             margin-left: 0;
+                            margin-bottom: 20px;
                             width: 300px;
                             order: 1;
                         }
@@ -1390,7 +1390,6 @@ body {
                 left: 0; bottom: 80px;
                 width: 100%;
                 text-align: center;
-                // background-color: cadetblue;
                 
                 @include responsive(pc-screens) {
                     width: auto;
