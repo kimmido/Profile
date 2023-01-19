@@ -1007,9 +1007,9 @@ body.scroll-stop {
   width: 100%;
   padding: 0 20px;
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1200px) {
   #wraper main section#skillWrap .skill #skillDetail .detail-inner {
-    width: 1380px;
+    width: 1200px;
   }
 }
 #wraper main section#skillWrap .skill #skillDetail .detail-inner .perspective {
