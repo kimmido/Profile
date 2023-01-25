@@ -739,6 +739,10 @@ body {
             @include responsive(pc-screens) {
                 padding-top: 150px;
             }
+
+            @include responsive(pc-L-screens) {
+                height: 1050px;
+            }
     
             .skill {
     
@@ -787,6 +791,13 @@ body {
                         margin-top: 80px;
                         justify-content: space-between;
                     }
+
+                    @include responsive(pc-L-screens) {
+                        position: absolute;
+                        left: 50%; top: 80px;
+                        width: 100vw;
+                        transform: translateX(-50%);
+                    }
                     
                     
                     .perspective {
@@ -800,19 +811,27 @@ body {
                         @include responsive(pc-screens) {
                             height: 360px;
                         }
+
+                        @include responsive(pc-L-screens) {
+                            width: calc(100% / 6);
+                        }
     
                         // 큐브 회전 애니메이션 선언
-                        &:nth-child(1) .cube,
-                        &:nth-child(8) .cube{ animation-name: cuberotate01; }
-                        
                         &:nth-child(2) .cube,
-                        &:nth-child(7) .cube { animation-name: cuberotate02; }
-    
-                        &:nth-child(3) .cube,
-                        &:nth-child(6) .cube { animation-name: cuberotate03; }
+                        &:nth-child(5) .cube,
+                        &:nth-child(10) .cube{ animation-name: cuberotate01; }
+                        
+                        &:nth-child(1) .cube,
+                        &:nth-child(6) .cube,
+                        &:nth-child(9) .cube { animation-name: cuberotate02; }
     
                         &:nth-child(4) .cube,
-                        &:nth-child(5) .cube { animation-name: cuberotate04; }
+                        &:nth-child(7) .cube, 
+                        &:nth-child(12) .cube { animation-name: cuberotate03; }
+    
+                        &:nth-child(3) .cube,
+                        &:nth-child(8) .cube,
+                        &:nth-child(11) .cube { animation-name: cuberotate04; }
     
                         // 큐브 회전 애니메이션 생성
                         @keyframes cuberotate01 {
@@ -856,7 +875,7 @@ body {
                             }
     
                             @include responsive(pc-screens) {
-                                @include square(130px);
+                                @include square(120px);
                             }
     
                             > div {
@@ -867,14 +886,14 @@ body {
                                 @include create_cube(80px);
                                 
                                 @include responsive(pc-screens) {
-                                    @include create_cube(130px);
+                                    @include create_cube(120px);
                                 }
     
                                 span {
                                     font-size: calc(1em + 4px);
                                     
                                     @include responsive(pc-screens) {
-                                        font-size: 32px;
+                                        font-size: 28px;
                                     }
                                 }
                             }

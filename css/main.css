@@ -772,6 +772,11 @@ body.scroll-stop {
     padding-top: 150px;
   }
 }
+@media screen and (min-width: 1400px) {
+  #wraper main section#skillWrap {
+    height: 1050px;
+  }
+}
 #wraper main section#skillWrap .skill h3 {
   font-size: 20px;
 }
@@ -819,6 +824,15 @@ body.scroll-stop {
     justify-content: space-between;
   }
 }
+@media screen and (min-width: 1400px) {
+  #wraper main section#skillWrap .skill #skillList {
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    width: 100vw;
+    transform: translateX(-50%);
+  }
+}
 #wraper main section#skillWrap .skill #skillList .perspective {
   padding-top: 20px;
   width: 50%;
@@ -835,19 +849,24 @@ body.scroll-stop {
     height: 360px;
   }
 }
-#wraper main section#skillWrap .skill #skillList .perspective:nth-child(1) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(8) .cube {
+@media screen and (min-width: 1400px) {
+  #wraper main section#skillWrap .skill #skillList .perspective {
+    width: 16.6666666667%;
+  }
+}
+#wraper main section#skillWrap .skill #skillList .perspective:nth-child(2) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(5) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(10) .cube {
   -webkit-animation-name: cuberotate01;
           animation-name: cuberotate01;
 }
-#wraper main section#skillWrap .skill #skillList .perspective:nth-child(2) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(7) .cube {
+#wraper main section#skillWrap .skill #skillList .perspective:nth-child(1) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(6) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(9) .cube {
   -webkit-animation-name: cuberotate02;
           animation-name: cuberotate02;
 }
-#wraper main section#skillWrap .skill #skillList .perspective:nth-child(3) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(6) .cube {
+#wraper main section#skillWrap .skill #skillList .perspective:nth-child(4) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(7) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(12) .cube {
   -webkit-animation-name: cuberotate03;
           animation-name: cuberotate03;
 }
-#wraper main section#skillWrap .skill #skillList .perspective:nth-child(4) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(5) .cube {
+#wraper main section#skillWrap .skill #skillList .perspective:nth-child(3) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(8) .cube, #wraper main section#skillWrap .skill #skillList .perspective:nth-child(11) .cube {
   -webkit-animation-name: cuberotate04;
           animation-name: cuberotate04;
 }
@@ -938,8 +957,8 @@ body.scroll-stop {
 }
 @media screen and (min-width: 1028px) {
   #wraper main section#skillWrap .skill #skillList .perspective .cube {
-    width: 130px;
-    height: 130px;
+    width: 120px;
+    height: 120px;
   }
 }
 #wraper main section#skillWrap .skill #skillList .perspective .cube > div {
@@ -969,26 +988,26 @@ body.scroll-stop {
 }
 @media screen and (min-width: 1028px) {
   #wraper main section#skillWrap .skill #skillList .perspective .cube > div {
-    width: 130px;
-    height: 130px;
+    width: 120px;
+    height: 120px;
   }
   #wraper main section#skillWrap .skill #skillList .perspective .cube > div.front {
-    transform: translateZ(65px);
+    transform: translateZ(60px);
   }
   #wraper main section#skillWrap .skill #skillList .perspective .cube > div.back {
-    transform: scaleX(-1) translateZ(-65px);
+    transform: scaleX(-1) translateZ(-60px);
   }
   #wraper main section#skillWrap .skill #skillList .perspective .cube > div.top {
-    transform: rotateX(90deg) translateZ(65px);
+    transform: rotateX(90deg) translateZ(60px);
   }
   #wraper main section#skillWrap .skill #skillList .perspective .cube > div.bottom {
-    transform: rotateX(-90deg) translateZ(65px);
+    transform: rotateX(-90deg) translateZ(60px);
   }
   #wraper main section#skillWrap .skill #skillList .perspective .cube > div.left {
-    transform: rotateY(-90deg) translateZ(65px);
+    transform: rotateY(-90deg) translateZ(60px);
   }
   #wraper main section#skillWrap .skill #skillList .perspective .cube > div.right {
-    transform: rotateY(90deg) translateZ(65px);
+    transform: rotateY(90deg) translateZ(60px);
   }
 }
 #wraper main section#skillWrap .skill #skillList .perspective .cube > div span {
@@ -996,7 +1015,7 @@ body.scroll-stop {
 }
 @media screen and (min-width: 1028px) {
   #wraper main section#skillWrap .skill #skillList .perspective .cube > div span {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 #wraper main section#skillWrap .skill #skillDetail .detail-inner {
