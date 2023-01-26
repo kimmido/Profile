@@ -559,7 +559,7 @@ body {
                 
                 .index-wrap {
                     text-align: right;
-                    
+                        
                     .index {
                         @include index();
                     }
@@ -573,9 +573,26 @@ body {
                     }
                     
                     .title {
+                        position: relative;
+
+                        &::after {
+                            position: absolute;
+                            left: 0; bottom: 0; 
+                            content: "";
+                            width: 100%; height: 100%;
+                            background-color: $main-color;
+    
+                            transition: height .4s;
+                        }
+    
+                        &.up {
+                            &::after {
+                                height: 0%;
+                            }
+                        }
                         
                         h4 {
-                            position: relative;
+                            display: none;
                             font-size: 60px;
         
                             @include responsive(tablet-screens) {
@@ -587,21 +604,10 @@ body {
                                 font-size: 150px;
                             }
 
-                            &::after {
-                                position: absolute;
-                                left: 0; bottom: 0; 
-                                content: "";
-                                width: 100%; height: 100%;
-                                background-color: $main-color;
-
-                                transition: height .4s;
+                            &.on {
+                                display: inline-block;
                             }
 
-                            &.up {
-                                &::after {
-                                    height: 0%;
-                                }
-                            }
                         }
                     }
     
@@ -683,9 +689,26 @@ body {
                         } // img-con-change-box
     
                         .attitude-txt {
+                            position: relative;
                             margin-top: 50px;
                             @include font_height(1em);
                             
+                            &::after {
+                                position: absolute;
+                                right: 0; bottom: 0; 
+                                content: "";
+                                width: 100%; height: 100%;
+                                background-color: $main-color;
+
+                                transition: height .4s;
+                            }
+
+                            &.up {
+                                &::after {
+                                    height: 0%;
+                                }
+                            }
+
                             @include responsive(tablet-screens) {
                                 margin: 70px 40px 0;
                                 font-size: 18px;
@@ -703,23 +726,12 @@ body {
                             }
 
                             p {
-                                position: relative;
+                                display: none;
 
-                                &::after {
-                                    position: absolute;
-                                    right: 0; bottom: 0; 
-                                    content: "";
-                                    width: 100%; height: 100%;
-                                    background-color: $main-color;
-    
-                                    transition: height .4s;
+                                &.on {
+                                    display: block;
                                 }
-    
-                                &.up {
-                                    &::after {
-                                        height: 0%;
-                                    }
-                                }
+
                             }
                         }
                     }

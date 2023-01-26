@@ -33,24 +33,5 @@
                 "Vue.js"
             ]
         }
-    },
-    "portfolio" : [
-        {
-            "title" : "리움미술관",
-            "subTitle" : "Renewal page",
-            "contribution" : "(조별 프로젝트)",
-            "configuration" : "미술관 소개, 미술관 소개, 관람안내, 멤버쉽, 오시는길, 보존연구 메인, 재질별 보존처리, 보존처리 사레",
-            "tool" : "HTML, CSS, Javascript, JQuery, Photoshop, Illustrator",
-            "link" : ["Plan","Degin", "Git", "Website"]
-        },
-        {
-            "title" : "절물자연휴양림",
-            "subTitle" : "Renewal page",
-            "contribution" : "100% (개인 프로젝트)",
-            "configuration" : "메인 페이지",
-            "tool" : "HTML, CSS, Javascript, JQuery, Photoshop",
-            "link" : ["Degin", "Git", "Website"]
-        }
-        
-    ]
+    }
 }

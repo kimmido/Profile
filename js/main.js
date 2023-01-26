@@ -4,60 +4,12 @@ window.onload = function() {
     const attitude = document.getElementById("attitudeWrap");
     const attitudeImg = attitude.querySelector(".img");
     const attitudeIndex = attitude.querySelector(".index");
-    const attitudeTitle = attitude.querySelector(".title > h4");
-    const attitudeText = attitude.querySelector(".attitude-txt > p");
+    const attitudeTitle = attitude.querySelector(".title");
+    const attitudeText = attitude.querySelector(".attitude-txt");
     const attitudePrev = attitude.querySelector(".prev");
     const attitudeNext = attitude.querySelector(".next");
 
-    const attitudeData = [
-        {
-            title : "RECORD",
-            txt : "기록은 습관입니다. 스티커 메모를 활용해 빠르게 기록하고 노션을 이용해 일정과 필요한 정보를 정리합니다. 기록은 시간을 절약하고 더 가치있게 사용할 수 있도록 해줍니다."
-        },
-        {
-            title : "VISION",
-            txt : "1년 차엔 작성된 코드를 파악하며 그 과정에서 유지보수에 편리한 코드를 구성하는 능력을 더욱 높이고 싶습니다. 리액트와 자바스크립트 학습을 꾸준히 하여 3년 안에 프론트엔트 개발자로 성장하고 싶습니다."
-        },
-        {
-            title : "PERSONALITY",
-            txt : "엉덩이가 무겁습니다. 고등학생 때는 반순이, 하루 8시간의 작업 중 일어나는 횟수는 평균 3회, 진득하게 앉아 과제에 몰입하는 성향을 가지고 있습니다."
-        }
-    ]
 
-    // 인덱스 생성
-    for(let i = 0; i < attitudeData.length; i++) {
-        span = document.createElement("span");$
-        span.className = "click";
-        attitudeIndex.appendChild(span);
-    }
-    
-    // 내용 입력 함수
-    function attdConChange(attitudeCounter) {
-        console.log(attitudeCounter);
-
-        [...attitudeIndex.children].forEach(idx => {
-            idx == [...attitudeIndex.children][attitudeCounter] ?
-            idx.classList.add("on") :
-            idx.classList.remove("on") 
-        });
-            
-        attitudeTitle.classList.toggle("up");
-        attitudeText.classList.toggle("up");
-        setTimeout(() => {
-            attitudeTitle.innerText = `${attitudeData[attitudeCounter].title}`
-            attitudeText.innerText = `${attitudeData[attitudeCounter].txt}`
-            attitudeTitle.classList.toggle("up");
-            attitudeText.classList.toggle("up");
-        }, 600)
-        
-        attitudeImg.classList.toggle("coverOut");
-        setTimeout(() => {
-            attitudeImg.style.backgroundImage = `url('./images/attitude(${attitudeCounter}).png')`;
-            attitudeImg.classList.toggle("coverOut")
-        }, 500)
-    };
-    
-    
     let attitudeCounter = 0;
     attdConChange(attitudeCounter);
     
@@ -79,6 +31,37 @@ window.onload = function() {
             attitudeCounter = [...attitudeIndex.children].indexOf(e.target);
             attdConChange(attitudeCounter);
         }
+    }
+
+    
+    // 내용 입력 함수
+    function attdConChange(attitudeCounter) {
+        console.log(attitudeCounter);
+
+        addClassOnlyTarget([...attitudeIndex.children], attitudeCounter, "on")
+        
+        attitudeTitle.classList.toggle("up");
+        attitudeText.classList.toggle("up");
+        setTimeout(() => {
+            addClassOnlyTarget([...attitudeTitle.children], attitudeCounter, "on")
+            addClassOnlyTarget([...attitudeText.children], attitudeCounter, "on")
+            attitudeTitle.classList.toggle("up");
+            attitudeText.classList.toggle("up");
+        }, 600)
+        
+        attitudeImg.classList.toggle("coverOut");
+        setTimeout(() => {
+            attitudeImg.style.backgroundImage = `url('./images/attitude(${attitudeCounter}).png')`;
+            attitudeImg.classList.toggle("coverOut")
+        }, 500)
+    };
+    
+    function addClassOnlyTarget(elements, targetIndex, className) {
+        elements.forEach(element => {
+            element == elements[targetIndex] ?
+            element.classList.add(className) :
+            element.classList.remove(className) 
+        });
     }
 
 

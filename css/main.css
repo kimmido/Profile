@@ -613,8 +613,24 @@ body.scroll-stop {
     margin-top: 66px;
   }
 }
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .title h4 {
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .title {
   position: relative;
+}
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .title::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  transition: height 0.4s;
+}
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .title.up::after {
+  height: 0%;
+}
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .title h4 {
+  display: none;
   font-size: 60px;
 }
 @media screen and (min-width: 768px) {
@@ -628,18 +644,8 @@ body.scroll-stop {
     font-size: 150px;
   }
 }
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .title h4::after {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #222;
-  transition: height 0.4s;
-}
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .title h4.up::after {
-  height: 0%;
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .title h4.on {
+  display: inline-block;
 }
 @media screen and (min-width: 768px) {
   #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex {
@@ -718,9 +724,23 @@ body.scroll-stop {
   transform: scale(1.2);
 }
 #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt {
+  position: relative;
   margin-top: 50px;
   font-size: 1em;
   line-height: calc(1em + 10px);
+}
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  transition: height 0.4s;
+}
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt.up::after {
+  height: 0%;
 }
 @media screen and (min-width: 768px) {
   #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt {
@@ -742,20 +762,10 @@ body.scroll-stop {
   }
 }
 #wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt p {
-  position: relative;
+  display: none;
 }
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt p::after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #222;
-  transition: height 0.4s;
-}
-#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt p.up::after {
-  height: 0%;
+#wraper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt p.on {
+  display: block;
 }
 #wraper main section#skillWrap {
   position: relative;

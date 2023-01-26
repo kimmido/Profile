@@ -24,6 +24,7 @@ $(function() {
                 
                 $('#skillList').append(result);
 
+
                 $('#skillList').on("click", function(e) {
                     if($(e.target).hasClass("cube")) {
                         let name = $(e.target).find(".front").find("span").text();
@@ -36,10 +37,22 @@ $(function() {
             }
 
             
+
             const $attitude = data.attitude;
 
             if($attitude) {
-                
+                for(let i in $attitude) {
+                    $('#attitudeWrap .index').append($("<span class='click' />"));
+                    $('#attitudeWrap .title').append($("<h4 />").text($attitude[i].title));
+                    $('#attitudeWrap .attitude-txt').append($("<p />").text($attitude[i].txt));
+                    // console.log($("#attitudeWrap span").attr())
+                }
+
+                // $('#attitudeWrap').on("click", function(e) {
+                //     if($(e.target).hasClass("click")) {
+
+                //     }
+                // })
             }
         },
         error: function(err) {
