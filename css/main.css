@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
 @font-face {
   font-family: "Cafe24Dongdong";
@@ -107,7 +106,7 @@ body {
   overflow-x: hidden;
 }
 body::-webkit-scrollbar {
-  width: 8px; /* 스크롤바의 너비 */
+  width: 8px;
 }
 @media screen and (min-width: 768px) {
   body::-webkit-scrollbar {
@@ -115,8 +114,8 @@ body::-webkit-scrollbar {
   }
 }
 body::-webkit-scrollbar-thumb {
-  height: 10%; /* 스크롤바의 길이 */
-  background: #ff5da2; /* 스크롤바의 색상 */
+  height: 10%;
+  background: #ff5da2;
   border-radius: 10px;
 }
 body.scroll-stop {
