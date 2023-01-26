@@ -26,7 +26,7 @@ window.onload = function() {
 
     // 인덱스 생성
     for(let i = 0; i < attitudeData.length; i++) {
-        span = document.createElement("span");
+        span = document.createElement("span");$
         span.className = "click";
         attitudeIndex.appendChild(span);
     }
@@ -90,13 +90,8 @@ window.onload = function() {
     
     skillList.onclick = function(e) {
         if(e.target.matches(".cube")) {
-            // let name = e.target.querySelector(".front > span").innerText;
-            // let idx = skill.name.indexOf(name);
-            
-            // skillDetail.querySelector(".front > span").innerHTML = `${name}<span>${skill.percent[idx]}</span>`;
-            // skillDetail.querySelector(".txt-inner > p").innerText = skill.desc[idx];
             skillDetail.classList.add("on");
-            toggleScroll(true);
+            stopScroll(true);
         }
     }
     
@@ -105,13 +100,13 @@ window.onload = function() {
 
     detailClose.onclick = function() {
         skillDetail.classList.remove("on");
-        toggleScroll(false);
+        stopScroll(false);
     }
 
     const body = document.querySelector("body");
     let modalPos;
 
-    function toggleScroll(toggle) {
+    function stopScroll(toggle) {
         if(toggle) {
             modalPos = document.documentElement.scrollTop;
             body.classList.add("scroll-stop");

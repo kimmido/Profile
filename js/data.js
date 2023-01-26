@@ -26,14 +26,10 @@ $(function() {
 
                 $('#skillList').on("click", function(e) {
                     if($(e.target).hasClass("cube")) {
-                        let name = $(e.target).find("span").text();
+                        let name = $(e.target).find(".front").find("span").text();
                         let idx = $skill.name.indexOf(name);
-                        console.log(name)
                         
-                        $('#skillDetail').find("span")
-                        .text(`${name}`)
-                        // .html("<span />")
-                        //  = `${name}<span>${$skill.percent[idx]}</span>`;
+                        $('#skillDetail').find("span").text(name);
                         $('#skillDetail').find("p").text($skill.desc[idx]);
                     }
                 })
