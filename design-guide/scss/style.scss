@@ -2,18 +2,16 @@
 $break-mobile: 320px;
 $break-tablet: 768px;
 $break-pc: 1028px;
-$break-pc-M: 1200px;
-$break-pc-L: 1400px;
 
 // 색상
-$main-color: #222;
-$main-color02: #e3e0dd;
-$point-pink: #ff5da2;
-$point-neon: #ddff0d;
+$jeolmul-color01: #9c8c7e;
+$jeolmul-color02: #c2b7ad;
+$jeolmul-color03: #ebe4dd;
 
 // 글꼴
-$main-font: Pretendard;
-$point-font: Cafe24Dongdong;
+$main-font: "NanumSquareNeo-Variable";
+$jeolmul-font01: "GangwonEdu_OTFBoldA";
+$jeolmul-font02: NanumSquareRound;
 
 // svg 이미지 색상 변경
 // $svg-black: brightness(0) saturate(100%);

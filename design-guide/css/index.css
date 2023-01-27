@@ -1,5 +1,15 @@
-@charset "UTF-8";
+@import url("https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css");
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+@font-face {
+  font-family: "NanumSquareNeo-Variable";
+  font-style: normal;
+  src: url("../font/NanumSquareNeo-Variable.ttf");
+}
+@font-face {
+  font-family: "GangwonEdu_OTFBoldA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff") format("woff");
+  font-style: normal;
+}
 @font-face {
   font-family: "Cafe24Dongdong";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff") format("woff");
@@ -15,7 +25,8 @@
 body {
   letter-spacing: -0.04em;
   font-size: 16px;
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-family: "NanumSquareNeo-Variable";
+  font-weight: 200;
 }
 @media screen and (min-width: 768px) {
   body {
@@ -36,9 +47,34 @@ body {
   }
 }
 
+.title {
+  display: flex;
+  align-items: center;
+}
+.title span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #9c8c7e;
+}
+.title h2 {
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #9c8c7e;
+}
+
+section {
+  margin-top: 250px;
+}
+
 input, textarea, button, select, pre {
   font-family: inherit;
   letter-spacing: -0.04em;
+}
+
+table, th, td {
+  border-collapse: collapse;
 }
 
 ul, ol {
@@ -82,8 +118,13 @@ header, main, footer {
 
 header {
   width: 100%;
-  height: 100vh;
-  background-color: rgb(154, 165, 154);
+  height: 300px;
+  background-color: #ebe4dd;
+}
+@media screen and (min-width: 1028px) {
+  header {
+    height: 500px;
+  }
 }
 header .close {
   position: fixed;
@@ -106,19 +147,32 @@ header .close a {
   }
 }
 header .title-box {
+  text-align: center;
   padding-top: 10vh;
 }
 @media screen and (min-width: 1028px) {
   header .title-box {
-    padding-top: 50vh;
+    padding-top: 100px;
   }
 }
 header .title-box h1 {
   font-size: 30px;
+  font-weight: 900;
+}
+@media screen and (min-width: 768px) {
+  header .title-box h1 {
+    font-size: 50px;
+  }
+}
+header .title-box h2 {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
 }
 @media screen and (min-width: 1028px) {
-  header .title-box h1 {
-    font-size: 70px;
+  header .title-box h2 {
+    font-size: 30px;
   }
 }
 header .site-img-box {
@@ -127,28 +181,203 @@ header .site-img-box {
 }
 @media screen and (min-width: 1028px) {
   header .site-img-box {
-    position: absolute;
-    right: 0;
-    top: 250px;
+    margin-top: 70px;
   }
 }
 header .site-img-box .pc-device {
-  width: 100%;
-  aspect-ratio: 16/12;
-  background: url(../images/Apple\ Pro\ Display\ XDR.png) no-repeat;
   background-size: cover;
 }
 @media screen and (min-width: 1028px) {
   header .site-img-box .pc-device {
-    width: 700px;
+    margin: 0 auto;
+    width: 900px;
   }
+}
+header .site-img-box .pc-device img {
+  width: 100%;
 }
 header .site-img-box .moblie-device {
   position: absolute;
-  right: -20px;
+  right: -10px;
   bottom: 0;
-  width: 30%;
-  aspect-ratio: 9/16;
-  background: url(../images/Apple\ iPhone\ 13\ —\ Midnight.png) no-repeat;
+  width: 25%;
+  aspect-ratio: 9/18.5;
+  background: url(../images/profile_mobile.png) no-repeat;
   background-size: cover;
+}
+header .link-box {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+header .link-box a {
+  width: 100px;
+  text-align: center;
+  padding: 10px 5px;
+  font-weight: 500;
+  border-radius: 50px;
+  background: #c2b7ad;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 1028px) {
+  header .link-box a {
+    width: 150px;
+    padding: 15px 10px;
+    font-size: 24px;
+  }
+}
+header .link-box a + a {
+  margin-left: 20px;
+}
+@media screen and (min-width: 1028px) {
+  header .link-box a + a {
+    margin-left: 30px;
+  }
+}
+header .link-box a:hover {
+  transform: scale(0.9);
+  background-color: #837264;
+}
+
+main {
+  margin-top: 500px;
+}
+main section.design-strategy .strategy-txt {
+  word-break: keep-all;
+  margin: 60px 100px 0;
+  line-height: 34px;
+}
+main section.color-font-wrap .color-font-flex {
+  display: flex;
+  justify-content: space-between;
+}
+main section.color-font-wrap .color-font-flex .flex-item {
+  width: 45%;
+}
+main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list {
+  margin-top: 50px;
+  margin-left: 50px;
+  display: flex;
+}
+main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li + li {
+  margin-left: 20px;
+}
+main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:first-child .color {
+  background-color: #9c8c7e;
+}
+main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:first-child span {
+  color: #9c8c7e;
+}
+main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:nth-child(2) .color {
+  background-color: #c2b7ad;
+}
+main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:nth-child(2) span {
+  color: #c2b7ad;
+}
+main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:last-child .color {
+  background-color: #ebe4dd;
+}
+main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:last-child span {
+  color: #ebe4dd;
+}
+main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li .color {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li span {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+}
+main section.color-font-wrap .color-font-flex .flex-item .font-wrap {
+  margin-top: 120px;
+}
+main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1, main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 {
+  margin-top: 60px;
+  margin-left: 50px;
+}
+main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 strong, main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 strong {
+  font-size: 30px;
+}
+main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 ul.font-list, main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 ul.font-list {
+  margin-top: 30px;
+}
+main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 ul.font-list li, main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 ul.font-list li {
+  margin-top: 7px;
+}
+main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 ul.font-list li:first-child, main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 ul.font-list li:first-child {
+  font-weight: 900;
+}
+main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 ul.font-list li:nth-child(2), main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 ul.font-list li:nth-child(2) {
+  font-weight: 600;
+}
+main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 ul.font-list li:nth-child(3), main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 ul.font-list li:nth-child(3) {
+  font-weight: 400;
+}
+main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 ul.font-list li:last-child, main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 ul.font-list li:last-child {
+  font-weight: 100;
+}
+main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font1 {
+  font-family: "GangwonEdu_OTFBoldA";
+}
+main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font1 strong {
+  font-size: 36px;
+}
+main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font1 li {
+  font-size: 22px;
+}
+main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 {
+  font-family: NanumSquareRound;
+}
+main section.color-font-wrap .color-font-flex .color-font-img.flex-item {
+  margin-top: 70px;
+  width: 55%;
+}
+main section.color-font-wrap .color-font-flex .color-font-img.flex-item li {
+  width: 300px;
+  height: 325px;
+  margin-left: auto;
+}
+main section.color-font-wrap .color-font-flex .color-font-img.flex-item li + li {
+  margin-top: -140px;
+}
+main section.color-font-wrap .color-font-flex .color-font-img.flex-item li:first-child {
+  margin-right: 0;
+}
+main section.color-font-wrap .color-font-flex .color-font-img.flex-item li:nth-child(2) {
+  margin-right: 140px;
+}
+main section.color-font-wrap .color-font-flex .color-font-img.flex-item li:nth-child(3) {
+  margin-right: 280px;
+}
+main section.color-font-wrap .color-font-flex .color-font-img.flex-item li:last-child {
+  margin-top: -510px;
+  margin-right: 500px;
+}
+main section.color-font-wrap .color-font-flex .color-font-img.flex-item img {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+}
+main section.grid-system-wrap table {
+  width: 70%;
+  margin: 100px auto 80px;
+  border-radius: 5px;
+  background-color: #ebe4dd;
+}
+main section.grid-system-wrap table th, main section.grid-system-wrap table td {
+  text-align: center;
+  padding: 15px 30px;
+  font-size: 24px;
+}
+main section.grid-system-wrap .grid-pc-img img {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+}
+main section.wireframe-wrap img {
+  display: block;
+  margin: 50px auto;
+  width: 300px;
 }/*# sourceMappingURL=index.css.map */

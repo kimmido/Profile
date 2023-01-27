@@ -1,6 +1,23 @@
 @charset 'utf-8';
 @import './style.scss';
-@import '../../scss/mixin.scss';
+@import './mixin.scss';
+
+
+@font-face { 
+    font-family: 'NanumSquareNeo-Variable'; 
+    font-style: normal;  
+    // font-weight: normal; 
+    src: url('../font/NanumSquareNeo-Variable.ttf');
+}
+
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    // font-weight: normal;
+    font-style: normal;
+} 
+
+@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
 
@@ -22,7 +39,8 @@ body {
     
     font: {
         size: 16px;
-        family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        family: "NanumSquareNeo-Variable";
+        weight: 200;
     }
     
     @include responsive(tablet-screens) {
@@ -41,12 +59,22 @@ body {
         padding: 0 10px;
     }
 }
+.title {
+    @include title($jeolmul-color01);
+}
+
+section {
+    margin-top: 250px;
+}
 
 input, textarea, button, select, pre {
     font-family: inherit;
     letter-spacing: -0.04em;
 }
 
+table, th, td {
+    border-collapse: collapse;
+}
 
 ul, ol {
     list-style: none;
@@ -81,24 +109,12 @@ input {
     &:focus {
         outline: none;
     }
-
-    // &[type=checkbox], &[type=radio] {
-    // }
 }
 
 section > h2 {
     display: none;
 }
 
-// select {
-//     -webkit-appearance: none;
-//     -moz-appearance: none;
-//     appearance: none;
-    
-//     &::-ms-expand {
-//         display: none;
-//     }
-// }
 
 header, main, footer {
     display: block;
