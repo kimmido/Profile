@@ -45,14 +45,7 @@ $(function() {
                     $('#attitudeWrap .index').append($("<span class='click' />"));
                     $('#attitudeWrap .title').append($("<h4 />").text($attitude[i].title));
                     $('#attitudeWrap .attitude-txt').append($("<p />").text($attitude[i].txt));
-                    // console.log($("#attitudeWrap span").attr())
                 }
-
-                // $('#attitudeWrap').on("click", function(e) {
-                //     if($(e.target).hasClass("click")) {
-
-                //     }
-                // })
             }
         },
         error: function(err) {
