@@ -1,6 +1,6 @@
 $(function() {
     $.ajax({
-        url: "./data/data.json",
+        url: "https://kimmido.github.io/data/profile.json",
         dataType: "json",
         success: function(data) {
             const $skillCube = data.skillCube;
