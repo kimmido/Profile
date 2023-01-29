@@ -83,14 +83,20 @@ header {
             }
         }
         
-        .moblie-device {
+        .mobile-device {
             position: absolute;
-            right: -10px; bottom: 0;
+            right: -10px; bottom: -30px;
             width: 25%;
             aspect-ratio: 9 / 18.5;
             
-            background: url(../images/profile_mobile.png) no-repeat;
-            background-size: cover;
+            @include responsive(pc-screens) {
+                right: 10%;
+                width: 15%;
+            }
+
+            img {
+                width: 100%;
+            }
         }
     } // site-img-box
 
@@ -132,7 +138,11 @@ header {
 }
 
 main {
-    margin-top: 500px;
+    margin-top: 300px;
+    
+    @include responsive(tablet-screens) {
+        margin-top:500px;
+    }
 
     section.design-strategy {
         
@@ -280,31 +290,6 @@ main {
             }
         }
     } // section.color-typography-wrap
-
-    section.grid-system-wrap {
-
-        table {
-            width: 70%;
-            margin: 100px auto 80px;
-            border-radius: 5px;
-            background-color: $jeolmul-color03;
-            
-            th, td {
-                text-align: center;
-                padding: 15px 30px;
-                font-size: 24px;
-            }
-        }
-
-        .grid-pc-img {
-
-            img {
-                display: block;
-                width: 100%;
-                // margin: 0 auto;
-            }
-        }
-    }
 
     section.wireframe-grid-wrap {
 

@@ -108,7 +108,7 @@ header, main, footer {
 header {
   width: 100%;
   height: 300px;
-  background-color: #ebe4dd;
+  background-color: #e3e0dd;
 }
 @media screen and (min-width: 1028px) {
   header {
@@ -157,7 +157,6 @@ header .title-box h2 {
   margin-top: 10px;
   font-size: 20px;
   font-weight: 400;
-  color: black;
 }
 @media screen and (min-width: 1028px) {
   header .title-box h2 {
@@ -185,14 +184,21 @@ header .site-img-box .pc-device {
 header .site-img-box .pc-device img {
   width: 100%;
 }
-header .site-img-box .moblie-device {
+header .site-img-box .mobile-device {
   position: absolute;
   right: -10px;
-  bottom: 0;
+  bottom: -30px;
   width: 25%;
   aspect-ratio: 9/18.5;
-  background: url(../images/profile_mobile.png) no-repeat;
-  background-size: cover;
+}
+@media screen and (min-width: 1028px) {
+  header .site-img-box .mobile-device {
+    right: 10%;
+    width: 15%;
+  }
+}
+header .site-img-box .mobile-device img {
+  width: 100%;
 }
 header .link-box {
   margin-top: 30px;
@@ -205,7 +211,7 @@ header .link-box a {
   padding: 10px 5px;
   font-weight: 500;
   border-radius: 50px;
-  background: #c2b7ad;
+  background: #ff5da2;
   transition: all 0.3s;
 }
 @media screen and (min-width: 1028px) {
@@ -225,11 +231,16 @@ header .link-box a + a {
 }
 header .link-box a:hover {
   transform: scale(0.9);
-  background-color: #837264;
+  background-color: #bbd900;
 }
 
 main {
-  margin-top: 500px;
+  margin-top: 300px;
+}
+@media screen and (min-width: 768px) {
+  main {
+    margin-top: 500px;
+  }
 }
 main section.design-strategy .strategy-txt {
   word-break: keep-all;
@@ -252,22 +263,28 @@ main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list
   margin-left: 20px;
 }
 main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:first-child .color {
-  background-color: #9c8c7e;
+  background-color: #222222;
 }
 main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:first-child span {
-  color: #9c8c7e;
+  color: #222222;
 }
 main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:nth-child(2) .color {
-  background-color: #c2b7ad;
+  background-color: #e3e0dd;
 }
 main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:nth-child(2) span {
-  color: #c2b7ad;
+  color: #e3e0dd;
+}
+main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:nth-child(3) .color {
+  background-color: #ddff0d;
+}
+main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:nth-child(3) span {
+  color: #ddff0d;
 }
 main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:last-child .color {
-  background-color: #ebe4dd;
+  background-color: #ff5da2;
 }
 main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:last-child span {
-  color: #ebe4dd;
+  color: #ff5da2;
 }
 main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li .color {
   width: 100px;
@@ -308,16 +325,10 @@ main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 ul.
   font-weight: 100;
 }
 main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font1 {
-  font-family: "GangwonEdu_OTFBoldA";
-}
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font1 strong {
-  font-size: 36px;
-}
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font1 li {
-  font-size: 22px;
+  font-family: Pretendard;
 }
 main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 {
-  font-family: NanumSquareRound;
+  font-family: Cafe24Dongdong;
 }
 main section.color-font-wrap .color-font-flex .color-font-img.flex-item {
   margin-top: 70px;
@@ -353,7 +364,7 @@ main section.grid-system-wrap table {
   width: 70%;
   margin: 100px auto 80px;
   border-radius: 5px;
-  background-color: #ebe4dd;
+  background-color: #ddff0d;
 }
 main section.grid-system-wrap table th, main section.grid-system-wrap table td {
   text-align: center;
@@ -384,7 +395,7 @@ main section.wireframe-grid-wrap .button-box > button {
 }
 main section.wireframe-grid-wrap .button-box > button:hover, main section.wireframe-grid-wrap .button-box > button:focus, main section.wireframe-grid-wrap .button-box > button.on {
   color: #ffffff;
-  background-color: #9c8c7e;
+  background-color: #222222;
 }
 main section.wireframe-grid-wrap .wireframe-grid-inner {
   margin-left: 40px;
@@ -394,6 +405,7 @@ main section.wireframe-grid-wrap .wireframe-grid-inner .wireframe-grid-flex {
   display: flex;
 }
 main section.wireframe-grid-wrap .wireframe-grid-inner .wireframe-grid-flex table {
+  display: block;
   width: 20%;
   height: 500px;
   border-radius: 5px;
@@ -422,4 +434,4 @@ main section.page-wrap .page-img {
 }
 main section.page-wrap .page-img img {
   width: 100%;
-}/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=profile.css.map */

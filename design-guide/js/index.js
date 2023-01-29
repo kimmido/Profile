@@ -8,6 +8,7 @@ $(function() {
         $src = $img.attr("src");
 
         $img.attr("src", $src.replace($val, $target));
+        
         $(this)
         .addClass("on")
         .siblings().removeClass("on");
