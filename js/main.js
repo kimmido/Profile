@@ -4,8 +4,8 @@ window.onload = function() {
     const attitude = document.getElementById("attitudeWrap");
     const attitudeImg = attitude.querySelector(".img");
     const attitudeIndex = attitude.querySelector(".index");
-    const attitudeTitle = attitude.querySelector(".title");
-    const attitudeText = attitude.querySelector(".attitude-txt");
+    const attitudeTitle = attitude.querySelector(".title h4");
+    const attitudeText = attitude.querySelector(".attitude-txt p");
     const attitudePrev = attitude.querySelector(".prev");
     const attitudeNext = attitude.querySelector(".next");
 
@@ -43,8 +43,6 @@ window.onload = function() {
         attitudeTitle.classList.toggle("up");
         attitudeText.classList.toggle("up");
         setTimeout(() => {
-            addClassOnlyTarget([...attitudeTitle.children], attitudeCounter, "on")
-            addClassOnlyTarget([...attitudeText.children], attitudeCounter, "on")
             attitudeTitle.classList.toggle("up");
             attitudeText.classList.toggle("up");
         }, 600)
