@@ -1279,6 +1279,7 @@ body.scroll-stop {
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .move-btn button {
   display: block;
   width: 30px;
+  transition: width 0.3s;
 }
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .move-btn button.left {
   transform: rotateZ(90deg);
@@ -1287,6 +1288,9 @@ body.scroll-stop {
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .move-btn button.right {
   transform: rotateZ(-90deg);
   filter: drop-shadow(-2px 0 2px rgba(0, 0, 0, 0.3));
+}
+#wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .move-btn button:hover {
+  width: 40px;
 }
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con {
   display: flex;

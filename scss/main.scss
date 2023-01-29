@@ -1128,6 +1128,8 @@ body {
                                             display: block;
                                             width: 30px;
 
+                                            transition: width .3s;
+
                                             &.left {
                                                 transform: rotateZ(90deg);
                                                 filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.3));
@@ -1138,6 +1140,9 @@ body {
                                                 filter: drop-shadow(-2px 0 2px rgba(0, 0, 0, 0.3));
                                             }
 
+                                            &:hover {
+                                                width: 40px;
+                                            }
                                         }
                                     }
                                 } // item-img

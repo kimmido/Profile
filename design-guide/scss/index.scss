@@ -3,7 +3,6 @@
 @import './common.scss';
 @import './mixin.scss';
 
-
 header {
     width: 100%;
     height: 300px;
@@ -301,18 +300,88 @@ main {
 
             img {
                 display: block;
-                width: 70%;
-                margin: 0 auto;
+                width: 100%;
+                // margin: 0 auto;
             }
         }
     }
 
-    section.wireframe-wrap {
-        
-        img {
-            display: block;
-            margin: 50px auto;
+    section.wireframe-grid-wrap {
+
+        .button-box {
+            display:flex;
+            justify-content: space-between;
             width: 300px;
+            margin: 80px auto 0;
+            overflow: hidden;
+            border-radius: 50px;
+
+            > button {
+                width: 50%;
+                padding: 15px 0;
+                text-align: center;
+                cursor: pointer;
+                font-size: 1em;
+                font-weight: 500;
+
+                color: #c5c5c5;
+                background-color: #f1f1f1;
+
+                &:hover,&:focus,&.on {
+                    color: #ffffff;
+                    background-color: #9c8c7e;
+                }
+            }
+        }
+
+        .wireframe-grid-inner {
+            margin-left: 40px;
+            
+            .wireframe-grid-flex {
+                margin-top: 100px;
+                display: flex;
+                
+                table {
+                    width: 20%;
+                    height: 500px;
+                    border-radius: 5px;
+                    
+                    th, td {
+                        text-align: center;
+                        padding: 15px 30px;
+                        font-size: 24px;
+                    }
+    
+                    th {
+                    font-weight: 100;
+                    }
+    
+                    td {
+                        font-weight: 600;
+                    }
+                }
+
+                .wireframe-grid-img {
+                    width: 80%;
+
+                    img {
+                        display: block;
+                        margin: 0 auto;
+                        width: 500px;
+                    }
+                }
+            }
         }
     } // section.wireframe-gird-wrap
+
+    section.page-wrap {
+
+        .page-img {
+            margin-top: 100px;
+
+            img {
+                width: 100%;
+            }
+        }
+    } // section.page-wrap
 }
