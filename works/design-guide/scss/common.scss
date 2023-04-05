@@ -1,0 +1,114 @@
+@charset 'utf-8';
+@import './style.scss';
+@import './mixin.scss';
+
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-style: normal;
+} 
+
+@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+
+@font-face {
+    font-family: 'Cafe24Dongdong';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    letter-spacing: -0.04em;
+    
+    font: {
+        size: 16px;
+        family: $main-font;
+        weight: 200;
+    }
+    
+    @include responsive(tablet-screens) {
+        font-size: 20px;
+    }
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include responsive(pc-screens) {
+        padding: 0 10px;
+    }
+}
+
+.title {
+    $title_color: #adadad;
+    display: flex;
+    align-items: center;
+
+    span {
+        display: block;
+        width: 30px;
+        height: 4px;
+        background-color: $title_color;
+    }
+
+    h2 {
+        margin-left: 10px;
+        font-size: 30px;
+        font-weight: 900;
+        color: $title_color;
+    }
+}
+
+section {
+    margin-top: 250px;
+}
+
+input, textarea, button, select, pre {
+    font-family: inherit;
+    letter-spacing: -0.04em;
+}
+
+table, th, td {
+    border-collapse: collapse;
+}
+
+ul, ol {
+    list-style: none;
+    -webkit-padding-start: 0;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+}
+
+address {
+    font-style: normal;
+}
+
+button {
+    border: 0;
+    background: transparent;
+}
+
+section > h2 {
+    display: none;
+}
+
+
+header, main, footer {
+    display: block;
+}

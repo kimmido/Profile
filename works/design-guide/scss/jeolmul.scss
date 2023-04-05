@@ -1,0 +1,356 @@
+@charset "utf-8";
+@import './style.scss';
+@import './common.scss';
+@import './mixin.scss';
+
+header {
+    width: 100%;
+    height: 300px;
+    background-color: $profile-beige;
+    
+    @include responsive(pc-screens) {
+        height: 500px;
+    }
+
+    @include close_bt($jeolmul-color03, $jeolmul-color01);
+
+    .title-box {
+        text-align: center;
+        padding-top: 10vh;
+        
+        @include responsive(pc-screens) {
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 900;
+            
+            @include responsive(tablet-screens) {
+                font-size: 50px;
+            }
+        }
+
+        h2 {
+            margin-top: 10px;
+            font: {
+                size: 20px;
+                weight: 400;
+            }
+            color: black;
+            
+            @include responsive(pc-screens) {
+                font-size: 30px;
+            }
+        }
+    }
+    
+    .site-img-box {
+        position: relative;
+        margin-top: 30px;
+        
+        @include responsive(pc-screens) {
+            margin-top: 70px;
+        }
+        
+        .pc-device{
+            
+            background-size: cover;
+            
+            @include responsive(pc-screens) {
+                margin: 0 auto;
+                width: 900px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+        
+        .mobile-device {
+            position: absolute;
+            right: -10px; bottom: -30px;
+            width: 25%;
+            aspect-ratio: 9 / 18.5;
+            
+            @include responsive(pc-screens) {
+                right: 10%;
+                width: 15%;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    } // site-img-box
+
+    .link-box {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+
+        a {
+            width: 100px;
+            text-align: center;
+            padding: 10px 5px;
+            font-weight: 500;
+            border-radius: 50px;
+            background: $jeolmul-color02;
+
+            transition: all .3s;
+
+            @include responsive(pc-screens) {
+                width: 150px;
+                padding: 15px 10px;
+                font-size: 24px;
+            }
+
+            & + a {
+                margin-left: 20px;
+
+                @include responsive(pc-screens) {
+                    margin-left: 30px;
+                }
+            }
+            
+            &:hover {
+                transform: scale(0.9);
+                background-color: darken($jeolmul-color01, 10);
+            }
+        }
+    } // link-box
+}
+
+main {
+    margin-top: 300px;
+    
+    @include responsive(tablet-screens) {
+        margin-top:500px;
+    }
+
+    section.design-strategy {
+        
+        .strategy-txt {
+            word-break: keep-all;
+            margin: 60px 100px 0;
+            line-height: 34px;
+        }
+    }
+
+    section.color-font-wrap {
+        
+        .color-font-flex {
+            display: flex;
+            justify-content: space-between;
+
+            .flex-item {
+                width: 45%;
+
+                .color-wrap {
+    
+                    .color-list {
+                        margin-top: 50px;
+                        margin-left: 50px;
+                        display: flex;
+    
+                        li {
+    
+                            & + li {
+                                margin-left: 20px;
+                            }
+    
+                            &:first-child {
+                                .color {background-color: #9c8c7e;}
+                                span { color: #9c8c7e; }
+                            }
+                            &:nth-child(2) {
+                                .color {background-color: #c2b7ad;}
+                                span { color: #c2b7ad; }
+                            }
+                            &:last-child {
+                                .color {background-color: #ebe4dd;}
+                                span { color: #ebe4dd; }
+                            }
+    
+                            .color {
+                                // display: inline-block;
+                                @include square(100px);
+                                border-radius: 50%;
+                                
+                            }
+    
+                            span {
+                                
+                                display: block;
+                                margin-top: 20px;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                } // color-wrap
+    
+                .font-wrap {
+                    margin-top: 120px;
+                    
+                    > .font1, .font2 {
+                        margin-top: 60px;
+                        margin-left: 50px;
+                        
+                        strong {
+                            font-size: 30px;
+                        }
+    
+                        ul.font-list {
+                            margin-top: 30px;
+    
+                            li {
+                                margin-top: 7px;
+    
+                                &:first-child {
+                                    font-weight: 900;
+                                }
+                                &:nth-child(2) {
+                                    font-weight: 600;
+                                }
+                                &:nth-child(3) {
+                                    font-weight: 400;
+                                }
+                                &:last-child {
+                                    font-weight: 100;
+                                }
+                            }
+                        }
+                    }
+    
+                    .font1 {
+                        font-family: $jeolmul-font01; 
+
+                        strong {
+                            font-size: 36px;
+                        }
+                        
+                        li {
+                            font-size: 22px;
+                        }
+                    }
+    
+                    .font2 {
+                        font-family: $jeolmul-font02;    
+                    }
+                }
+            }
+
+            .color-font-img.flex-item {
+                margin-top: 70px;
+                width: 55%;
+
+                li {
+                    width: 300px; height: 325px;
+                    margin-left: auto;
+
+                    & + li {
+                        margin-top: -140px;
+                    }
+
+                    &:first-child {
+                        margin-right: 0;
+                    }
+                    &:nth-child(2) {
+                        margin-right: 140px;
+                    }
+                    &:nth-child(3) {
+                        margin-right: 280px;
+                    }
+                    &:last-child {
+                        margin-top: -510px;
+                        margin-right: 500px;
+                    }
+                }
+                img {
+                    width: 100%;
+                    border-radius: 5px;
+                    box-shadow: 0px 10px 20px 0px rgba(#000000, .2);
+                }
+            }
+        }
+    } // section.color-typography-wrap
+
+    section.wireframe-grid-wrap {
+
+        .button-box {
+            display:flex;
+            justify-content: space-between;
+            width: 300px;
+            margin: 80px auto 0;
+            overflow: hidden;
+            border-radius: 50px;
+
+            > button {
+                width: 50%;
+                padding: 15px 0;
+                text-align: center;
+                cursor: pointer;
+                font-size: 1em;
+                font-weight: 500;
+
+                color: #c5c5c5;
+                background-color: #f1f1f1;
+
+                &:hover,&:focus,&.on {
+                    color: #ffffff;
+                    background-color: #9c8c7e;
+                }
+            }
+        }
+
+        .wireframe-grid-inner {
+            margin-left: 40px;
+            
+            .wireframe-grid-flex {
+                margin-top: 100px;
+                display: flex;
+                
+                table {
+                    width: 20%;
+                    height: 500px;
+                    border-radius: 5px;
+                    
+                    th, td {
+                        text-align: center;
+                        padding: 15px 30px;
+                        font-size: 24px;
+                    }
+    
+                    th {
+                    font-weight: 100;
+                    }
+    
+                    td {
+                        font-weight: 600;
+                    }
+                }
+
+                .wireframe-grid-img {
+                    width: 80%;
+
+                    img {
+                        display: block;
+                        margin: 0 auto;
+                        width: 500px;
+                    }
+                }
+            }
+        }
+    } // section.wireframe-gird-wrap
+
+    section.page-wrap {
+
+        .page-img {
+            margin-top: 100px;
+
+            img {
+                width: 100%;
+            }
+        }
+    } // section.page-wrap
+}
