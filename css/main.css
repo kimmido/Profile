@@ -309,16 +309,7 @@ body.scroll-stop {
   height: 10px;
   border-radius: 50%;
   background-color: #ff5da2;
-  -webkit-animation: 0.5s bounce alternate infinite cubic-bezier(0.1, 0.1, 0.1, 0.8);
-          animation: 0.5s bounce alternate infinite cubic-bezier(0.1, 0.1, 0.1, 0.8);
-}
-@-webkit-keyframes bounce {
-  from {
-    top: 0;
-  }
-  to {
-    top: -12px;
-  }
+  animation: 0.5s bounce alternate infinite cubic-bezier(0.1, 0.1, 0.1, 0.8);
 }
 @keyframes bounce {
   from {
@@ -869,28 +860,16 @@ body.scroll-stop {
   }
 }
 #wrapper main section#skillWrap .skill #skillList .perspective:nth-child(2) .cube, #wrapper main section#skillWrap .skill #skillList .perspective:nth-child(5) .cube, #wrapper main section#skillWrap .skill #skillList .perspective:nth-child(10) .cube {
-  -webkit-animation-name: cuberotate01;
-          animation-name: cuberotate01;
+  animation-name: cuberotate01;
 }
 #wrapper main section#skillWrap .skill #skillList .perspective:nth-child(1) .cube, #wrapper main section#skillWrap .skill #skillList .perspective:nth-child(6) .cube, #wrapper main section#skillWrap .skill #skillList .perspective:nth-child(9) .cube {
-  -webkit-animation-name: cuberotate02;
-          animation-name: cuberotate02;
+  animation-name: cuberotate02;
 }
 #wrapper main section#skillWrap .skill #skillList .perspective:nth-child(4) .cube, #wrapper main section#skillWrap .skill #skillList .perspective:nth-child(7) .cube, #wrapper main section#skillWrap .skill #skillList .perspective:nth-child(12) .cube {
-  -webkit-animation-name: cuberotate03;
-          animation-name: cuberotate03;
+  animation-name: cuberotate03;
 }
 #wrapper main section#skillWrap .skill #skillList .perspective:nth-child(3) .cube, #wrapper main section#skillWrap .skill #skillList .perspective:nth-child(8) .cube, #wrapper main section#skillWrap .skill #skillList .perspective:nth-child(11) .cube {
-  -webkit-animation-name: cuberotate04;
-          animation-name: cuberotate04;
-}
-@-webkit-keyframes cuberotate01 {
-  from {
-    transform: rotateY(0);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
+  animation-name: cuberotate04;
 }
 @keyframes cuberotate01 {
   from {
@@ -898,14 +877,6 @@ body.scroll-stop {
   }
   to {
     transform: rotateY(360deg);
-  }
-}
-@-webkit-keyframes cuberotate02 {
-  from {
-    transform: rotateZ(50deg) rotateY(360deg);
-  }
-  to {
-    transform: rotateZ(50deg) rotateY(0);
   }
 }
 @keyframes cuberotate02 {
@@ -916,28 +887,12 @@ body.scroll-stop {
     transform: rotateZ(50deg) rotateY(0);
   }
 }
-@-webkit-keyframes cuberotate03 {
-  from {
-    transform: rotateZ(-50deg) rotateY(0);
-  }
-  to {
-    transform: rotateZ(-50deg) rotateY(360deg);
-  }
-}
 @keyframes cuberotate03 {
   from {
     transform: rotateZ(-50deg) rotateY(0);
   }
   to {
     transform: rotateZ(-50deg) rotateY(360deg);
-  }
-}
-@-webkit-keyframes cuberotate04 {
-  from {
-    transform: rotateX(230deg) rotateZ(230deg) rotateY(0);
-  }
-  to {
-    transform: rotateX(230deg) rotateZ(230deg) rotateY(360deg);
   }
 }
 @keyframes cuberotate04 {
@@ -952,17 +907,13 @@ body.scroll-stop {
   margin: 0 auto;
   width: 80px;
   height: 80px;
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
   cursor: pointer;
 }
 #wrapper main section#skillWrap .skill #skillList .perspective .cube:hover {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+  animation-play-state: paused;
 }
 #wrapper main section#skillWrap .skill #skillList .perspective .cube:hover > div {
   color: #222;
@@ -1583,22 +1534,7 @@ body.scroll-stop {
 }
 #wrapper footer .footer-inner #contact a img {
   width: 220px;
-  -webkit-animation: 1.5s linear email-bounce infinite;
-          animation: 1.5s linear email-bounce infinite;
-}
-@-webkit-keyframes email-bounce {
-  from {
-    transform: rotateZ(30deg);
-  }
-  20% {
-    transform: rotateZ(0deg);
-  }
-  80% {
-    transform: rotateZ(0deg);
-  }
-  to {
-    transform: rotateZ(30deg);
-  }
+  animation: 1.5s linear email-bounce infinite;
 }
 @keyframes email-bounce {
   from {
@@ -1620,8 +1556,7 @@ body.scroll-stop {
   }
 }
 #wrapper footer .footer-inner #contact a img:hover {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+  animation-play-state: paused;
 }
 #wrapper footer .footer-inner .copyright {
   position: absolute;

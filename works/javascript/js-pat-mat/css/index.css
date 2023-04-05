@@ -186,14 +186,6 @@ header, main, footer {
   border-radius: inherit;
   animation: light 1s linear infinite alternate-reverse;
 }
-@-webkit-keyframes light {
-  from {
-    box-shadow: 0 0 130px rgba(255, 255, 0, 0.8);
-  }
-  to {
-    box-shadow: 0 0 30px rgba(255, 255, 0, 0.3);
-  }
-}
 @keyframes light {
   from {
     box-shadow: 0 0 130px rgba(255, 255, 0, 0.8);

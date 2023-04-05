@@ -7,25 +7,25 @@
     }
 
     @else if $break == tablet-screens {
-        @media screen and(min-width:$break-tablet) {
+        @media screen and (min-width:$break-tablet) {
             @content;
         }
     }
 
     @else if $break == pc-screens {
-        @media screen and(min-width:$break-pc) {
+        @media screen and (min-width:$break-pc) {
             @content;
         }
     }
 
     @else if $break == pc-M-screens {
-        @media screen and(min-width:$break-pc-M) {
+        @media screen and (min-width:$break-pc-M) {
             @content;
         }
     }
 
     @else if $break == pc-L-screens {
-        @media screen and(min-width:$break-pc-L) {
+        @media screen and (min-width:$break-pc-L) {
             @content;
         }
     }
