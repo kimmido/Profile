@@ -95,29 +95,42 @@ main {
     
                             li {
                                 margin-top: 7px;
-    
-                                &:first-child {
-                                    font-weight: 900;
-                                }
-                                &:nth-child(2) {
-                                    font-weight: 600;
-                                }
-                                &:nth-child(3) {
-                                    font-weight: 400;
-                                }
-                                &:last-child {
-                                    font-weight: 100;
-                                }
                             }
                         }
                     }
     
                     .font1 {
-                        font-family: $profile-font01; 
+                        font-family: $profile-font01;
+                        
+                        ul.font-list {
+                            
+                            li {
+                                $font_weight_list1: (900, 600, 400, 100);
+            
+                                @for $i from 1 through length($font_weight_list1) {
+                                    &:nth-child(#{$i}) {
+                                        font-weight: nth($font_weight_list1, $i);
+                                    }
+                                }
+                            }
+                        }
                     }
-    
+                    
                     .font2 {
                         font-family: $profile-font02;    
+
+                        ul.font-list {
+                            
+                            li {
+                                $font_weight_list2: (900, 100);
+            
+                                @for $i from 1 through length($font_weight_list2) {
+                                    &:nth-child(#{$i}) {
+                                        font-weight: nth($font_weight_list2, $i);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -129,37 +142,7 @@ main {
                     width: 55%;
                 }
                 
-                ul.color-font-img {
-                    margin-top: 70px;
-    
-                    li {
-                        // width: 300px; height: 325px;
-                        width: calc(300px / 748px) * 100%;
-                        aspect-ratio: 12 / 13;
-                        margin-left: auto;
-    
-                        & + li {
-                            margin-top: calc(-140px / 748px) * 100%;
-                        }
-    
-                        &:nth-child(2) {
-                            margin-right: calc(140px / 748px) * 100%;
-                        }
-                        &:nth-child(3) {
-                            margin-right: calc(280px / 748px) * 100%;
-                        }
-                        &:last-child {
-                            margin-top: calc(-510px / 748px) * 100%;
-                            margin-right: calc(500px / 748px) * 100%;
-                        }
-    
-                        img {
-                            width: 100%;
-                            border-radius: 5px;
-                            box-shadow: 0px 10px 20px 0px rgba(#000000, .2);
-                        }
-                    }
-                }
+                @include color_font_img;
             }
         }
     } // section.color-typography-wrap
@@ -184,7 +167,6 @@ main {
             img {
                 display: block;
                 width: 100%;
-                // margin: 0 auto;
             }
         }
     }

@@ -2,15 +2,15 @@
 @import './style.scss';
 @import './mixin.scss';
 
+@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+@import url('https://webfontworld.github.io/kopus/KoPubWorldBatang.css');
+
 @font-face {
     font-family: 'GangwonEdu_OTFBoldA';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
     font-style: normal;
 } 
-
-@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
-
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
 
 @font-face {
     font-family: 'Cafe24Dongdong';
@@ -18,6 +18,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 
 * {
     margin: 0;
@@ -31,7 +32,7 @@ body {
     font: {
         size: 16px;
         family: $main-font;
-        weight: 200;
+        weight: 400;
     }
     
     @include responsive(tablet-screens) {
@@ -66,7 +67,7 @@ body {
     h2 {
         margin-left: 10px;
         font-size: 30px;
-        font-weight: 900;
+        font-weight: 600;
         color: $title_color;
     }
 }

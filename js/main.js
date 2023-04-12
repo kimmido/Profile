@@ -219,44 +219,47 @@ window.onload = function() {
     })();
 
     
-    (function() {const portfolioImgWrap = document.querySelectorAll("#portfolioWrap .item-img")
-    const portfolioImgWidth = portfolioImgWrap[0].offsetWidth;
+    (function portfolioImgMove() {
+        const portfolioImgWrap = document.querySelectorAll("#portfolioWrap .item-img")
+        const portfolioImgWidth = portfolioImgWrap[0].offsetWidth;
 
-    let portfolioImg;
-    let imgBox;
-    let moveLeft;
-    let moveRight;
-    let move = 0;
-
-    portfolioImgWrap.forEach(imgWrap => {
-        portfolioImg = imgWrap.querySelectorAll("img")
+        let portfolioImg;
+        let imgBox;
+        let moveLeft;
+        let moveRight;
         
-        if(portfolioImg.length > 1) {
-            imgBox = imgWrap.querySelector(".flex-box");
-            moveLeft = imgWrap.querySelector(".left");
-            moveRight = imgWrap.querySelector(".right");
-
-            moveLeft.addEventListener("click", function() {
-                slideMove(imgBox, "plus", portfolioImgWidth)
-            })
-
-            moveRight.addEventListener("click", function() {
-                slideMove(imgBox, "minus", portfolioImgWidth)
-            })
+        portfolioImgWrap.forEach(imgWrap => {
+            portfolioImg = imgWrap.querySelectorAll("img")
+            
+            if(portfolioImg.length > 1) {
+                imgBox = imgWrap.querySelector(".flex-box");
+                moveLeft = imgWrap.querySelector(".left");
+                moveRight = imgWrap.querySelector(".right");
+                
+                moveLeft.addEventListener("click", function() {
+                    slideMove(imgBox, "plus", portfolioImgWidth)
+                })
+                
+                moveRight.addEventListener("click", function() {
+                    slideMove(imgBox, "minus", portfolioImgWidth)
+                })
+            }
+        });
+        
+        let move = 0;
+        
+        function slideMove(moveElement, calc, moveValue) {
+            if(calc == "plus") {
+                move += moveValue
+                if(move > 0) { move = 0; } 
+            }
+            if(calc == "minus") {
+                move -= moveValue
+                if(move <= -moveElement.offsetWidth) { move = -moveElement.offsetWidth + moveValue; } 
+            }
+            moveElement.style.marginLeft = `${move}px`;
         }
-    });
-
-    function slideMove(moveElement, calc, moveValue) {
-        if(calc == "plus") {
-            move += moveValue
-            if(move > 0) { move = 0; } 
-        }
-        if(calc == "minus") {
-            move -= moveValue
-            if(move <= -moveElement.offsetWidth) { move = -moveElement.offsetWidth + moveValue; } 
-        }
-        moveElement.style.marginLeft = `${move}px`;
-    }})();
+    })();
 
 
 

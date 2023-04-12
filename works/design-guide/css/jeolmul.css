@@ -55,7 +55,7 @@ body {
 .title h2 {
   margin-left: 10px;
   font-size: 30px;
-  font-weight: 900;
+  font-weight: 600;
   color: #adadad;
 }
 
@@ -276,115 +276,124 @@ main section.design-strategy .strategy-txt {
   margin: 60px 100px 0;
   line-height: 34px;
 }
-main section.color-font-wrap .color-font-flex {
-  display: flex;
-  justify-content: space-between;
+@media screen and (min-width: 1028px) {
+  main section.color-font-wrap .color-font-flex {
+    display: flex;
+    justify-content: space-between;
+  }
 }
-main section.color-font-wrap .color-font-flex .flex-item {
-  width: 45%;
+@media screen and (min-width: 1028px) {
+  main section.color-font-wrap .color-font-flex .flex-item:first-child {
+    width: 45%;
+  }
 }
-main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list {
   margin-top: 50px;
   margin-left: 50px;
   display: flex;
 }
-main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li + li {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li + li {
   margin-left: 20px;
 }
-main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:first-child .color {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li:nth-child(1) div.color-chip {
   background-color: #9c8c7e;
 }
-main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:first-child span {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li:nth-child(1) span.color {
   color: #9c8c7e;
 }
-main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:nth-child(2) .color {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li:nth-child(2) div.color-chip {
   background-color: #c2b7ad;
 }
-main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:nth-child(2) span {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li:nth-child(2) span.color {
   color: #c2b7ad;
 }
-main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:last-child .color {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li:nth-child(3) div.color-chip {
   background-color: #ebe4dd;
 }
-main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li:last-child span {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li:nth-child(3) span.color {
   color: #ebe4dd;
 }
-main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li .color {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li div.color-chip {
   width: 100px;
   height: 100px;
   border-radius: 50%;
 }
-main section.color-font-wrap .color-font-flex .flex-item .color-wrap .color-list li span {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li span.color {
   display: block;
   margin-top: 20px;
   font-weight: 600;
 }
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap {
   margin-top: 120px;
 }
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1, main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 {
   margin-top: 60px;
   margin-left: 50px;
 }
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 strong, main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 strong {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 strong, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 strong {
   font-size: 30px;
 }
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 ul.font-list, main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 ul.font-list {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list {
   margin-top: 30px;
 }
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 ul.font-list li, main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 ul.font-list li {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li {
   margin-top: 7px;
 }
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 ul.font-list li:first-child, main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 ul.font-list li:first-child {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li:first-child, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:first-child {
   font-weight: 900;
 }
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 ul.font-list li:nth-child(2), main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 ul.font-list li:nth-child(2) {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li:nth-child(2), main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:nth-child(2) {
   font-weight: 600;
 }
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 ul.font-list li:nth-child(3), main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 ul.font-list li:nth-child(3) {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li:nth-child(3), main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:nth-child(3) {
   font-weight: 400;
 }
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap > .font1 ul.font-list li:last-child, main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 ul.font-list li:last-child {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li:last-child, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:last-child {
   font-weight: 100;
 }
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font1 {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font1 {
   font-family: "GangwonEdu_OTFBoldA";
 }
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font1 strong {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font1 strong {
   font-size: 36px;
 }
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font1 li {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font1 li {
   font-size: 22px;
 }
-main section.color-font-wrap .color-font-flex .flex-item .font-wrap .font2 {
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 {
   font-family: NanumSquareRound;
 }
-main section.color-font-wrap .color-font-flex .color-font-img.flex-item {
-  margin-top: 70px;
-  width: 55%;
+main section.color-font-wrap .color-font-flex .flex-item:last-child {
+  display: none;
 }
-main section.color-font-wrap .color-font-flex .color-font-img.flex-item li {
-  width: 300px;
-  height: 325px;
+@media screen and (min-width: 1028px) {
+  main section.color-font-wrap .color-font-flex .flex-item:last-child {
+    display: block;
+    width: 55%;
+  }
+}
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img {
+  margin-top: 70px;
+}
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li {
+  width: 40.1069518717%;
+  aspect-ratio: 12/13;
   margin-left: auto;
 }
-main section.color-font-wrap .color-font-flex .color-font-img.flex-item li + li {
-  margin-top: -140px;
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li + li {
+  margin-top: -18.7165775401%;
 }
-main section.color-font-wrap .color-font-flex .color-font-img.flex-item li:first-child {
-  margin-right: 0;
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li:nth-child(2) {
+  margin-right: 18.7165775401%;
 }
-main section.color-font-wrap .color-font-flex .color-font-img.flex-item li:nth-child(2) {
-  margin-right: 140px;
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li:nth-child(3) {
+  margin-right: 37.4331550802%;
 }
-main section.color-font-wrap .color-font-flex .color-font-img.flex-item li:nth-child(3) {
-  margin-right: 280px;
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li:last-child {
+  margin-top: -68.1818181818%;
+  margin-right: 66.8449197861%;
 }
-main section.color-font-wrap .color-font-flex .color-font-img.flex-item li:last-child {
-  margin-top: -510px;
-  margin-right: 500px;
-}
-main section.color-font-wrap .color-font-flex .color-font-img.flex-item img {
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li img {
   width: 100%;
   border-radius: 5px;
   box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);

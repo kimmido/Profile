@@ -1,5 +1,6 @@
 @import url("https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css");
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+@import url("https://webfontworld.github.io/kopus/KoPubWorldBatang.css");
 @font-face {
   font-family: "GangwonEdu_OTFBoldA";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff") format("woff");
@@ -21,7 +22,7 @@ body {
   letter-spacing: -0.04em;
   font-size: 16px;
   font-family: Pretendard;
-  font-weight: 200;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   body {
@@ -55,7 +56,7 @@ body {
 .title h2 {
   margin-left: 10px;
   font-size: 30px;
-  font-weight: 900;
+  font-weight: 600;
   color: #adadad;
 }
 
@@ -169,7 +170,7 @@ header .site-img-box .mobile-device {
 @media screen and (min-width: 1028px) {
   header .site-img-box .mobile-device {
     right: 10%;
-    width: 15%;
+    width: 200px;
   }
 }
 header .site-img-box .mobile-device img {
@@ -347,23 +348,29 @@ main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap 
 main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li {
   margin-top: 7px;
 }
-main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li:first-child, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:first-child {
-  font-weight: 900;
-}
-main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li:nth-child(2), main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:nth-child(2) {
-  font-weight: 600;
-}
-main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li:nth-child(3), main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:nth-child(3) {
-  font-weight: 400;
-}
-main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li:last-child, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:last-child {
-  font-weight: 100;
-}
 main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font1 {
   font-family: Pretendard;
 }
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font1 ul.font-list li:nth-child(1) {
+  font-weight: 900;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font1 ul.font-list li:nth-child(2) {
+  font-weight: 600;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font1 ul.font-list li:nth-child(3) {
+  font-weight: 400;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font1 ul.font-list li:nth-child(4) {
+  font-weight: 100;
+}
 main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 {
   font-family: Cafe24Dongdong;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:nth-child(1) {
+  font-weight: 900;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:nth-child(2) {
+  font-weight: 100;
 }
 main section.color-font-wrap .color-font-flex .flex-item:last-child {
   display: none;
@@ -381,6 +388,9 @@ main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-fon
   width: 40.1069518717%;
   aspect-ratio: 12/13;
   margin-left: auto;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
 }
 main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li + li {
   margin-top: -18.7165775401%;
@@ -397,8 +407,6 @@ main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-fon
 }
 main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li img {
   width: 100%;
-  border-radius: 5px;
-  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
 }
 main section.grid-system-wrap table {
   width: 70%;
