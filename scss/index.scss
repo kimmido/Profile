@@ -3,11 +3,15 @@
 @import './common.scss';
 @import './mixin.scss';
 
-.landing {
+.intro {
     overflow: hidden;
     position: relative;
     width: 100vw; height: 100vh;
     background-color: $point-neon;
+
+    h1 {
+        font-size: 0;
+    }
 
     .txt {
         @include position_center();

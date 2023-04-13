@@ -1,5 +1,6 @@
 @import url("https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css");
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+@import url("https://webfontworld.github.io/kopus/KoPubWorldBatang.css");
 @font-face {
   font-family: "GangwonEdu_OTFBoldA";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff") format("woff");
@@ -21,7 +22,7 @@ body {
   letter-spacing: -0.04em;
   font-size: 16px;
   font-family: Pretendard;
-  font-weight: 200;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   body {
@@ -379,6 +380,9 @@ main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-fon
   width: 40.1069518717%;
   aspect-ratio: 12/13;
   margin-left: auto;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
 }
 main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li + li {
   margin-top: -18.7165775401%;
@@ -395,8 +399,6 @@ main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-fon
 }
 main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li img {
   width: 100%;
-  border-radius: 5px;
-  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
 }
 main section.wireframe-grid-wrap .button-box {
   display: flex;

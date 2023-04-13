@@ -814,7 +814,6 @@ body.scroll-stop {
   top: 50%;
   transform: translate(-50%, -50%);
   display: block;
-  padding: auto;
   font-family: Cafe24Dongdong;
 }
 #wrapper main section#skillWrap .skill #skillList {
@@ -1102,7 +1101,7 @@ body.scroll-stop {
 }
 @media screen and (min-width: 1028px) {
   #wrapper main section#skillWrap .skill #skillDetail .detail-inner .txt-wrap .txt-inner {
-    padding: 70px 100px 0;
+    padding: 55px 100px 0;
   }
 }
 #wrapper main section#skillWrap .skill #skillDetail .detail-inner .txt-wrap .txt-inner p {
@@ -1110,6 +1109,11 @@ body.scroll-stop {
   color: #222;
   font-size: calc(1em - 2px);
   line-height: calc(1em - 2px + 10px);
+}
+@media screen and (min-width: 1028px) {
+  #wrapper main section#skillWrap .skill #skillDetail .detail-inner .txt-wrap .txt-inner p {
+    font-size: 22px;
+  }
 }
 #wrapper main section#portfolioWrap {
   padding-top: 50px;
@@ -1492,14 +1496,14 @@ body.scroll-stop {
     margin-left: 80px;
   }
 }
-#wrapper footer .footer-inner .txt-wrap span, #wrapper footer .footer-inner .txt-wrap strong {
+#wrapper footer .footer-inner .txt-wrap strong {
   display: block;
 }
-#wrapper footer .footer-inner .txt-wrap span {
+#wrapper footer .footer-inner .txt-wrap p {
   font-size: 16px;
 }
 @media screen and (min-width: 1028px) {
-  #wrapper footer .footer-inner .txt-wrap span {
+  #wrapper footer .footer-inner .txt-wrap p {
     font-size: 26px;
   }
 }
@@ -1529,10 +1533,8 @@ body.scroll-stop {
     bottom: 140px;
   }
 }
-#wrapper footer .footer-inner #contact a {
+#wrapper footer .footer-inner #contact img {
   transition: all 0.3s;
-}
-#wrapper footer .footer-inner #contact a img {
   width: 220px;
   animation: 1.5s linear email-bounce infinite;
 }
@@ -1551,11 +1553,11 @@ body.scroll-stop {
   }
 }
 @media screen and (min-width: 1028px) {
-  #wrapper footer .footer-inner #contact a img {
+  #wrapper footer .footer-inner #contact img {
     width: 300px;
   }
 }
-#wrapper footer .footer-inner #contact a img:hover {
+#wrapper footer .footer-inner #contact img:hover {
   animation-play-state: paused;
 }
 #wrapper footer .footer-inner .copyright {

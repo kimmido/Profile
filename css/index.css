@@ -81,48 +81,51 @@ header, main, footer {
   display: block;
 }
 
-.landing {
+.intro {
   overflow: hidden;
   position: relative;
   width: 100vw;
   height: 100vh;
   background-color: #ddff0d;
 }
-.landing .txt {
+.intro h1 {
+  font-size: 0;
+}
+.intro .txt {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 @media screen and (min-width: 768px) {
-  .landing .txt {
+  .intro .txt {
     bottom: 300px;
   }
 }
 @media screen and (min-width: 1028px) {
-  .landing .txt {
+  .intro .txt {
     bottom: 350px;
   }
 }
-.landing .txt b {
+.intro .txt b {
   display: none;
   color: #ff5da2;
   font-size: 20px;
 }
 @media screen and (min-width: 768px) {
-  .landing .txt b {
+  .intro .txt b {
     font-size: 30px;
   }
 }
 @media screen and (min-width: 1028px) {
-  .landing .txt b {
+  .intro .txt b {
     font-size: 60px;
   }
 }
-.landing .txt b.on {
+.intro .txt b.on {
   display: block;
 }
-.landing .img {
+.intro .img {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -134,12 +137,12 @@ header, main, footer {
   transition: top 0.5s;
 }
 @media screen and (min-width: 768px) {
-  .landing .img {
+  .intro .img {
     width: 300px;
   }
 }
 @media screen and (min-width: 1028px) {
-  .landing .img {
+  .intro .img {
     width: 390px;
   }
 }
@@ -160,6 +163,6 @@ header, main, footer {
     filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0.2));
   }
 }
-.landing .img.down {
+.intro .img.down {
   top: 100%;
 }/*# sourceMappingURL=index.css.map */

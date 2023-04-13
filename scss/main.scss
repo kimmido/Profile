@@ -777,7 +777,6 @@ body {
                                 > span {
                                     @include position_center();
                                     display: block;
-                                    padding: auto;
                                     font-family: $point-font;
                                 }
                             }
@@ -988,13 +987,17 @@ body {
                                 }
                                 
                                 @include responsive(pc-screens) {
-                                    padding: 70px 100px 0;
+                                    padding: 55px 100px 0;
                                 }
                                 
                                 p {
                                     text-align: justify;
                                     color: $main-color;
                                     @include font_height(calc(1em - 2px));
+
+                                    @include responsive(pc-screens) {
+                                        font-size: 22px;
+                                    }
                                 }
                             }
                         }
@@ -1388,9 +1391,11 @@ body {
                     margin-left: 80px;
                 }
 
-                span, strong { display: block; }
+                strong {
+                    display: block;
+                }
 
-                span {
+                p {
                     font-size: 16px;
                     
                     @include responsive(pc-screens) {
@@ -1424,27 +1429,24 @@ body {
                     bottom: 140px;
                 }
 
-                a {
+                img {
                     transition: all .3s;
+                    width: 220px;
+                    animation: 1.5s linear email-bounce infinite;
+                    
+                    @keyframes email-bounce {
+                        from { transform: rotateZ(30deg); }
+                        20% { transform: rotateZ(0deg); }
+                        80% { transform: rotateZ(0deg); }
+                        to { transform: rotateZ(30deg); }
+                    }
+                    
+                    @include responsive(pc-screens) {
+                        width: 300px;
+                    }
 
-                    img {
-                        width: 220px;
-                        animation: 1.5s linear email-bounce infinite;
-                        
-                        @keyframes email-bounce {
-                            from { transform: rotateZ(30deg); }
-                            20% { transform: rotateZ(0deg); }
-                            80% { transform: rotateZ(0deg); }
-                            to { transform: rotateZ(30deg); }
-                        }
-                        
-                        @include responsive(pc-screens) {
-                            width: 300px;
-                        }
-    
-                        &:hover {
-                            animation-play-state: paused;
-                        }
+                    &:hover {
+                        animation-play-state: paused;
                     }
                 }
             } // email-wrap

@@ -265,21 +265,24 @@ window.onload = function() {
 
     // ***** footer 이메일 마우스 이벤트 *****
     (function contactImgEvent() {
-        const contact = document.querySelector("#contact > a");
+        const contact = document.querySelector("#contact > img");
         
         contact.addEventListener("mouseover", function() {
-            this.querySelector("img").setAttribute("src", "./images/envelope_open2.svg");
+            this.setAttribute("src", "./images/envelope_open.svg");
         })
     
         contact.addEventListener("mouseout", function() {
-            this.querySelector("img").setAttribute("src", "./images/envelope.svg");
+            this.setAttribute("src", "./images/envelope.svg");
         })
-    
+        
         contact.addEventListener("mousedown", function() {
-            this.style.transform = "scale(0.9)";
-            setTimeout(() => {
-                this.style.transform = "scale(1)";
-            }, 300)
+            let mail = this.getAttribute("alt");
+            mail = mail.replace("메일주소:", "");
+            mail = mail.trim();
+            navigator.clipboard.writeText(mail)
+            .then(() => {
+                alert("메일주소가 복사되었습니다. " + mail);
+            })
         })
     })();
 
