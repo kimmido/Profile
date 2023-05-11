@@ -1,6 +1,6 @@
 # Profile page
 
-![기기목업](./design-guide/images/profile_mockup_pc+mobile.png)
+![기기목업](./works/design-guide/images/profile_mockup_pc+mobile.png)
 
 - 기여도 : 100% (개인작업)
 - 형식 : 반응형
