@@ -494,9 +494,10 @@ body {
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
+                        gap: $spacer-8;
                         
                         @include responsive(tablet-screens) {
-                            margin-top: 80px;
+                            margin-top: 60px;
                             margin-right: $spacer-6;
                             margin-bottom: $spacer-10;
                             width: calc(650px / 1380px) * 100%;
@@ -504,15 +505,44 @@ body {
                         }
 
                         @include responsive(pc-screens) {
-                            margin-top: calc(120px / 1380px) * 100%;
+                            margin-top: 0;
                             width: calc(650px / 1380px) * 100%;
                         }
 
                         .about-txt {    
                             
                             p {
-                                @include font_height(1em, calc(1em + 14px));
-                                text-align: justify;
+                                margin-top: $spacer-6;
+                                
+                                @include responsive(pc-screens) {
+                                    margin-top: $spacer-8;
+                                }
+
+                                &::first-child {
+                                    margin-top: 0;
+                                }
+                            }
+                            
+                            
+                            li {
+                                position: relative;
+                                margin-top: $spacer-3;
+                                margin-left: $spacer-3;
+                                padding-left: $spacer-4;
+                                
+                                @include responsive(pc-screens) {
+                                    margin-top: $spacer-4;
+                                    margin-left: $spacer-5;
+                                    padding-left: $spacer-4;
+                                    font-size: $font-size-body-sm;
+                                    
+                                }
+
+                                &::before {
+                                    position: absolute;
+                                    left: 0; 
+                                    content: '-';
+                                }
                             }
                         }
                         

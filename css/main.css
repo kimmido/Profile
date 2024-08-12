@@ -511,10 +511,11 @@ body.scroll-stop {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 32px;
 }
 @media screen and (min-width: 768px) {
   #wrapper main section#aboutWrap .about .about-flex .about-con {
-    margin-top: 80px;
+    margin-top: 60px;
     margin-right: 20px;
     margin-bottom: 48px;
     width: 47.1014492754%;
@@ -523,14 +524,39 @@ body.scroll-stop {
 }
 @media screen and (min-width: 1028px) {
   #wrapper main section#aboutWrap .about .about-flex .about-con {
-    margin-top: 8.6956521739%;
+    margin-top: 0;
     width: 47.1014492754%;
   }
 }
 #wrapper main section#aboutWrap .about .about-flex .about-con .about-txt p {
-  font-size: 1em;
-  line-height: calc(1em + 14px);
-  text-align: justify;
+  margin-top: 20px;
+}
+@media screen and (min-width: 1028px) {
+  #wrapper main section#aboutWrap .about .about-flex .about-con .about-txt p {
+    margin-top: 32px;
+  }
+}
+#wrapper main section#aboutWrap .about .about-flex .about-con .about-txt p::first-child {
+  margin-top: 0;
+}
+#wrapper main section#aboutWrap .about .about-flex .about-con .about-txt li {
+  position: relative;
+  margin-top: 8px;
+  margin-left: 8px;
+  padding-left: 12px;
+}
+@media screen and (min-width: 1028px) {
+  #wrapper main section#aboutWrap .about .about-flex .about-con .about-txt li {
+    margin-top: 12px;
+    margin-left: 16px;
+    padding-left: 12px;
+    font-size: 15px;
+  }
+}
+#wrapper main section#aboutWrap .about .about-flex .about-con .about-txt li::before {
+  position: absolute;
+  left: 0;
+  content: "-";
 }
 #wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .sill-list {
   display: flex;
