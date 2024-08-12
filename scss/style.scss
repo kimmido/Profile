@@ -5,15 +5,51 @@ $break-pc: 1028px;
 $break-pc-M: 1200px;
 $break-pc-L: 1400px;
 
+// spacer
+$spacer-0: 0;
+$spacer-1: 2px;
+$spacer-2: 4px;
+$spacer-3: 8px;
+$spacer-4: 12px;
+$spacer-5: 16px;
+$spacer-6: 20px;
+$spacer-7: 24px;
+$spacer-8: 32px;
+$spacer-9: 40px;
+$spacer-10: 48px;
+
 // 색상
-$main-color: #222;
-$main-color02: #e3e0dd;
+$gray-0: #ffffff; // background-base
+$gray-5: #f8f8f8; // background
+$gray-10: #f0f0f0;
+$gray-20: #e4e4e4; // disabled
+$gray-30: #d8d8d8;
+$gray-40: #c6c6c6; // border
+$gray-50: #8e8e8e; // text-disabled
+$gray-60: #717171; // 입력창 기본 상태
+$gray-70: #555555; // text-body, detail text
+$gray-80: #2d2d2d; // text-title
+$gray-90: #1d1d1d;
+$gray-100: #000000;
+
+$main-color-gary: $gray-80;
+$main-color-beige: #e3e0dd;
 $point-pink: #ff5da2;
 $point-neon: #ddff0d;
 
-// 글꼴
+// font
 $main-font: Pretendard;
 $point-font: Cafe24Dongdong;
+
+// font-size
+$font-size-body-xsm: 13px;
+$font-size-body-sm: 15px;
+$font-size-body-md: 17px;
+$font-size-body-lg: 19px;
+
+
+// radius
+$radius-square: 8px;
 
 // svg 이미지 색상 변경
 // $svg-black: brightness(0) saturate(100%);

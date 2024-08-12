@@ -15,12 +15,12 @@ body {
   color: #fff;
   letter-spacing: -0.04em;
   background-color: #e3e0dd;
-  font-size: 16px;
+  font-size: 15px;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 @media screen and (min-width: 768px) {
   body {
-    font-size: 20px;
+    font-size: 19px;
   }
 }
 
@@ -155,7 +155,7 @@ body.scroll-stop {
     border-bottom: 1px solid #fff;
   }
   #wrapper header:hover {
-    background-color: #222;
+    background-color: #2d2d2d;
   }
 }
 #wrapper header .header-inner {
@@ -235,7 +235,7 @@ body.scroll-stop {
   margin-top: 10px;
 }
 #wrapper header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span {
-  background-color: #222;
+  background-color: #2d2d2d;
 }
 #wrapper header .header-inner .mobile-menu-wrap .mobile-menu-bt .bt-box.on span:nth-child(2) {
   width: 34px;
@@ -266,7 +266,7 @@ body.scroll-stop {
   top: 0;
   width: 100%;
   height: 100vh;
-  background: url("../images/cat_ear.svg") #222 no-repeat center bottom;
+  background: url("../images/cat_ear.svg") #2d2d2d no-repeat center bottom;
   background-size: 80%;
   transition: all 0.8s;
 }
@@ -339,7 +339,7 @@ body.scroll-stop {
 }
 #wrapper main section#homeWrap {
   position: relative;
-  background-color: #222;
+  background-color: #2d2d2d;
   transition: opacity 0.15s ease-out;
 }
 @media screen and (min-width: 1028px) {
@@ -430,7 +430,7 @@ body.scroll-stop {
 }
 #wrapper main section#homeWrap .home .mouse-pointer .background-neon .home-box .home-txt,
 #wrapper main section#homeWrap .home .mouse-pointer .background-neon .home-box .hidden-txt {
-  color: #222;
+  color: #2d2d2d;
 }
 #wrapper main section#homeWrap .home .mouse-pointer .background-neon .home-box .hidden-txt {
   position: absolute;
@@ -447,7 +447,7 @@ body.scroll-stop {
 }
 #wrapper main section#aboutWrap .about {
   padding-top: 75px;
-  color: #222;
+  color: #2d2d2d;
 }
 @media screen and (min-width: 768px) {
   #wrapper main section#aboutWrap .about {
@@ -507,19 +507,18 @@ body.scroll-stop {
     margin-top: 200px;
   }
 }
-@media screen and (min-width: 768px) {
-  #wrapper main section#aboutWrap .about .about-flex .about-con {
-    margin-top: 80px;
-    margin-right: 20px;
-    width: 47.1014492754%;
-    order: 2;
-  }
+#wrapper main section#aboutWrap .about .about-flex .about-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
   #wrapper main section#aboutWrap .about .about-flex .about-con {
     margin-top: 80px;
     margin-right: 20px;
+    margin-bottom: 48px;
     width: 47.1014492754%;
+    order: 2;
   }
 }
 @media screen and (min-width: 1028px) {
@@ -533,23 +532,50 @@ body.scroll-stop {
   line-height: calc(1em + 14px);
   text-align: justify;
 }
-#wrapper main section#aboutWrap .about .about-flex .about-con .about-skills {
+#wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .sill-list {
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-#wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .skill-icon {
+#wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .sill-list .skill-item {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  padding-right: 8px;
+  font-size: 13px;
+  color: #555555;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+}
+@media screen and (min-width: 1028px) {
+  #wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .sill-list .skill-item {
+    font-size: 15px;
+  }
+}
+#wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .sill-list .skill-item img {
+  width: 20px;
+  margin-right: 4px;
+}
+@media screen and (min-width: 1028px) {
+  #wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .sill-list .skill-item img {
+    width: 26px;
+    margin-right: 8px;
+  }
+}
+#wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .sill-list .skill-icon {
   width: 30px;
   margin-right: 16px;
 }
 @media screen and (min-width: 1028px) {
-  #wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .skill-icon {
+  #wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .sill-list .skill-icon {
     width: 60px;
     margin-right: 30px;
   }
 }
-#wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .skill-icon:last-child {
+#wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .sill-list .skill-icon:last-child {
   margin-right: 0;
 }
-#wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .skill-icon img {
+#wrapper main section#aboutWrap .about .about-flex .about-con .about-skills .sill-list .skill-icon img {
   width: 100%;
 }
 #wrapper main section#aboutWrap .about .about-flex .about-img {
@@ -576,7 +602,7 @@ body.scroll-stop {
 #wrapper main section#attitudeWrap {
   padding-top: 60px;
   padding-bottom: 50px;
-  background-color: #222;
+  background-color: #2d2d2d;
 }
 @media screen and (min-width: 768px) {
   #wrapper main section#attitudeWrap {
@@ -659,7 +685,7 @@ body.scroll-stop {
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #222;
+  background-color: #2d2d2d;
   transition: height 0.4s;
 }
 #wrapper main section#attitudeWrap .attitude-inner .attitude-area .title h4.up {
@@ -779,7 +805,7 @@ body.scroll-stop {
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #222;
+  background-color: #2d2d2d;
   transition: height 0.4s;
 }
 #wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt p.up {
@@ -787,67 +813,6 @@ body.scroll-stop {
 }
 #wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt p.up::after {
   height: 0%;
-}
-#wrapper main section#skillWrap {
-  position: relative;
-  padding-top: 50px;
-  background-color: #222;
-}
-@media screen and (min-width: 768px) {
-  #wrapper main section#skillWrap {
-    padding-top: 100px;
-  }
-}
-@media screen and (min-width: 1028px) {
-  #wrapper main section#skillWrap {
-    padding-top: 150px;
-  }
-}
-@media screen and (min-width: 1400px) {
-  #wrapper main section#skillWrap {
-    height: 1050px;
-  }
-}
-#wrapper main section#skillWrap .skill .skill-title {
-  margin-top: 60px;
-  font-size: 20px;
-}
-#wrapper main section#skillWrap .skill .skill-title:first-child {
-  margin-top: 0;
-}
-@media screen and (min-width: 1028px) {
-  #wrapper main section#skillWrap .skill .skill-title {
-    margin-top: 100px;
-    font-size: 30px;
-  }
-}
-#wrapper main section#skillWrap .skill #skillList {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 40px 0 20px;
-}
-@media screen and (min-width: 1028px) {
-  #wrapper main section#skillWrap .skill #skillList {
-    margin-top: 30px;
-  }
-}
-#wrapper main section#skillWrap .skill #skillList .skill-icon {
-  width: 54px;
-  height: 54px;
-  margin-right: 16px;
-}
-@media screen and (min-width: 1028px) {
-  #wrapper main section#skillWrap .skill #skillList .skill-icon {
-    width: 100px;
-    height: 100px;
-    margin-right: 30px;
-  }
-}
-#wrapper main section#skillWrap .skill #skillList .skill-icon:last-child {
-  margin-right: 0;
-}
-#wrapper main section#skillWrap .skill #skillList .skill-icon img {
-  width: 100%;
 }
 #wrapper main section#portfolioWrap {
   padding-top: 50px;
@@ -865,7 +830,7 @@ body.scroll-stop {
   }
 }
 #wrapper main section#portfolioWrap .portfolio-area {
-  color: #222;
+  color: #2d2d2d;
 }
 #wrapper main section#portfolioWrap .portfolio-area > h3 {
   display: none;
@@ -1062,7 +1027,7 @@ body.scroll-stop {
   margin-left: 14px;
 }
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .index-wrap .index span.on {
-  background-color: #222;
+  background-color: #2d2d2d;
 }
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .title-text-link {
   order: 1;
@@ -1202,7 +1167,7 @@ body.scroll-stop {
 }
 #wrapper footer {
   padding-top: 60px;
-  background-color: #222;
+  background-color: #2d2d2d;
 }
 @media screen and (min-width: 1028px) {
   #wrapper footer {
