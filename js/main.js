@@ -12,24 +12,24 @@ let attitudeCounter = 0;
 attdConChange(attitudeCounter);
 
 // 이전, 다음, 인덱스 버튼 클릭 이벤트
-attitudePrev.onclick = function() {
-    attitudeCounter--;
-    if(attitudeCounter < 0) { attitudeCounter = 2; }
-    attdConChange(attitudeCounter);
-}
+// attitudePrev.onclick = function() {
+//     attitudeCounter--;
+//     if(attitudeCounter < 0) { attitudeCounter = 2; }
+//     attdConChange(attitudeCounter);
+// }
 
-attitudeNext.onclick = function() {
-    attitudeCounter++;
-    if(attitudeCounter > 2) { attitudeCounter = 0; }
-    attdConChange(attitudeCounter);
-}
+// attitudeNext.onclick = function() {
+//     attitudeCounter++;
+//     if(attitudeCounter > 2) { attitudeCounter = 0; }
+//     attdConChange(attitudeCounter);
+// }
 
-attitudeIndex.onclick = function(e) {
-    if(e.target.matches('span')) {
-        attitudeCounter = [...attitudeIndex.children].indexOf(e.target);
-        attdConChange(attitudeCounter);
-    }
-}
+// attitudeIndex.onclick = function(e) {
+//     if(e.target.matches('span')) {
+//         attitudeCounter = [...attitudeIndex.children].indexOf(e.target);
+//         attdConChange(attitudeCounter);
+//     }
+// }
 
 
 // 내용 입력 함수
