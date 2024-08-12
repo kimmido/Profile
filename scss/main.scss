@@ -489,8 +489,8 @@ body {
                         width: calc(1160px / 1380px) * 100%;
                         margin-top: 200px;
                     }
-    
-                    .about-txt {
+
+                    .about-con {
                         
                         @include responsive(tablet-screens) {
                             margin-top: 80px;
@@ -498,17 +498,49 @@ body {
                             width: calc(650px / 1380px) * 100%;
                             order: 2;
                         }
+
+                        @include responsive(tablet-screens) {
+                            margin-top: 80px;
+                            margin-right: 20px;
+                            width: calc(650px / 1380px) * 100%;
+                        }
                         
                         @include responsive(pc-screens) {
                             margin-top: calc(120px / 1380px) * 100%;
                             width: calc(650px / 1380px) * 100%;
                         }
+
+                        .about-txt {    
+                            
+                            p {
+                                @include font_height(1em, calc(1em + 14px));
+                                text-align: justify;
+                            }
+                        }
                         
-                        p {
-                            @include font_height(1em, calc(1em + 14px));
-                            text-align: justify;
+                        .about-skills {
+                            display: flex;
+
+                            .skill-icon {
+                                width: 30px;
+                                margin-right: 16px;
+                                
+                                @include responsive(pc-screens) {
+                                    width: 60px;
+                                    margin-right: 30px;
+                                }
+    
+                                &:last-child {
+                                    margin-right: 0;
+                                }
+    
+                                img {
+                                    width: 100%;
+                                }
+                            }
                         }
                     }
+    
     
                     .about-img {
                         margin-top: 30px;
@@ -750,259 +782,52 @@ body {
     
             .skill {
     
-                h3 {
+                .skill-title {
+                    margin-top: 60px;
                     font-size: 20px;
                     
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                    
                     @include responsive(pc-screens) {
+                        margin-top: 100px;
                         font-size: 30px;
                     }
                 }
-    
-                #skillList,
-                #skillDetail {
-
-                    .perspective {
-                        position: relative;
-                        perspective: 2000px;
-                        perspective-origin: -600px 500px;
-                        
-                        .cube{
-                            position: relative;
-                            transform-style: preserve-3d;
-        
-                            > div {
-                                position: absolute;
-                                left: 0; top: 0;
-        
-                                > span {
-                                    @include position_center();
-                                    display: block;
-                                    font-family: $point-font;
-                                }
-                            }
-                        }
-                    }
-                } // #skillList, #skillDetail
                 
                 #skillList {
                     display: flex;
-                    justify-content: space-around;
                     flex-wrap: wrap;
                     padding: 40px 0 20px;
                     
                     @include responsive(pc-screens) {
-                        margin-top: 80px;
-                        justify-content: space-between;
+                        margin-top: 30px;
                     }
 
-                    @include responsive(pc-L-screens) {
-                        position: absolute;
-                        left: 50%; top: 80px;
-                        width: 100vw;
-                        transform: translateX(-50%);
-                    }
                     
                     
-                    .perspective {
-                        padding-top: 20px;
-                        width: 50%; height: 160px;
+                    .skill-icon {
+                        width: 54px;
+                        height: 54px;
+                        margin-right: 16px;
                         
-                        @include responsive(tablet-screens) {
-                            width: 25%; height: 180px;
-                        }
-    
                         @include responsive(pc-screens) {
-                            height: 360px;
+                            width: 100px;
+                            height: 100px;
+                            margin-right: 30px;
                         }
 
-                        @include responsive(pc-L-screens) {
-                            width: calc(100% / 6);
+                        &:last-child {
+                            margin-right: 0;
                         }
-    
-                        // 큐브 회전 애니메이션 선언
-                        &:nth-child(2) .cube,
-                        &:nth-child(5) .cube,
-                        &:nth-child(10) .cube{ animation-name: cuberotate01; }
-                        
-                        &:nth-child(1) .cube,
-                        &:nth-child(6) .cube,
-                        &:nth-child(9) .cube { animation-name: cuberotate02; }
-    
-                        &:nth-child(4) .cube,
-                        &:nth-child(7) .cube, 
-                        &:nth-child(12) .cube { animation-name: cuberotate03; }
-    
-                        &:nth-child(3) .cube,
-                        &:nth-child(8) .cube,
-                        &:nth-child(11) .cube { animation-name: cuberotate04; }
-    
-                        // 큐브 회전 애니메이션 생성
-                        @keyframes cuberotate01 {
-                            from { transform: rotateY(0);}
-                            to { transform: rotateY(360deg);}
+
+                        img {
+                            width: 100%;
                         }
-                        
-                        @keyframes cuberotate02 {
-                            from { transform: rotateZ(50deg) rotateY(360deg);}
-                            to { transform: rotateZ(50deg) rotateY(0);}
-                        }
-    
-                        @keyframes cuberotate03 {
-                            from { transform: rotateZ(-50deg) rotateY(0);}
-                            to { transform: rotateZ(-50deg) rotateY(360deg);}
-                        }
-    
-                        @keyframes cuberotate04 {
-                            from { transform: rotateX(230deg)rotateZ(230deg) rotateY(0);}
-                            to { transform: rotateX(230deg) rotateZ(230deg) rotateY(360deg);}
-                        }
-                        
-                        .cube {
-                            margin: 0 auto;
-                            @include square(80px);
-                            animation: {
-                                duration: 10s;
-                                timing-function: linear;
-                                iteration-count: infinite;
-                            }
-                            cursor: pointer;
-                            
-                            &:hover {
-                                animation-play-state: paused;
-    
-                                > div {
-                                    color: $main-color;
-                                    border-color: $main-color;
-                                    background-color: $main-color02;
-                                }                            
-                            }
-    
-                            @include responsive(pc-screens) {
-                                @include square(120px);
-                            }
-    
-                            > div {
-                                color: rgba(255, 255, 255, 0.6);
-                                border: 2px solid rgba(255, 255, 255, 0.6);
-                                background-color: $main-color;
-                                
-                                @include create_cube(80px);
-                                
-                                @include responsive(pc-screens) {
-                                    @include create_cube(120px);
-                                }
-    
-                                span {
-                                    font-size: calc(1em + 4px);
-                                    
-                                    @include responsive(pc-screens) {
-                                        font-size: 28px;
-                                    }
-                                }
-                            }
-                        } // cube
-                    } // perspective
+                    }
+
                 } // skillList
-    
-                #skillDetail {
-                    
-                    .detail-inner {
-                        @include position_center;
-                        width: 100%;
-                        padding: 0 20px;
-                        
-
-                        @include responsive(pc-M-screens) {
-                            width: 1200px;
-                        }
-
-                        .perspective {
-                            transform: translate(60px, -30px);
-                            
-                            @include responsive(pc-screens) {
-                                transform: translate(40px, 20px);
-                            }
-                            
-                            .cube {
-        
-                                > div {
-                                    color: #555;
-                                    border: 2px solid #555;
-                                    background-color: $main-color02;
-                                    
-                                    @include create_cube(80px);
-                                    
-                                    @include responsive(pc-screens) {
-                                        @include create_cube(280px);
-                                        border-width: 5px;
-                                    }
-        
-                                    & > span {
-                                        text-align: center;
-                                        font-size: calc(1em + 4px);
-                                        
-                                        @include responsive(pc-screens) {
-                                            font-size: 60px;
-                                        }
-                                        
-                                        span {
-                                            display: block;
-                                        }
-                                    }
-                                }
-                            } // cube
-                        } // perspective
-        
-                        .txt-wrap {
-                            height: 200px;
-                            border: 2px solid #555;
-                            background-color: $main-color02;
-
-                            @include responsive(tablet-screens) {
-                                height: 240px;  
-                            }
-                            
-                            @include responsive(pc-screens) {
-                                height: 280px;  
-                                border-width: 5px;
-                                margin-left: 330px;
-                            }
-                            
-                            .close {
-                                margin: 20px 20px auto auto;
-                                @include square(25px);
-
-                                transition: transform .3s;
-
-                                &:hover {
-                                    transform: rotateZ(180deg);
-                                }
-                            }
-                            
-                            .txt-inner {
-                                padding: 40px 22px 60px;
-
-                                @include responsive(tablet-screens) {
-                                    padding: 50px 60px 90px;
-                                }
-                                
-                                @include responsive(pc-screens) {
-                                    padding: 55px 100px 0;
-                                }
-                                
-                                p {
-                                    text-align: justify;
-                                    color: $main-color;
-                                    @include font_height(calc(1em - 2px));
-
-                                    @include responsive(pc-screens) {
-                                        font-size: 22px;
-                                    }
-                                }
-                            }
-                        }
-                    } // detail-inner
-                } // skillDetail
             } // skill
         } // section#skillWrap
     
@@ -1082,6 +907,7 @@ body {
                             }
                             
                             .item-area {
+                                height: 100%;
                                 
                                 @include responsive(pc-M-screens) {
                                     display: flex;
@@ -1098,8 +924,7 @@ body {
         
                                     @include responsive(pc-M-screens) {
                                         width: calc(950px / 1720px) * 100%; 
-                                        height: auto;
-                                        aspect-ratio: 95 / 105;
+                                        height: inherit;
                                     }
                                             
                                     img {
@@ -1162,7 +987,7 @@ body {
                                     }
                                     
                                     @include responsive(pc-M-screens) {
-                                        width: calc(880px / 1720px) * 100%; 
+                                        width: calc(770px / 1720px) * 100%; 
                                         padding: 65px 50px;
                                     }
 

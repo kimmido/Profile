@@ -63,44 +63,6 @@ window.onload = function() {
     }
 
 
-    
-    // ***** skill섹션 모달 기능 *****
-    // skill설명 모달창 열기
-    const skillDetail = document.getElementById("skillDetail");
-    const skillList = document.getElementById("skillList");
-    
-    skillList.onclick = function(e) {
-        if(e.target.matches(".cube")) {
-            skillDetail.classList.add("on");
-            stopScroll(true);
-        }
-    }
-    
-    // skill설명 모달창 닫기
-    const detailClose = skillDetail.querySelector(".close");
-
-    detailClose.onclick = function() {
-        skillDetail.classList.remove("on");
-        stopScroll(false);
-    }
-
-    const body = document.querySelector("body");
-    let modalPos;
-
-    function stopScroll(toggle) {
-        if(toggle) {
-            modalPos = document.documentElement.scrollTop;
-            body.classList.add("scroll-stop");
-            body.style.top = `-${modalPos}px`;
-        } else {
-            body.classList.remove("scroll-stop");
-            body.style.removeProperty("top");
-            window.scrollTo(0, modalPos);
-        }
-    }
-
-
-
     // ********** 헤더 클릭 이벤트 ********** 
     const gnbA = document.querySelectorAll(".gnb li a");
     
