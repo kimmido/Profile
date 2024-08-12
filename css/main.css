@@ -796,29 +796,40 @@ body.scroll-stop {
 #wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-con-change-box .con-change .prev:hover, #wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .img-con-change-box .con-change .next:hover {
   transform: scale(1.2);
 }
-#wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt {
+#wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitud-con {
   position: relative;
   margin-top: 50px;
+}
+@media screen and (min-width: 768px) {
+  #wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitud-con {
+    margin: 70px 40px 0;
+  }
+}
+@media screen and (min-width: 1028px) {
+  #wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitud-con {
+    margin-left: 70px;
+    margin-right: 190px;
+    width: 500px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  #wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitud-con {
+    margin-top: 140px;
+  }
+}
+#wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt {
+  margin-top: -20px;
   font-size: 1em;
   line-height: calc(1em + 10px);
 }
 @media screen and (min-width: 768px) {
   #wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt {
-    margin: 70px 40px 0;
     font-size: 18px;
   }
 }
 @media screen and (min-width: 1028px) {
   #wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt {
-    margin-left: 70px;
-    margin-right: 190px;
     font-size: 20px;
-    width: 500px;
-  }
-}
-@media screen and (min-width: 1400px) {
-  #wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt {
-    margin-top: 140px;
   }
 }
 #wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt p {
@@ -830,7 +841,7 @@ body.scroll-stop {
   bottom: 0;
   content: "";
   width: 100%;
-  height: 100%;
+  height: calc(100% + 100px);
   background-color: #2d2d2d;
   transition: height 0.4s;
 }
@@ -839,6 +850,21 @@ body.scroll-stop {
 }
 #wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitude-txt p.up::after {
   height: 0%;
+}
+#wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitud-link {
+  padding: 8px 12px;
+  margin-top: 20px;
+  color: #ff5da2;
+  border: 1px solid #ff5da2;
+  border-radius: 1000px;
+  opacity: 0;
+}
+#wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitud-link.up {
+  opacity: 1;
+}
+#wrapper main section#attitudeWrap .attitude-inner .attitude-area .attitude-flex .attitud-link:hover {
+  color: #ffffff;
+  background-color: #ff5da2;
 }
 #wrapper main section#portfolioWrap {
   padding-top: 50px;

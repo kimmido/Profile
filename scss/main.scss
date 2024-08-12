@@ -773,26 +773,38 @@ body {
                             }
                         } // img-con-change-box
     
-                        .attitude-txt {
+                        .attitud-con {
                             position: relative;
                             margin-top: 50px;
-                            @include font_height(1em);
 
                             @include responsive(tablet-screens) {
                                 margin: 70px 40px 0;
+                            }
+
+                            @include responsive(pc-screens) {
+                                margin-left: 70px;
+                                margin-right: 190px;
+                                width: 500px;
+                            }
+
+                            @include responsive(pc-L-screens) {
+                                margin-top: 140px;
+                            }
+                        }
+
+                        .attitude-txt {
+                            margin-top: -$spacer-6;
+                            
+                            @include font_height(1em);
+
+                            @include responsive(tablet-screens) {
                                 font-size: 18px;
                             }
                             
                             @include responsive(pc-screens) {
-                                margin-left: 70px;
-                                margin-right: 190px;
                                 font-size: 20px;
-                                width: 500px;
                             }
                             
-                            @include responsive(pc-L-screens) {
-                                margin-top: 140px;
-                            }
 
                             p {
                                 opacity: 0;
@@ -801,7 +813,7 @@ body {
                                     position: absolute;
                                     right: 0; bottom: 0; 
                                     content: "";
-                                    width: 100%; height: 100%;
+                                    width: 100%; height: calc(100% + 100px);
                                     background-color: $main-color-gary;
     
                                     transition: height .4s;
@@ -814,6 +826,25 @@ body {
                                         height: 0%;
                                     }
                                 }
+                            }
+                        }
+
+                        .attitud-link {
+                            padding: $spacer-3 $spacer-4;
+                            margin-top: $spacer-6;
+                            color: $point-pink;
+                            border: 1px solid $point-pink;
+                            border-radius: $radius-round;
+                            
+                            opacity: 0;
+                            
+                            &.up {
+                                opacity: 1;
+                            }
+
+                            &:hover {
+                                color: $gray-0;
+                                background-color: $point-pink;
                             }
                         }
                     }

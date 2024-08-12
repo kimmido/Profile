@@ -4,6 +4,7 @@ const attitudeImg = attitude.querySelector(".img");
 const attitudeIndex = attitude.querySelector(".index");
 const attitudeTitle = attitude.querySelector(".title h4");
 const attitudeText = attitude.querySelector(".attitude-txt p");
+const attitudeLink = attitude.querySelector(".attitud-link");
 const attitudePrev = attitude.querySelector(".prev");
 const attitudeNext = attitude.querySelector(".next");
 
@@ -39,7 +40,7 @@ function attdConChange(attitudeCounter) {
     addClassOnlyTarget([...attitudeIndex.children], attitudeCounter, "on")
     
     attitudeTitle.classList.toggle("up");
-    attitudeText.classList.toggle("up");
+    attitudeLink.classList.toggle("up");
     setTimeout(() => {
         attitudeTitle.classList.toggle("up");
         attitudeText.classList.toggle("up");
@@ -311,8 +312,10 @@ function attitudeConCover() {
     if(pos > attitude.offsetTop - (window.innerHeight * 0.2)) {
         attitudeTitle.classList.add("up");
         attitudeText.classList.add("up");
+        attitudeLink.classList.add("up");
         attitudeImg.classList.add("coverOut");
     } else {
+        attitudeLink.classList.remove("up");
         attitudeTitle.classList.remove("up");
         attitudeText.classList.remove("up");
         attitudeImg.classList.remove("coverOut");
