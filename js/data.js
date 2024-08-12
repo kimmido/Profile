@@ -15,7 +15,7 @@ $(function() {
                 
                 $('#attitudeWrap').on("click", function(e) {
                     if($(e.target).hasClass("click")) {
-                        let idx = $('#attitudeWrap .index').find('.on').index();;
+                        let idx = $('#attitudeWrap .index').find('.on').index();
                         $('#attitudeWrap .title h4').text($attitude[idx].title);
                         $('#attitudeWrap .attitude-txt p').text($attitude[idx].txt);
                         

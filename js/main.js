@@ -49,7 +49,7 @@ window.onload = function() {
         
         attitudeImg.classList.toggle("coverOut");
         setTimeout(() => {
-            attitudeImg.style.backgroundImage = `url('./images/attitude(${attitudeCounter}).png')`;
+            attitudeImg.style.backgroundImage = `url('./images/attitude/attitude(${attitudeCounter}).png')`;
             attitudeImg.classList.toggle("coverOut")
         }, 500)
     };
