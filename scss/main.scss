@@ -947,6 +947,23 @@ body {
                                         width: calc(950px / 1720px) * 100%; 
                                         height: inherit;
                                     }
+
+                                    &.preparing {
+                                        position: relative;
+
+                                        &::after {
+                                            position: absolute;
+                                            top: 0; left: 0;
+                                            width: 100%; height: 100%;
+                                            text-align: center;
+                                            align-content: center;
+                                            font-size: 30px;
+                                            font-weight: 600;
+                                            color: $gray-0;
+                                            content: '준비 중인 프로젝트입니다.';
+                                            background-color: rgba(0, 0, 0, 0.6);
+                                        }
+                                    }
                                             
                                     img {
                                         width: 100%;   

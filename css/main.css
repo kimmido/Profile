@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
 @font-face {
   font-family: "Cafe24Dongdong";
@@ -962,6 +963,23 @@ body.scroll-stop {
     width: 55.2325581395%;
     height: inherit;
   }
+}
+#wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img.preparing {
+  position: relative;
+}
+#wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img.preparing::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  align-content: center;
+  font-size: 30px;
+  font-weight: 600;
+  color: #ffffff;
+  content: "준비 중인 프로젝트입니다.";
+  background-color: rgba(0, 0, 0, 0.6);
 }
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img img {
   width: 100%;
