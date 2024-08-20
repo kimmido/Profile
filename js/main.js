@@ -180,49 +180,6 @@ const portfolioItem = portfolio.querySelectorAll(".item-wrap");
 })();
 
 
-(function portfolioImgMove() {
-    const portfolioImgWrap = document.querySelectorAll("#portfolioWrap .item-img")
-    const portfolioImgWidth = portfolioImgWrap[0].offsetWidth;
-
-    let portfolioImg;
-    let imgBox;
-    let moveLeft;
-    let moveRight;
-    
-    portfolioImgWrap.forEach(imgWrap => {
-        portfolioImg = imgWrap.querySelectorAll("img")
-        
-        if(portfolioImg.length > 1) {
-            imgBox = imgWrap.querySelector(".flex-box");
-            moveLeft = imgWrap.querySelector(".left");
-            moveRight = imgWrap.querySelector(".right");
-            
-            moveLeft.addEventListener("click", function() {
-                slideMove(imgBox, "plus", portfolioImgWidth)
-            })
-            
-            moveRight.addEventListener("click", function() {
-                slideMove(imgBox, "minus", portfolioImgWidth)
-            })
-        }
-    });
-    
-    let move = 0;
-    
-    function slideMove(moveElement, calc, moveValue) {
-        if(calc == "plus") {
-            move += moveValue
-            if(move > 0) { move = 0; } 
-        }
-        if(calc == "minus") {
-            move -= moveValue
-            if(move <= -moveElement.offsetWidth) { move = -moveElement.offsetWidth + moveValue; } 
-        }
-        moveElement.style.marginLeft = `${move}px`;
-    }
-})();
-
-
 
 // ***** footer 이메일 마우스 이벤트 *****
 (function contactImgEvent() {
