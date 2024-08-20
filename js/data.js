@@ -1,6 +1,6 @@
 $(function() {
     $.ajax({
-        url: "https://kimmido.github.io/data/profile.json",
+        url: "https://kimmido.github.io/Profile/data/profile.json",
         dataType: "json",
         success: function(data) {
             const $attitude = data.attitude;

@@ -8,8 +8,33 @@
     "portfolio": [
         {
             "idx" : 1,
+            "state": "완료",
             "title": "리움미술관",
-            "sub-title": "Renewal page"
+            "sub-title": "Renewal page",
+            "contents": [
+                { "th": "기여도", "td": "30% (조별 프로젝트)" },
+                { "th": "담당 영역", "td": "미술관 소개, 관람안내, 멤버쉽, 오시는길,<br>보존연구 메인, 재질별 보존처리, 보존처리 사레" },
+                { "th": "담당 영역", "td": "기존 리움 미술관 홈페이지의 문제점을 파악하고 개선하여 리뉴얼 페이지를 제작하였습니다. 미술관의 정적이고 지루한 이미지를 탈피하고자 다양한 레이아웃과 인터렉티브한 요소들을 구현해 사용자의 흥미를 이끌어내고자 하였습니다." },
+                { "th": "TOOL", "td": "HTML, SASS, Javascript, JQuery, Photoshop, Illustrator" }
+            ],
+            "link": [
+                {
+                    "href": "./works/pages/Leeum/plan.pdf#page=1",
+                    "text": "Plan"
+                },
+                {
+                    "href": "./works/design-guide/leeum.html",
+                    "text": "Design"
+                },
+                {
+                    "href": "https://github.com/kimmido/Leeum.git",
+                    "text": "Git"
+                },
+                {
+                    "href": "https://kimmido.github.io/Leeum/",
+                    "text": "Website"
+                }
+            ]
         }
     ]
 }
