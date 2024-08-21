@@ -32,12 +32,18 @@ $gray-80: #2d2d2d; // text-title
 $gray-90: #1d1d1d;
 $gray-100: #000000;
 
-$overlay: rgba(0, 0, 0, 0.45);
 
 $main-color-gary: $gray-80;
 $main-color-beige: #e3e0dd;
 $point-pink: #ff5da2;
 $point-neon: #ddff0d;
+
+$overlay: rgba(0, 0, 0, 0.45);
+
+$shadow-text: 0px 5px 5px rgba(0, 0, 0, 0.3);
+$shadow-skill: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+$shadow-md: 0 0px 20px rgba(0, 0, 0, .09);
+$shadow-lg: 0 7px 40px 4px rgba(0, 0, 0, 0.2);
 
 // font
 $main-font: Pretendard;

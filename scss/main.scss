@@ -281,7 +281,7 @@ body {
                         
                         a {
                             padding: 5px;
-                            text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+                            text-shadow: $shadow-text;
                             span {
                                 font-size: 24px;
                             }
@@ -561,7 +561,7 @@ body {
                                     font-size: $font-size-body-xsm;
                                     color: $gray-70;
                                     border-radius: $radius-square;
-                                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+                                    box-shadow: $shadow-skill;
                                     
                                     @include responsive(pc-screens) {
                                         font-size: $font-size-body-sm;
@@ -902,7 +902,7 @@ body {
                         &.up {
                             
                             .item-inner {
-                                box-shadow: 0 7px 40px 4px rgba(0, 0, 0, 0.2);
+                                box-shadow: $shadow-lg;
                                 transform: rotateX(0) translateZ(0) translateY(0);
                             }
                         }
@@ -980,37 +980,6 @@ body {
                                             
                                         }
                                     }
-
-                                    .move-btn {
-                                        position: absolute;
-                                        left: 0; top: 50%;
-                                        transform: translateY(-50%);
-                                        display: flex;
-                                        justify-content: space-between;
-                                        width: 100%;
-                                        padding: 0 10px;
-
-                                        button {
-                                            display: block;
-                                            width: 30px;
-
-                                            transition: width .3s;
-
-                                            &.left {
-                                                transform: rotateZ(90deg);
-                                                filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.3));
-                                            }
-                                            
-                                            &.right {
-                                                transform: rotateZ(-90deg);
-                                                filter: drop-shadow(-2px 0 2px rgba(0, 0, 0, 0.3));
-                                            }
-
-                                            &:hover {
-                                                width: 40px;
-                                            }
-                                        }
-                                    }
                                 } // item-img
                                 
                                 .item-con {
@@ -1018,7 +987,8 @@ body {
                                     flex-direction: column;
                                     position: relative;
                                     padding: 50px 20px 50px;
-        
+                                    box-shadow: $shadow-md;
+                                    
                                     @include responsive(tablet-screens) {
                                         padding-left: 60px;
                                         padding-right: 60px;

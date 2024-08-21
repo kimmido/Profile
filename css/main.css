@@ -992,37 +992,12 @@ body.scroll-stop {
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .flex-box li {
   width: 11.1111111111%;
 }
-#wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .move-btn {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 10px;
-}
-#wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .move-btn button {
-  display: block;
-  width: 30px;
-  transition: width 0.3s;
-}
-#wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .move-btn button.left {
-  transform: rotateZ(90deg);
-  filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.3));
-}
-#wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .move-btn button.right {
-  transform: rotateZ(-90deg);
-  filter: drop-shadow(-2px 0 2px rgba(0, 0, 0, 0.3));
-}
-#wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-img .move-btn button:hover {
-  width: 40px;
-}
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con {
   display: flex;
   flex-direction: column;
   position: relative;
   padding: 50px 20px 50px;
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.09);
 }
 @media screen and (min-width: 768px) {
   #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con {
