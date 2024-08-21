@@ -14,7 +14,7 @@
             "contents": [
                 { 
                     "th": "기여도", 
-                    "td": "30% (조별 프로젝트)" 
+                    "td": "30% (4인 프로젝트)" 
                 },
                 { 
                     "th": "담당 영역", 
@@ -43,13 +43,17 @@
                     "text": "Git"
                 },
                 {
+                    "href": "https://kimmido.github.io/Leeum/sub/collect/collect_conserve_case.html",
+                    "text": "Website(슬라이더)"
+                },
+                {
                     "href": "https://kimmido.github.io/Leeum/",
-                    "text": "Website"
+                    "text": "Website(메인)"
                 }
             ]
         },
         {
-            "idx" : 1,
+            "idx" : 2,
             "state": "완료",
             "title": "CRC 로봇카페",
             "sub-title": "Mobile website",
@@ -69,6 +73,44 @@
                 { 
                     "th": "TOOL", 
                     "td": "HTML, CSS, Javascript, Photoshop, Illustrator" 
+                }
+            ],
+            "link": [
+                {
+                    "href": "https://rbrb5016.cafe24.com/profile/works/pages/Crc/plan.pdf#page=1",
+                    "text": "Plan"
+                },
+                {
+                    "href": "http://www.rif.cafe/",
+                    "text": "Website1"
+                },
+                {
+                    "href": "https://rbrb5016.cafe24.com/crc_test/loading.html",
+                    "text": "Website2"
+                }
+            ]
+        },
+        {
+            "idx" : 3,
+            "state": "미완료",
+            "title": "We-Map",
+            "sub-title": "Mobile website",
+            "contents": [
+                { 
+                    "th": "기여도", 
+                    "td": "100% (개인 프로젝트)" 
+                },
+                { 
+                    "th": "구성", 
+                    "td": "지도, 목록 리스트, 장소 리스트, 장소 검색, 장소 상세" 
+                },
+                { 
+                    "th": "소개", 
+                    "td": "친구들과 함께 마음에 드는 장소를 저장하고 리뷰를 공유하는 사이트 입니다. 친구들의 리뷰를 모아보면 재미있겠다는 마음과 신뢰하는 사람들의 리뷰만 보고 싶다는 마음으로 개발하게 되었습니다." 
+                },
+                { 
+                    "th": "TOOL", 
+                    "td": "React" 
                 }
             ],
             "link": [
