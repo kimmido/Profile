@@ -21,6 +21,11 @@ body {
 }
 @media screen and (min-width: 768px) {
   body {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  body {
     font-size: 19px;
   }
 }
@@ -330,14 +335,6 @@ body.scroll-stop {
 #wrapper main {
   word-break: keep-all;
 }
-#wrapper main .index-wrap > h3 {
-  font-size: 20px;
-}
-@media screen and (min-width: 1028px) {
-  #wrapper main .index-wrap > h3 {
-    font-size: 24px;
-  }
-}
 #wrapper main section#homeWrap {
   position: relative;
   background-color: #2d2d2d;
@@ -545,13 +542,13 @@ body.scroll-stop {
   margin-top: 8px;
   margin-left: 8px;
   padding-left: 12px;
+  font-size: calc(1em - 2px);
 }
 @media screen and (min-width: 1028px) {
   #wrapper main section#aboutWrap .about .about-flex .about-con .about-txt li {
     margin-top: 12px;
     margin-left: 16px;
     padding-left: 12px;
-    font-size: 15px;
   }
 }
 #wrapper main section#aboutWrap .about .about-flex .about-con .about-txt li::before {
@@ -975,7 +972,7 @@ body.scroll-stop {
   height: 100%;
   text-align: center;
   align-content: center;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 600;
   color: #ffffff;
   content: "준비 중인 프로젝트입니다.";
@@ -996,24 +993,23 @@ body.scroll-stop {
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 50px 20px 50px;
+  padding: 48px 20px;
   box-shadow: 0 0px 20px rgba(0, 0, 0, 0.09);
 }
 @media screen and (min-width: 768px) {
   #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding: 48px;
   }
 }
 @media screen and (min-width: 1200px) {
   #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con {
     width: 44.7674418605%;
-    padding: 65px 50px;
+    padding: 6% 4%;
   }
 }
 @media screen and (min-width: 1400px) {
   #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con {
-    padding: 100px 150px 0 100px;
+    padding-right: 6%;
   }
 }
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .index-wrap {
@@ -1033,7 +1029,7 @@ body.scroll-stop {
 @media screen and (min-width: 1200px) {
   #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .index-wrap h3 {
     display: block;
-    font-size: 20px;
+    font-size: calc(1em + 2px);
   }
 }
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .index-wrap .index {
@@ -1065,11 +1061,11 @@ body.scroll-stop {
   background-color: #ddff0d;
 }
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .index-wrap .index span {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
 }
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .index-wrap .index span + span {
-  margin-left: 14px;
+  margin-left: 12px;
 }
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .index-wrap .index span.on {
   background-color: #2d2d2d;
@@ -1102,7 +1098,7 @@ body.scroll-stop {
 }
 @media screen and (min-width: 1200px) {
   #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .title-text-link .title-box strong {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .title-text-link .title-box span {
@@ -1127,11 +1123,6 @@ body.scroll-stop {
   display: flex;
   font-size: 1em;
   line-height: calc(1em + 10px);
-}
-@media screen and (min-width: 768px) {
-  #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .title-text-link .text-box p, #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .title-text-link .text-box li {
-    font-size: 18px;
-  }
 }
 #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .title-text-link .text-box p + li, #wrapper main section#portfolioWrap .portfolio-area ul.portfolio-list li.item-wrap .item-inner .item-area .item-con .title-text-link .text-box li + li {
   margin-top: 10px;
@@ -1246,7 +1237,7 @@ body.scroll-stop {
   display: block;
 }
 #wrapper footer .footer-inner .txt-wrap p {
-  font-size: 16px;
+  font-size: 15px;
 }
 @media screen and (min-width: 1028px) {
   #wrapper footer .footer-inner .txt-wrap p {
@@ -1315,9 +1306,4 @@ body.scroll-stop {
 #wrapper footer .footer-inner .copyright span {
   font-weight: lighter;
   font-size: calc(1em - 2px);
-}
-@media screen and (min-width: 1028px) {
-  #wrapper footer .footer-inner .copyright span {
-    font-size: 16px;
-  }
 }/*# sourceMappingURL=main.css.map */

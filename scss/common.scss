@@ -28,6 +28,10 @@ body {
     }
     
     @include responsive(tablet-screens) {
+        font-size: $font-size-body-md;
+    }
+
+    @include responsive(pc-L-screens) {
         font-size: $font-size-body-lg;
     }
 }

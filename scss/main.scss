@@ -294,17 +294,10 @@ body {
     
     
     
-    
+
     
     main {
-        // overflow: hidden;
         word-break: keep-all;
-    
-        .index-wrap > h3 {
-            font-size: 20px;
-        
-            @include responsive(pc-screens) { font-size: 24px; }
-        }
     
         section#homeWrap {
             position: relative;
@@ -529,13 +522,12 @@ body {
                                 margin-top: $spacer-3;
                                 margin-left: $spacer-3;
                                 padding-left: $spacer-4;
+                                font-size: calc(1em - 2px);
                                 
                                 @include responsive(pc-screens) {
                                     margin-top: $spacer-4;
                                     margin-left: $spacer-5;
                                     padding-left: $spacer-4;
-                                    font-size: $font-size-body-sm;
-                                    
                                 }
 
                                 &::before {
@@ -957,7 +949,7 @@ body {
                                             width: 100%; height: 100%;
                                             text-align: center;
                                             align-content: center;
-                                            font-size: 30px;
+                                            font-size: $font-size-pc-strong;
                                             font-weight: 600;
                                             color: $gray-0;
                                             content: '준비 중인 프로젝트입니다.';
@@ -986,21 +978,20 @@ body {
                                     display: flex;
                                     flex-direction: column;
                                     position: relative;
-                                    padding: 50px 20px 50px;
+                                    padding: $spacer-10 $spacer-6;
                                     box-shadow: $shadow-md;
                                     
                                     @include responsive(tablet-screens) {
-                                        padding-left: 60px;
-                                        padding-right: 60px;
+                                        padding: $spacer-10;
                                     }
                                     
                                     @include responsive(pc-M-screens) {
                                         width: calc(770px / 1720px) * 100%; 
-                                        padding: 65px 50px;
+                                        padding: 6% 4%;
                                     }
 
                                     @include responsive(pc-L-screens) {
-                                        padding: 100px 150px 0 100px;
+                                        padding-right: 6%;
                                     }
             
                                     .index-wrap {
@@ -1018,11 +1009,7 @@ body {
                                             
                                             @include responsive(pc-M-screens) {
                                                 display: block;
-                                                font-size: 20px;
-                                            }
-                                            
-                                            @include responsive(pc2-screens) {
-                                                font-size: 24px;
+                                                font-size: calc(1em + 2px);
                                             }
                                         }
         
@@ -1030,10 +1017,10 @@ body {
                                             @include index();
                                             
                                             span {
-                                                @include square(12px);
+                                                @include square(10px);
         
                                                 & + span {
-                                                    margin-left: 14px;
+                                                    margin-left: $spacer-4;
                                                 }
         
                                                 &.on {
@@ -1067,7 +1054,7 @@ body {
                                                 font-size: calc(1em + 6px);
                                                 
                                                 @include responsive(pc-M-screens) {
-                                                    font-size: 30px;
+                                                    font-size: $font-size-pc-strong;
                                                 }
                                             }
                                             
@@ -1092,10 +1079,6 @@ body {
                                             p, li {
                                                 display: flex;
                                                 @include font_height(1em);
-        
-                                                @include responsive(tablet-screens) {
-                                                    font-size: 18px;
-                                                }
                                                 
                                                 & + li {
                                                     margin-top: 10px;
@@ -1103,10 +1086,6 @@ body {
                                                     @include responsive(tablet-screens) {
                                                         margin-top: 20px;
                                                     }
-        
-                                                    // @include responsive(pc-M-screens) {
-                                                    //     margin-top: 25px;
-                                                    // }
                                                 }
         
                                                 b {
@@ -1229,7 +1208,7 @@ body {
                 }
 
                 p {
-                    font-size: 16px;
+                    font-size: $font-size-body-sm;
                     
                     @include responsive(pc-screens) {
                         font-size: 26px;
@@ -1293,10 +1272,6 @@ body {
                 span {
                     font-weight: lighter;
                     font-size: calc(1em - 2px);
-                    
-                    @include responsive(pc-screens) {
-                        font-size: 16px;
-                    }
                 }
             } // copyright
         } // footer-inner
