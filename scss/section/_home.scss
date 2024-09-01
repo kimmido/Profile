@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+section#homeWrap {
+    position: relative;
+    background-color: $main-color-gary;
+    
+    transition: opacity .15s ease-out;
+    
+    @include responsive(pc-screens) {
+        cursor: none;
+    }
+
+
+    .home {
+        position: relative;
+        
+        .background-bk, .background-neon {
+            width: 100vw; 
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .home-txt {
+            padding-top: 145px;
+
+            @include responsive(pc-screens) {
+                padding-top: 220px;
+            }
+
+            > span {
+                font-size: 24px;
+                
+                @include responsive(tablet-screens) {
+                    font-size: 30px;
+                }
+
+                @include responsive(pc-screens) {
+                    font-size: 40px;
+                }
+                
+                strong {
+                    font-size: 30px;
+
+                    @include responsive(tablet-screens) {
+                        font-size: calc(1em + 20px);
+                    }
+
+                    .point-txt {
+                        color: $point-pink;
+                    }
+                }
+            }
+        }
+
+        .home-img {
+            width: calc(322px/ 390px) * 100%;
+            margin: {
+                top: 80px;
+                left: auto;
+                right: calc(90px/ 390px) * -100%;
+            }
+            
+            @include responsive(pc-screens) {
+                width: calc(757px / 1920px) * 100%;
+                margin: {
+                    top: -25px;
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+        
+        .mouse-pointer {
+            display: none;
+            position: absolute;
+            top: -240px;
+            @include square(240px);
+            overflow: hidden;
+            border-radius: 50%;
+            transform: scale(0);
+            
+            transition: transform .3s;
+
+            &.scale {
+                transform: scale(1);
+            }
+
+            @include responsive(pc-screens) {
+                display: block;
+            }
+            
+            .background-neon {
+                position: absolute;
+                background-color: $point-neon;
+
+                .home-box {
+                    position: relative;
+                    height: 100vh;
+                    
+                    .home-txt,
+                    .hidden-txt {
+                        color: $main-color-gary;
+                    }
+
+                    .hidden-txt {
+                        position: absolute;
+                        left: calc(330px / 1380px) * 100%;
+                        top: calc(620px / 1380px) * 100%;
+                        font-family: $point-font;
+                    }
+
+                    .hidden-arrow {
+                        position: absolute;
+                        left: 50%; bottom: 27px;
+                        transform: translateX(-50%);
+                        width: calc(95px / 1380px) * 100%;
+                    }
+                }
+            }
+        }
+    } // home
+} // section#homeWrap

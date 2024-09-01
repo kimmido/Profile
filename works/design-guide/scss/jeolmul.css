@@ -1,0 +1,461 @@
+@import url("https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+@import url("https://webfontworld.github.io/kopus/KoPubWorldBatang.css");
+@font-face {
+  font-family: "GangwonEdu_OTFBoldA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff") format("woff");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cafe24Dongdong";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  letter-spacing: -0.04em;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media screen and (min-width: 1028px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+.title span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #adadad;
+}
+.title h2 {
+  margin-left: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #adadad;
+}
+
+section {
+  margin-top: 250px;
+}
+
+input, textarea, button, select, pre {
+  font-family: inherit;
+  letter-spacing: -0.04em;
+}
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+ul, ol {
+  list-style: none;
+  -webkit-padding-start: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+}
+
+address {
+  font-style: normal;
+}
+
+button {
+  border: 0;
+  background: transparent;
+}
+
+section > h2 {
+  display: none;
+}
+
+header, main, footer {
+  display: block;
+}
+
+header {
+  width: 100%;
+  height: 300px;
+  background-color: #e3e0dd;
+}
+@media screen and (min-width: 1028px) {
+  header {
+    height: 500px;
+  }
+}
+header .close-wrap {
+  position: fixed;
+  right: 20px;
+  top: 34px;
+  z-index: 90;
+}
+@media screen and (min-width: 1028px) {
+  header .close-wrap {
+    right: 50px;
+    top: 50px;
+  }
+}
+header .close-wrap a {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #ebe4dd;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 1028px) {
+  header .close-wrap a {
+    width: 35px;
+    height: 35px;
+  }
+}
+header .close-wrap a .close-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+header .close-wrap a .close-box span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+}
+header .close-wrap a .close-box span:first-child {
+  transform: translateX(-50%) translateY(-1px) rotateZ(45deg);
+}
+header .close-wrap a .close-box span:last-child {
+  transform: translateX(-50%) translateY(-1px) rotateZ(-45deg);
+}
+header .close-wrap a:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.2) 0 5px 8px;
+  background-color: #9c8c7e;
+}
+header .close-wrap a:hover .close-box span {
+  background-color: #fff;
+}
+header .title-box {
+  text-align: center;
+  padding-top: 10vh;
+}
+@media screen and (min-width: 1028px) {
+  header .title-box {
+    padding-top: 100px;
+  }
+}
+header .title-box h1 {
+  font-size: 30px;
+  font-weight: 900;
+}
+@media screen and (min-width: 768px) {
+  header .title-box h1 {
+    font-size: 50px;
+  }
+}
+header .title-box h2 {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+}
+@media screen and (min-width: 1028px) {
+  header .title-box h2 {
+    font-size: 30px;
+  }
+}
+header .site-img-box {
+  position: relative;
+  margin-top: 30px;
+}
+@media screen and (min-width: 1028px) {
+  header .site-img-box {
+    margin-top: 70px;
+  }
+}
+header .site-img-box .pc-device {
+  background-size: cover;
+}
+@media screen and (min-width: 1028px) {
+  header .site-img-box .pc-device {
+    margin: 0 auto;
+    width: 900px;
+  }
+}
+header .site-img-box .pc-device img {
+  width: 100%;
+}
+header .site-img-box .mobile-device {
+  position: absolute;
+  right: -10px;
+  bottom: -30px;
+  width: 25%;
+  aspect-ratio: 9/18.5;
+}
+@media screen and (min-width: 1028px) {
+  header .site-img-box .mobile-device {
+    right: 10%;
+    width: 15%;
+  }
+}
+header .site-img-box .mobile-device img {
+  width: 100%;
+}
+header .link-box {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+header .link-box a {
+  width: 100px;
+  text-align: center;
+  padding: 10px 5px;
+  font-weight: 500;
+  border-radius: 50px;
+  background: #c2b7ad;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 1028px) {
+  header .link-box a {
+    width: 150px;
+    padding: 15px 10px;
+    font-size: 24px;
+  }
+}
+header .link-box a + a {
+  margin-left: 20px;
+}
+@media screen and (min-width: 1028px) {
+  header .link-box a + a {
+    margin-left: 30px;
+  }
+}
+header .link-box a:hover {
+  transform: scale(0.9);
+  background-color: #837264;
+}
+
+main {
+  margin-top: 300px;
+}
+@media screen and (min-width: 768px) {
+  main {
+    margin-top: 500px;
+  }
+}
+main section.design-strategy .strategy-txt {
+  word-break: keep-all;
+  margin: 60px 100px 0;
+  line-height: 34px;
+}
+@media screen and (min-width: 1028px) {
+  main section.color-font-wrap .color-font-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1028px) {
+  main section.color-font-wrap .color-font-flex .flex-item:first-child {
+    width: 45%;
+  }
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list {
+  margin-top: 50px;
+  margin-left: 50px;
+  display: flex;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li + li {
+  margin-left: 20px;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li:nth-child(1) div.color-chip {
+  background-color: #9c8c7e;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li:nth-child(1) span.color {
+  color: #9c8c7e;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li:nth-child(2) div.color-chip {
+  background-color: #c2b7ad;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li:nth-child(2) span.color {
+  color: #c2b7ad;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li:nth-child(3) div.color-chip {
+  background-color: #ebe4dd;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li:nth-child(3) span.color {
+  color: #ebe4dd;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li div.color-chip {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .color-wrap .color-list li span.color {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap {
+  margin-top: 120px;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 {
+  margin-top: 60px;
+  margin-left: 50px;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 strong, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 strong {
+  font-size: 30px;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list {
+  margin-top: 30px;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li {
+  margin-top: 7px;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li:first-child, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:first-child {
+  font-weight: 900;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li:nth-child(2), main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:nth-child(2) {
+  font-weight: 600;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li:nth-child(3), main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:nth-child(3) {
+  font-weight: 400;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap > .font1 ul.font-list li:last-child, main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 ul.font-list li:last-child {
+  font-weight: 100;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font1 {
+  font-family: "GangwonEdu_OTFBoldA";
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font1 strong {
+  font-size: 36px;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font1 li {
+  font-size: 22px;
+}
+main section.color-font-wrap .color-font-flex .flex-item:first-child .font-wrap .font2 {
+  font-family: NanumSquareRound;
+}
+main section.color-font-wrap .color-font-flex .flex-item:last-child {
+  display: none;
+}
+@media screen and (min-width: 1028px) {
+  main section.color-font-wrap .color-font-flex .flex-item:last-child {
+    display: block;
+    width: 55%;
+  }
+}
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img {
+  margin-top: 70px;
+}
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li {
+  width: 40.1069518717%;
+  aspect-ratio: 12/13;
+  margin-left: auto;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+}
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li + li {
+  margin-top: -18.7165775401%;
+}
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li:nth-child(2) {
+  margin-right: 18.7165775401%;
+}
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li:nth-child(3) {
+  margin-right: 37.4331550802%;
+}
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li:last-child {
+  margin-top: -68.1818181818%;
+  margin-right: 66.8449197861%;
+}
+main section.color-font-wrap .color-font-flex .flex-item:last-child ul.color-font-img li img {
+  width: 100%;
+}
+main section.wireframe-grid-wrap .button-box {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin: 80px auto 0;
+  overflow: hidden;
+  border-radius: 50px;
+}
+main section.wireframe-grid-wrap .button-box > button {
+  width: 50%;
+  padding: 15px 0;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  color: #c5c5c5;
+  background-color: #f1f1f1;
+}
+main section.wireframe-grid-wrap .button-box > button:hover, main section.wireframe-grid-wrap .button-box > button:focus, main section.wireframe-grid-wrap .button-box > button.on {
+  color: #ffffff;
+  background-color: #9c8c7e;
+}
+main section.wireframe-grid-wrap .wireframe-grid-inner {
+  margin-left: 40px;
+}
+main section.wireframe-grid-wrap .wireframe-grid-inner .wireframe-grid-flex {
+  margin-top: 100px;
+  display: flex;
+}
+main section.wireframe-grid-wrap .wireframe-grid-inner .wireframe-grid-flex table {
+  width: 20%;
+  height: 500px;
+  border-radius: 5px;
+}
+main section.wireframe-grid-wrap .wireframe-grid-inner .wireframe-grid-flex table th, main section.wireframe-grid-wrap .wireframe-grid-inner .wireframe-grid-flex table td {
+  text-align: center;
+  padding: 15px 30px;
+  font-size: 24px;
+}
+main section.wireframe-grid-wrap .wireframe-grid-inner .wireframe-grid-flex table th {
+  font-weight: 100;
+}
+main section.wireframe-grid-wrap .wireframe-grid-inner .wireframe-grid-flex table td {
+  font-weight: 600;
+}
+main section.wireframe-grid-wrap .wireframe-grid-inner .wireframe-grid-flex .wireframe-grid-img {
+  width: 80%;
+}
+main section.wireframe-grid-wrap .wireframe-grid-inner .wireframe-grid-flex .wireframe-grid-img img {
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+}
+main section.page-wrap .page-img {
+  margin-top: 100px;
+}
+main section.page-wrap .page-img img {
+  width: 100%;
+}/*# sourceMappingURL=jeolmul.css.map */
