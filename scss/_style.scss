@@ -32,11 +32,16 @@ $gray-80: #2d2d2d; // text-title
 $gray-90: #1d1d1d;
 $gray-100: #000000;
 
-
+// main-color
 $main-color-gary: $gray-80;
 $main-color-beige: #e3e0dd;
 $point-pink: #ff5da2;
 $point-neon: #ddff0d;
+
+// text-color
+$text-color-title: $gray-80;
+$text-color-body: $gray-70;
+$text-color-light: $gray-50;
 
 $overlay: rgba(0, 0, 0, 0.45);
 
