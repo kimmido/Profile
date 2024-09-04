@@ -10,7 +10,7 @@ async function renderPortfolio() {
                 <li class="item-wrap">
                     <div class="item-inner">
                         <div class="item-area">
-                            <div class="item-img">
+                            <div class="item-img ${item.state || 'preparing'}">
                                 <img src="https://kimmido.github.io/Profile/images/projects/portfolio_${item.img_name}.png" alt="포트폴리오${item.idx}">
                             </div>
                             <div class="item-con">

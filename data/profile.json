@@ -8,7 +8,7 @@
     "portfolio": [
         {
             "idx" : 1,
-            "state": "완료",
+            "ready": true,
             "title": "리움미술관",
             "img_name": "leeum",
             "introduce": "기존 리움 미술관 사이트의 문제점을 개선하고 다양한 레이아웃과 인터렉티브한 기능들로 사용자의 흥미를 이끌어내고자 리뉴얼 하였습니다.",
@@ -55,7 +55,7 @@
         },
         {
             "idx" : 2,
-            "state": "완료",
+            "ready": true,
             "title": "CRC 로봇카페",
             "img_name": "crc",
             "introduce": "'CRC 로봇카페'는 로봇 팔이 음료를 제조해주는 테이크아웃 전문 카페입니다. 음료 주문을 위한 모바일 웹사이트의 디자인과 퍼블리싱을 맡았습니다.",
@@ -90,10 +90,10 @@
         },
         {
             "idx" : 3,
-            "state": "미완료",
+            "ready": false,
             "title": "We-Map",
             "img_name": "we_map",
-            "introduce": "친구들과 함께 마음에 드는 장소를 저장하고 리뷰를 공유하는 사이트 입니다. 친구들의 리뷰를 모아보면 재미있겠다는 마음과 신뢰하는 사람들의 리뷰만 보고 싶다는 마음으로 개발하게 되었습니다.",
+            "introduce": "친구들과 함께 마음에 드는 장소를 저장하고 리뷰를 공유하는 사이트 입니다. useReduce를 이용한 상태관리, 컴포넌트 구조, 비동기처리에 대해 고심하며 작업하였습니다.",
             "contents": [
                 { 
                     "th": "기여도", 
@@ -121,7 +121,7 @@
         },
         {
             "idx" : 4,
-            "state": "완료",
+            "ready": true,
             "title": "절물자연휴양림",
             "img_name": "jeolmul",
             "introduce": "친구들과 함께 마",
@@ -156,7 +156,7 @@
         },
         {
             "idx" : 5,
-            "state": "완료",
+            "ready": true,
             "title": "TodoList",
             "img_name": "todo_list",
             "introduce": "친구들과 함께 마",
@@ -183,7 +183,7 @@
         },
         {
             "idx" : 6,
-            "state": "완료",
+            "ready": true,
             "title": "고양이 상점",
             "img_name": "cat_store",
             "introduce": "친구들과 함께 마",
