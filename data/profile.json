@@ -124,7 +124,7 @@
             "ready": true,
             "title": "절물자연휴양림",
             "img_name": "jeolmul",
-            "introduce": "친구들과 함께 마",
+            "introduce": "처음으로 혼자 제작한 웹페이지입니다. 시맨틱 태그를 학습하였고 애니메이션 효과에 흥미를 느끼게 된 프로젝트입니다.",
             "contents": [
                 { 
                     "th": "기여도", 
@@ -159,10 +159,10 @@
             "ready": true,
             "title": "TodoList",
             "img_name": "todo_list",
-            "introduce": "친구들과 함께 마",
+            "introduce": "react의 기본 todoList 페이지를 제작하였습니다. react의 동작방식과 컴포넌트 기본구조를 학습할 수 있었습니다.",
             "contents": [
                 { 
-                    "th": "기여도", 
+                    "th": "기여도",
                     "td": "100% (개인 프로젝트)" 
                 },
                 { 
@@ -186,8 +186,8 @@
             "ready": true,
             "title": "고양이 상점",
             "img_name": "cat_store",
-            "introduce": "친구들과 함께 마",
-            "contents": [
+            "introduce": "자바스크립트 공부를 위해 계산 기능을 가진 웹페이지를 제작하였습니다. 재미 요소를 추가하고자 직접 드로잉한 이미지를 활용하였습니다.",
+            "contents": [ 
                 { 
                     "th": "기여도", 
                     "td": "100% (개인 프로젝트)" 
