@@ -8,11 +8,11 @@ async function renderPortfolio() {
         let portfolioItem = '';
 
         data.forEach(item => {
-            portfolioItem = `
+            portfolioItem += `
                 <div class="item-inner">
                     <div class="item-area">
                         <div class="item-img">
-                            <img src="https://kimmido.github.io/Profile/images/projects/portfolio_${item.img-name}.png" alt="포트폴리오${item.idx}">
+                            <img src="https://kimmido.github.io/Profile/images/projects/portfolio_${item.img_name}.png" alt="포트폴리오${item.idx}">
                         </div>
                         <div class="item-con">
                             <div class="index-wrap">
