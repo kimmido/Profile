@@ -231,6 +231,10 @@ section#portfolioWrap {
                                         margin-top: 30px;
                                     }
 
+                                    table {
+                                        width: 100%;
+                                    }
+                                    
                                     tr {
                                         display: flex;
                                         @include font_height(1em);
