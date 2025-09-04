@@ -1,0 +1,328 @@
+@charset "utf-8";
+
+section#portfolioWrap {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+    @include responsive(tablet-screens) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @include responsive(pc-screens) {
+        padding: 80px calc(100px / 1920px) * 100%;
+    }
+    
+    
+    .portfolio-area {
+
+        > h3 {
+            display: none;
+            @include position_center();
+            position: fixed;
+            font-size: 100px;
+            z-index: -1;
+            color: rgba(255, 255, 255, 0.6);
+
+            @include responsive(tablet-screens) {
+                font-size: 140px;
+            }
+
+            @include responsive(pc-screens) {
+                font-size: 200px;
+            }
+        }
+
+        ul.portfolio-list {
+            
+            li.item-wrap {
+                perspective: 2000px;
+                
+                margin-top: 100px;
+                
+                @include responsive(pc-screens) {
+                    margin-top: 112px;
+                }
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                &.up {
+                    
+                    .item-inner {
+                        box-shadow: $shadow-lg;
+                        transform: rotateX(0) translateZ(0) translateY(0);
+                    }
+                }
+                
+                .item-inner {
+                    width: 100%;
+                    overflow: hidden;
+                    border-radius: 30px;
+                    background-color: #fff;
+                    transform: rotateX(30deg) translateZ(-400px) translateY(180px);
+                    
+                    transition: {
+                        property: box-shadow, transform;
+                        delay : 1s, 0;
+                        duration : 1s, 1s;
+                    }
+                    
+                    @include responsive(pc-M-screens) {
+                        margin: 0 auto;
+                        aspect-ratio: 16 / 9;
+                        border-radius: 50px;
+                        transform: rotateX(30deg) translateZ(-400px) translateY(400px);
+                    }
+                    
+                    .item-area {
+                        height: 100%;
+                        
+                        @include responsive(pc-M-screens) {
+                            display: flex;
+                        }
+                        
+                        .item-img {
+                            position: relative;
+                            width: 100%; height: 330px;
+                            overflow: hidden;
+                           
+                            @include responsive(tablet-screens) {
+                                height: 600px;
+                            }
+
+                            @include responsive(pc-M-screens) {
+                                width: calc(950px / 1720px) * 100%; 
+                                height: inherit;
+                            }
+
+                            &.preparing {
+                                position: relative;
+
+                                &::after {
+                                    position: absolute;
+                                    top: 0; left: 0;
+                                    width: 100%; height: 100%;
+                                    text-align: center;
+                                    align-content: center;
+                                    font-size: $font-size-pc-strong;
+                                    font-weight: 600;
+                                    color: $gray-0;
+                                    content: '준비 중인 프로젝트입니다.';
+                                    background-color: rgba(0, 0, 0, 0.6);
+                                }
+                            }
+                                    
+                            img {
+                                width: 100%;   
+                            }
+                            
+                            .flex-box {
+                                display: flex;
+                                width: 100% * 9;
+
+                                transition: margin 0.5s linear;
+                                
+                                li {
+                                    width: calc(1 / 9) * 100%;
+                                    
+                                }
+                            }
+                        } // item-img
+                        
+                        .item-con {
+                            display: flex;
+                            flex-direction: column;
+                            position: relative;
+                            padding: $spacer-10 $spacer-6;
+                            box-shadow: $shadow-md;
+                            
+                            @include responsive(tablet-screens) {
+                                padding: $spacer-10;
+                            }
+                            
+                            @include responsive(pc-M-screens) {
+                                width: calc(770px / 1720px) * 100%; 
+                                padding: 6% 4%;
+                            }
+
+                            @include responsive(pc-L-screens) {
+                                padding-right: 6%;
+                            }
+    
+                            .index-wrap {
+                                order: 2;
+                                margin: 30px auto 0;
+                                
+                                @include responsive(pc-M-screens) {
+                                    order: 1;
+                                    margin: 0;
+                                }
+                                
+                                h3 {
+                                    display: none;
+                                    text-align: right;
+                                    color: $text-color-title;
+                                    
+                                    @include responsive(pc-M-screens) {
+                                        display: block;
+                                        font-size: calc(1em + 2px);
+                                    }
+                                }
+
+                                .index {
+                                    @include index();
+                                    
+                                    span {
+                                        @include square(10px);
+
+                                        & + span {
+                                            margin-left: $spacer-4;
+                                        }
+
+                                        &.on {
+                                            background-color: $main-color-gary;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            .title-text-link {
+                                order: 1;
+                                
+                                @include responsive(pc-M-screens) {
+                                    order: 2;
+                                    margin-top: 30px;
+                                }
+
+                                @include responsive(pc-L-screens) {
+                                    order: 2;
+                                    margin-top: calc(80px / 680px) * 100%;
+                                }
+
+                                .title-box {
+                                    text-align: center;
+        
+                                    @include responsive(pc-M-screens) {
+                                        text-align: left;
+                                    }
+
+                                    strong {
+                                        color: $text-color-title;
+                                        font-size: calc(1em + 6px);
+                                        
+                                        @include responsive(pc-M-screens) {
+                                            font-size: $font-size-pc-strong;
+                                        }
+                                    }
+                                }
+
+                                
+                                .text-box {
+                                    margin-top: 30px;
+                                    color: $text-color-body;
+                                    
+                                    @include responsive(tablet-screens) {
+                                        margin-top: 50px;
+                                    }
+
+                                    @include responsive(pc-M-screens) {
+                                        margin-top: 30px;
+                                    }
+
+                                    table {
+                                        width: 100%;
+                                    }
+                                    
+                                    tr {
+                                        display: flex;
+                                        @include font_height(1em);
+                                        
+                                        margin-top: 10px;
+                                        
+                                        @include responsive(tablet-screens) {
+                                            margin-top: 20px;
+                                        }
+
+                                        th {
+                                            width: 20%;
+                                            font-weight: normal;
+                                            color: $text-color-light;
+
+                                            @include responsive(pc-M-screens) {
+                                                width: 22%;
+                                            }
+                                        }
+                                        
+                                        td {
+                                            width: 80%;
+
+                                            @include responsive(pc-M-screens) {
+                                                width: 75%;
+                                            }
+                                        }
+                                    }
+                                }
+        
+                                .link-box {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: $spacer-3;
+                                    margin-top: 45px;
+                                    
+                                    @include responsive(pc-L-screens) {
+                                        margin-top: calc(80px / 680px) * 100%;
+                                    }
+        
+                                    li {
+                                        overflow: hidden;
+                                        border: 1px solid opacify($point-pink, 0.5);
+                                        border-radius: 100px;
+                                        
+                                        a {
+                                            padding: 3px 10px;
+                                            min-width: 60px;
+                                            text-align: center;
+                                            @include font_height(1em);
+                                            color: $point-pink;
+
+                                            &:hover {
+                                                color: #fff;
+                                                background-color: $point-pink;
+                                            }
+                                        }
+                                    }
+                                }
+                            } // title-text-skill
+                            
+                            .more-box {
+                                display: none;
+                                position: absolute;
+                                right: 20px; top: 20px;                                
+                                
+                                @include responsive(pc-M-screens) {
+                                    bottom: 0;
+                                }
+
+                                .more-bt {
+                                    @include square(36px);
+                                    text-align: center;
+                                    border-radius: 50%;
+                                    background-color: $point-pink;
+                                    
+                                    
+                                    span {
+                                        @include font_height(38px, 30px);
+                                        font-weight: lighter;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        } // item-con
+                    } // item-inner
+                } // item-wrap
+            } // item-wrap
+        } // portfolio-list
+    } // portfolio-area
+} // section#portfolioWrap

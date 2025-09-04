@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+footer {
+    padding-top: 60px;
+    background-color: $main-color-gary;
+
+    @include responsive(table-screens) {
+        padding-top: 120px;
+    }
+
+    @include responsive(pc-screens) {
+        padding-top: 150px;
+    }
+
+    @include responsive(pc-L-screens) {
+        padding-top: 180px;
+    }
+
+    .footer-inner {
+        position: relative;
+        height: 370px;
+
+        @include responsive(pc-screens) {
+            height: 500px;
+        }
+        
+        .txt-wrap {
+            text-align: center;
+            
+            @include responsive(pc-screens) {
+                text-align: left;
+                margin-left: 80px;
+            }
+
+            strong {
+                display: block;
+            }
+
+            p {
+                font-size: $font-size-body-sm;
+                
+                @include responsive(pc-screens) {
+                    font-size: 26px;
+                }
+            }
+            
+            strong {
+                margin-top: 5px;
+                font-size: 24px;
+
+                @include responsive(pc-screens) {
+                    font-size: 44px;
+                }
+                
+                .point-txt {
+                    color: $point-pink;
+                }
+            }
+        } // txt-wrap
+
+        #contact {
+            position: absolute;
+            left: 0; bottom: 80px;
+            width: 100%;
+            text-align: center;
+            
+            @include responsive(pc-screens) {
+                width: auto;
+                left: calc(680px / 1380px) * 100%;
+                bottom: 140px;
+            }
+
+            img {
+                transition: all .3s;
+                width: 220px;
+                animation: 1.5s linear email-bounce infinite;
+                
+                @keyframes email-bounce {
+                    from { transform: rotateZ(30deg); }
+                    20% { transform: rotateZ(0deg); }
+                    80% { transform: rotateZ(0deg); }
+                    to { transform: rotateZ(30deg); }
+                }
+                
+                @include responsive(pc-screens) {
+                    width: 300px;
+                }
+
+                &:hover {
+                    animation-play-state: paused;
+                }
+            }
+        } // email-wrap
+
+        .copyright {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+
+            span {
+                font-weight: lighter;
+                font-size: calc(1em - 2px);
+            }
+        } // copyright
+    } // footer-inner
+} // footer

@@ -2,15 +2,47 @@
     "attitude" : [
         {
             "title" : "RECORD",
-            "txt" : "기록은 습관입니다. 스티커 메모를 활용해 빠르게 기록하고 노션을 이용해 일정과 필요한 정보를 정리합니다. 기록은 시간을 절약하고 더 가치있게 사용할 수 있도록 해줍니다."
+            "txt" : "기록은 습관입니다. 스티커 메모를 활용해 빠르게 기록하고 노션을 이용해 일정과 학습한 내용을 정리합니다."
         }
     ],
     "portfolio": [
         {
             "idx" : 1,
-            "state": "완료",
+            "ready": true,
+            "title": "델타봇",
+            "img_name": "deltabot",
+            "introduce": "기존 리움 미술관 사이트의 문제점을 개선하고 다양한 레이아웃과 인터렉티브한 기능들로 사용자의 흥미를 이끌어내고자 리뉴얼 하였습니다.",
+            "contents": [
+                { 
+                    "th": "기여도", 
+                    "td": "90%" 
+                },
+                { 
+                    "th": "담당 업무", 
+                    "td": "디자인 및 프론트 개발" 
+                },
+                { 
+                    "th": "TOOL", 
+                    "td": "React, SASS, Photoshop" 
+                }
+            ],
+            "link": [
+                {
+                    "href": "https://deltabot.co.kr/",
+                    "text": "Website"
+                },
+                {
+                    "href": "https://github.com/kimmido/deltabot-new-",
+                    "text": "Git"
+                }
+            ]
+        },
+        {
+            "idx" : 2,
+            "ready": true,
             "title": "리움미술관",
-            "sub-title": "Renewal page",
+            "img_name": "leeum",
+            "introduce": "기존 리움 미술관 사이트의 문제점을 개선하고 다양한 레이아웃과 인터렉티브한 기능들로 사용자의 흥미를 이끌어내고자 리뉴얼 하였습니다.",
             "contents": [
                 { 
                     "th": "기여도", 
@@ -21,15 +53,27 @@
                     "td": "미술관 소개, 관람안내, 멤버쉽, 오시는길,<br>보존연구 메인, 재질별 보존처리, 보존처리 사레" 
                 },
                 { 
-                    "th": "소개", 
-                    "td": "기존 리움 미술관 홈페이지의 문제점을 파악하고 개선하여 리뉴얼 페이지를 제작하였습니다. 미술관의 정적이고 지루한 이미지를 탈피하고자 다양한 레이아웃과 인터렉티브한 요소들을 구현해 사용자의 흥미를 이끌어내고자 하였습니다." 
-                },
-                { 
                     "th": "TOOL", 
                     "td": "HTML, SASS, Javascript, JQuery, Photoshop, Illustrator" 
                 }
             ],
             "link": [
+                {
+                    "href": "https://kimmido.github.io/Leeum/",
+                    "text": "Website(메인)"
+                },
+                {
+                    "href": "https://kimmido.github.io/Leeum/sub/collect/collect_conserve_case.html",
+                    "text": "Website(슬라이더)"
+                },
+                {
+                    "href": "https://kimmido.github.io/Leeum/sub/about/about_guide.html",
+                    "text": "Website(레이아웃)"
+                },
+                {
+                    "href": "https://github.com/kimmido/Leeum.git",
+                    "text": "Git"
+                },
                 {
                     "href": "./works/pages/Leeum/plan.pdf#page=1",
                     "text": "Plan"
@@ -37,26 +81,15 @@
                 {
                     "href": "./works/design-guide/leeum.html",
                     "text": "Design"
-                },
-                {
-                    "href": "https://github.com/kimmido/Leeum.git",
-                    "text": "Git"
-                },
-                {
-                    "href": "https://kimmido.github.io/Leeum/sub/collect/collect_conserve_case.html",
-                    "text": "Website(슬라이더)"
-                },
-                {
-                    "href": "https://kimmido.github.io/Leeum/",
-                    "text": "Website(메인)"
                 }
             ]
         },
         {
-            "idx" : 2,
-            "state": "완료",
+            "idx" : 3,
+            "ready": true,
             "title": "CRC 로봇카페",
-            "sub-title": "Mobile website",
+            "img_name": "crc",
+            "introduce": "'CRC 로봇카페'는 로봇 팔이 음료를 제조해주는 테이크아웃 전문 카페입니다. 음료 주문을 위한 모바일 웹사이트의 디자인과 퍼블리싱을 맡았습니다.",
             "contents": [
                 { 
                     "th": "기여도", 
@@ -67,34 +100,31 @@
                     "td": "로딩, 메뉴, 장바구니, 결제, 결제완료, 음료상태 현황, 관리자페이지" 
                 },
                 { 
-                    "th": "소개", 
-                    "td": "'CRC 로봇카페'는 로봇 팔이 음료를 제조해주는 테이크아웃 전문 카페입니다. 음료 주문을 위한 모바일 웹사이트의 디자인과 퍼블리싱을 맡았습니다. " 
-                },
-                { 
                     "th": "TOOL", 
                     "td": "HTML, CSS, Javascript, Photoshop, Illustrator" 
                 }
             ],
             "link": [
                 {
+                    "href": "https://coffee-test-roan.vercel.app/index.html",
+                    "text": "Website"
+                },
+                {
+                    "href": "https://github.com/kimmido/coffee.git",
+                    "text": "Git"
+                },
+                {
                     "href": "https://rbrb5016.cafe24.com/profile/works/pages/Crc/plan.pdf#page=1",
                     "text": "Plan"
-                },
-                {
-                    "href": "http://www.rif.cafe/",
-                    "text": "Website1"
-                },
-                {
-                    "href": "https://rbrb5016.cafe24.com/crc_test/loading.html",
-                    "text": "Website2"
                 }
             ]
         },
         {
-            "idx" : 3,
-            "state": "미완료",
-            "title": "We-Map",
-            "sub-title": "Mobile website",
+            "idx" : 4,
+            "ready": true,
+            "title": "절물자연휴양림",
+            "img_name": "jeolmul",
+            "introduce": "처음으로 혼자 제작한 웹페이지입니다. 시맨틱 태그를 학습하였고 애니메이션 효과에 흥미를 느끼게 된 프로젝트입니다.",
             "contents": [
                 { 
                     "th": "기여도", 
@@ -102,29 +132,83 @@
                 },
                 { 
                     "th": "구성", 
-                    "td": "지도, 목록 리스트, 장소 리스트, 장소 검색, 장소 상세" 
-                },
-                { 
-                    "th": "소개", 
-                    "td": "친구들과 함께 마음에 드는 장소를 저장하고 리뷰를 공유하는 사이트 입니다. 친구들의 리뷰를 모아보면 재미있겠다는 마음과 신뢰하는 사람들의 리뷰만 보고 싶다는 마음으로 개발하게 되었습니다." 
+                    "td": "메인 페이지" 
                 },
                 { 
                     "th": "TOOL", 
-                    "td": "React" 
+                    "td": "HTML, CSS, JQuery, Photoshop" 
                 }
             ],
             "link": [
                 {
-                    "href": "https://rbrb5016.cafe24.com/profile/works/pages/Crc/plan.pdf#page=1",
-                    "text": "Plan"
+                    "href": "./works/pages/Jeolmul/index.html",
+                    "text": "Website"
                 },
                 {
-                    "href": "http://www.rif.cafe/",
-                    "text": "Website1"
+                    "href": "https://github.com/kimmido/Jeolmul.git",
+                    "text": "Git"
                 },
                 {
-                    "href": "https://rbrb5016.cafe24.com/crc_test/loading.html",
-                    "text": "Website2"
+                    "href": "./works/design-guide/jeolmul.html",
+                    "text": "Design"
+                }
+            ]
+        },
+        {
+            "idx" : 5,
+            "ready": true,
+            "title": "TodoList",
+            "img_name": "todo_list",
+            "introduce": "react의 기본 todoList 페이지를 제작하였습니다. react의 동작방식과 컴포넌트 기본구조를 학습할 수 있었습니다.",
+            "contents": [
+                { 
+                    "th": "기여도",
+                    "td": "100% (개인 프로젝트)" 
+                },
+                { 
+                    "th": "구성", 
+                    "td": "할일 목록과 추가, 삭제, 수정, 카운터 기능" 
+                },
+                { 
+                    "th": "TOOL", 
+                    "td": "React, SASS" 
+                }
+            ],
+            "link": [
+                {
+                    "href": "https://rbrb5016.cafe24.com/profile/works/react/todolist",
+                    "text": "Website"
+                }
+            ]
+        },
+        {
+            "idx" : 6,
+            "ready": true,
+            "title": "고양이 상점",
+            "img_name": "cat_store",
+            "introduce": "자바스크립트 공부를 위해 계산 기능을 가진 웹페이지를 제작하였습니다. 재미 요소를 추가하고자 직접 드로잉한 이미지를 활용하였습니다.",
+            "contents": [ 
+                { 
+                    "th": "기여도", 
+                    "td": "100% (개인 프로젝트)" 
+                },
+                { 
+                    "th": "구성", 
+                    "td": "상품 선택 시 자동계산 기능" 
+                },
+                { 
+                    "th": "TOOL", 
+                    "td": "HTML, SASS, Javascript" 
+                }
+            ],
+            "link": [
+                {
+                    "href": "https://kimmido.github.io/js-cat-store/",
+                    "text": "Website"
+                },
+                {
+                    "href": "https://github.com/kimmido/js-cat-store.git",
+                    "text": "Git"
                 }
             ]
         }

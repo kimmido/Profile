@@ -140,6 +140,7 @@ let hiddenConLeft;
 let hiddenConTop;
 
 function homeCursorOn(e) {
+    let pos = document.documentElement.scrollTop;
     if(pos < 1) { e.stopPropagation(); }
 
     hiddenConLeft = e.pageX - 120;
@@ -156,29 +157,6 @@ function homeCursorOn(e) {
 function homeCursorOff() {
     homeCursor.classList.remove('scale');
 } 
-
-
-
-// ****** portfolio섹션 인덱스 클릭시 부드러운 이동 ******
-const portfolio = document.getElementById("portfolioWrap");
-const portfolioItem = portfolio.querySelectorAll(".item-wrap");
-
-(function portfolioIndexMove() {
-    const portfolioIndex = portfolio.querySelectorAll(".index");
-    let itemNum;
-    let itemTop;
-
-    portfolioIndex.forEach(idx => {
-        idx.onclick = function(e) {
-            if(e.target.matches('span')) {
-                itemNum = [...idx.children].indexOf(e.target);
-                itemTop = portfolioItem[itemNum].offsetTop;
-                window.scrollTo({ left: 0, top: itemTop, behavior: "smooth" });
-            }
-        }
-    });
-})();
-
 
 
 // ***** footer 이메일 마우스 이벤트 *****
@@ -205,25 +183,46 @@ const portfolioItem = portfolio.querySelectorAll(".item-wrap");
 })();
 
 
+// ****** portfolio섹션 인덱스 클릭시 부드러운 이동 ******
+function portfolioIndexMove(portfolio, portfolioItem) {
+    const portfolioIndex = portfolio.querySelectorAll(".index");
+    let itemNum;
+    let itemTop;
+
+    portfolioIndex.forEach(idx => {
+        idx.onclick = function(e) {
+            if(e.target.matches('span')) {
+                itemNum = [...idx.children].indexOf(e.target);
+                itemTop = portfolioItem[itemNum].offsetTop;
+                window.scrollTo({ left: 0, top: itemTop, behavior: "smooth" });
+            }
+        }
+    });
+};
 
 // ********** 스크롤 이벤트 ********** 
-window.addEventListener("scroll", scrollEvent);
+renderPortfolio().then(() => {
+    const portfolio = document.getElementById("portfolioWrap");
+    const portfolioItem = portfolio.querySelectorAll(".item-wrap");
+    const home = document.getElementById("homeWrap");
 
-let pos = document.documentElement.scrollTop;
-
-function scrollEvent() {
-    pos = document.documentElement.scrollTop;
     
-    homeOffMouseEvent();
-    gnbLocationPoint();
-    // aboutTitleMove();
-    // attitudeConCover();
-    portfolioTitleShow();
-    portfolioItemUp();
-}
+    portfolioIndexMove(portfolio, portfolioItem);
+    
+    window.addEventListener("scroll", () => {
+        let pos = document.documentElement.scrollTop;
+
+        homeOffMouseEvent(pos, home);
+        gnbLocationPoint(pos);
+        // aboutTitleMove(pos);
+        // attitudeConCover(pos);
+        portfolioTitleShow(pos, portfolio);
+        portfolioItemUp(pos, portfolioItem);
+    });
+})
 
 // home섹션 지나면 마우스 포인트 변경
-function homeOffMouseEvent() {
+function homeOffMouseEvent(pos) {
     if(pos > 0) {
         home.style.opacity = 0
         home.style.cursor = "default";
@@ -238,7 +237,7 @@ function homeOffMouseEvent() {
 // 섹션 위치에 해당하는 gnb 강조 효과
 targetTop.push(20000);
 
-function gnbLocationPoint(){
+function gnbLocationPoint(pos) {
     for(let i = 0; i < gnbA.length; i++) {
         if(pos >= targetTop[i] && pos < targetTop[i + 1]) {
             gnbA[i].previousSibling.previousSibling.classList.add('dot');
@@ -279,7 +278,7 @@ function gnbLocationPoint(){
 //     }
 // }
 
-function portfolioTitleShow() {
+function portfolioTitleShow(pos, portfolio) {
     if(pos > portfolio.offsetTop - 500) {
         portfolio.getElementsByTagName("h3")[0].style.display = "block";
     } else {
@@ -288,7 +287,7 @@ function portfolioTitleShow() {
 }
 
 // portfolio섹션 등장 이벤트    
-function portfolioItemUp() {
+function portfolioItemUp(pos, portfolioItem) {
     portfolioItem.forEach(item => {
         let itemUpPOS = item.offsetTop - (window.innerHeight * 0.3);
         
