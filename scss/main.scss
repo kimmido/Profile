@@ -248,7 +248,7 @@ body {
                     display: none;
                     position: absolute;
                     top: 35px; right: 30px;
-                    width: 540px;
+                    width: 360px;
                     
                     @include responsive(tablet-screens) {
                         display: flex;

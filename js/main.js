@@ -1,16 +1,16 @@
 // **** attitude섹션 내용 생성 및 변경 ****
-const attitude = document.getElementById("attitudeWrap");
-const attitudeImg = attitude.querySelector(".img");
-const attitudeIndex = attitude.querySelector(".index");
-const attitudeTitle = attitude.querySelector(".title h4");
-const attitudeText = attitude.querySelector(".attitude-txt p");
-const attitudeLink = attitude.querySelector(".attitud-link");
-const attitudePrev = attitude.querySelector(".prev");
-const attitudeNext = attitude.querySelector(".next");
+// const attitude = document.getElementById("attitudeWrap");
+// const attitudeImg = attitude.querySelector(".img");
+// const attitudeIndex = attitude.querySelector(".index");
+// const attitudeTitle = attitude.querySelector(".title h4");
+// const attitudeText = attitude.querySelector(".attitude-txt p");
+// const attitudeLink = attitude.querySelector(".attitud-link");
+// const attitudePrev = attitude.querySelector(".prev");
+// const attitudeNext = attitude.querySelector(".next");
 
 
-let attitudeCounter = 0;
-attdConChange(attitudeCounter);
+// let attitudeCounter = 0;
+// attdConChange(attitudeCounter);
 
 // 이전, 다음, 인덱스 버튼 클릭 이벤트
 // attitudePrev.onclick = function() {
@@ -34,32 +34,32 @@ attdConChange(attitudeCounter);
 
 
 // 내용 입력 함수
-function attdConChange(attitudeCounter) {
-    console.log(attitudeCounter);
+// function attdConChange(attitudeCounter) {
+//     console.log(attitudeCounter);
 
-    addClassOnlyTarget([...attitudeIndex.children], attitudeCounter, "on")
+//     addClassOnlyTarget([...attitudeIndex.children], attitudeCounter, "on")
     
-    attitudeTitle.classList.toggle("up");
-    attitudeLink.classList.toggle("up");
-    setTimeout(() => {
-        attitudeTitle.classList.toggle("up");
-        attitudeText.classList.toggle("up");
-    }, 600)
+//     attitudeTitle.classList.toggle("up");
+//     attitudeLink.classList.toggle("up");
+//     setTimeout(() => {
+//         attitudeTitle.classList.toggle("up");
+//         attitudeText.classList.toggle("up");
+//     }, 600)
     
-    attitudeImg.classList.toggle("coverOut");
-    setTimeout(() => {
-        attitudeImg.style.backgroundImage = `url('./images/attitude/attitude(${attitudeCounter}).png')`;
-        attitudeImg.classList.toggle("coverOut")
-    }, 500)
-};
+//     attitudeImg.classList.toggle("coverOut");
+//     setTimeout(() => {
+//         attitudeImg.style.backgroundImage = `url('./images/attitude/attitude(${attitudeCounter}).png')`;
+//         attitudeImg.classList.toggle("coverOut")
+//     }, 500)
+// };
 
-function addClassOnlyTarget(elements, targetIndex, className) {
-    elements.forEach(element => {
-        element == elements[targetIndex] ?
-        element.classList.add(className) :
-        element.classList.remove(className) 
-    });
-}
+// function addClassOnlyTarget(elements, targetIndex, className) {
+//     elements.forEach(element => {
+//         element == elements[targetIndex] ?
+//         element.classList.add(className) :
+//         element.classList.remove(className) 
+//     });
+// }
 
 
 // ********** 헤더 클릭 이벤트 ********** 
@@ -216,8 +216,8 @@ function scrollEvent() {
     
     homeOffMouseEvent();
     gnbLocationPoint();
-    aboutTitleMove();
-    attitudeConCover();
+    // aboutTitleMove();
+    // attitudeConCover();
     portfolioTitleShow();
     portfolioItemUp();
 }
@@ -249,35 +249,35 @@ function gnbLocationPoint(){
 } 
 
 // about섹션 강조글씨 등장
-const aboutTitle = document.querySelector(".about-title");
-let titleIn = document.querySelector("#aboutWrap").offsetTop - (window.innerHeight * 0.6);
+// const aboutTitle = document.querySelector(".about-title");
+// let titleIn = document.querySelector("#aboutWrap").offsetTop - (window.innerHeight * 0.6);
 
-function aboutTitleMove() {
-    if(pos > titleIn) {            
-        [...aboutTitle.children].forEach(title => {
-            title.classList.add("center-in");
-        });
-    } else {
-        [...aboutTitle.children].forEach(title => {
-            title.classList.remove("center-in");
-        });
-    }
-}
+// function aboutTitleMove() {
+//     if(pos > titleIn) {            
+//         [...aboutTitle.children].forEach(title => {
+//             title.classList.add("center-in");
+//         });
+//     } else {
+//         [...aboutTitle.children].forEach(title => {
+//             title.classList.remove("center-in");
+//         });
+//     }
+// }
 
 // attitude섹션 내용 커버 여닫기
-function attitudeConCover() {
-    if(pos > attitude.offsetTop - (window.innerHeight * 0.2)) {
-        attitudeTitle.classList.add("up");
-        attitudeText.classList.add("up");
-        attitudeLink.classList.add("up");
-        attitudeImg.classList.add("coverOut");
-    } else {
-        attitudeLink.classList.remove("up");
-        attitudeTitle.classList.remove("up");
-        attitudeText.classList.remove("up");
-        attitudeImg.classList.remove("coverOut");
-    }
-}
+// function attitudeConCover() {
+//     if(pos > attitude.offsetTop - (window.innerHeight * 0.2)) {
+//         attitudeTitle.classList.add("up");
+//         attitudeText.classList.add("up");
+//         attitudeLink.classList.add("up");
+//         attitudeImg.classList.add("coverOut");
+//     } else {
+//         attitudeLink.classList.remove("up");
+//         attitudeTitle.classList.remove("up");
+//         attitudeText.classList.remove("up");
+//         attitudeImg.classList.remove("coverOut");
+//     }
+// }
 
 function portfolioTitleShow() {
     if(pos > portfolio.offsetTop - 500) {

@@ -293,7 +293,7 @@ body.scroll-stop {
   position: absolute;
   top: 35px;
   right: 30px;
-  width: 540px;
+  width: 360px;
 }
 @media screen and (min-width: 768px) {
   #wrapper header .header-inner #gnbWrap .gnb {
